@@ -11,10 +11,9 @@ function AppRoutes() {
     return (
         <Router>
             <Routes>
-                <Route path="/buyer/home" element={<BlankPage />} />
                 <Route path="/buyer/orders" element={<OrderHistory />} />
                 <Route path="/buyer/product/:id" element={<ProductDetail />} />
-                <Route path="/" element={<OrderView />} />
+                <Route path="/orders" element={<OrderView />} />
             </Routes>
         </Router>
     );
