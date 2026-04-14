@@ -56,41 +56,110 @@ export default function CreateListing() {
   }
 
   return (
-    <form onSubmit={handleSubmit}> {/* 1. Wrap in form and move logic here */}
-    <h1>Create a Listing</h1>
-    {error && <p style={{ color: 'red' }}>{error}</p>}
+    <div className="seller-dashboard">
+      {/* Reusing header style */}
+      <header className="seller-header">
+        <div className="seller-badge">
+          <span className="badge-icon">📦</span>
+          <span className="seller-label">SELLER HUB</span>
+        </div>
+      </header>
 
-      <div>
-       <label>Title</label>
-       <input name="title" value={formData.title} onChange={handleChange} />
-      </div>
+      <main className="dashboard-content">
+        <div className="dashboard-header">
+          <div className="header-left">
+            <h1>Create a New Listing</h1>
+            <p className="subtitle">Fill in the details to list your service or product.</p>
+          </div>
+        </div>
 
-      <div>
-        <label>Description</label>
-        <textarea name="description" value={formData.description} onChange={handleChange} />
-      </div>
+        <div className="orders-card"> {/* Reusing  card container */}
+          <div className="card-header">
+            <h2>Listing Details</h2>
+          </div>
 
-      <div>
-        <label>Price</label>
-        <input name="price" type="number" value={formData.price} onChange={handleChange} />
-      </div> 
+          <form onSubmit={handleSubmit} className="listing-form">
+            {error && <div className="error-message">{error}</div>}
 
-      <div>
-        <label>Delivery Days</label>
-        <input name="delivery_days" type="number" value={formData.delivery_days} onChange={handleChange} />
-      </div>
+            <div className="form-group">
+              <label>Title</label>
+              <input 
+                className="search-input" 
+                name="title" 
+                placeholder="e.g. Headset, Sewing Machine, etc."
+                value={formData.title} 
+                onChange={handleChange} 
+                required 
+              />
+            </div>
 
-      <div>
-        <label>Category ID</label>
-        <input name="category_id" value={formData.category_id} onChange={handleChange} />
-      </div>
+            <div className="form-group">
+              <label>Description</label>
+              <textarea 
+                className="search-input" 
+                name="description" 
+                rows="4"
+                placeholder="Describe what you are offering..."
+                value={formData.description} 
+                onChange={handleChange} 
+                required 
+              />
+            </div>
 
-      <div>
-        <label>Image URLs (comma separated)</label>
-        <input name="image_url" value={formData.image_url} onChange={handleChange} />
-      </div>
+            <div className="form-row">
+              <div className="form-group">
+                <label>Price ($)</label>
+                <input 
+                  className="search-input" 
+                  name="price" 
+                  type="number" 
+                  value={formData.price} 
+                  onChange={handleChange} 
+                  required 
+                />
+              </div>
 
-      <button type="submit">Create Listing</button>
-  </form>
+              <div className="form-group">
+                <label>Delivery Days</label>
+                <input 
+                  className="search-input" 
+                  name="delivery_days" 
+                  type="number" 
+                  value={formData.delivery_days} 
+                  onChange={handleChange} 
+                  required 
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label>Category ID</label>
+              <input 
+                className="search-input" 
+                name="category_id" 
+                value={formData.category_id} 
+                onChange={handleChange} 
+                required 
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Image URLs (comma separated)</label>
+              <input 
+                className="search-input" 
+                name="image_url" 
+                placeholder="http://site.com/img1.jpg, http://site.com/img2.jpg"
+                value={formData.image_url} 
+                onChange={handleChange} 
+              />
+            </div>
+
+            <div className="form-actions">
+              <button type="submit" className="btn-save">Publish Listing</button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
   )
 }
