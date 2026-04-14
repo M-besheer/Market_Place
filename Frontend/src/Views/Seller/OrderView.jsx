@@ -223,21 +223,20 @@ return (
                 <p>Order: <strong>{selectedOrderId}</strong></p>
                 
                 <div className="status-options">
-                <label>
-                    <input type="radio" name="status" value="pending" /> Pending
-                </label>
-                <label>
-                    <input type="radio" name="status" value="processing" /> Processing
-                </label>
-                <label>
-                    <input type="radio" name="status" value="shipped" /> Shipped
-                </label>
-                <label>
-                    <input type="radio" name="status" value="delivered" /> Delivered
-                </label>
-                <label>
-                    <input type="radio" name="status" value="cancelled" /> Cancelled
-                </label>
+                {['pending', 'processing', 'shipped', 'delivered', 'cancelled'].map((status) => (
+                    <label key={status}>
+                    <input 
+                        type="radio" 
+                        name="status" 
+                        value={status} 
+                        // 1. Check if this radio matches our state
+                        checked={selectedStatus === status} 
+                        // 2. Update state when the user clicks a different one
+                        onChange={(e) => setSelectedStatus(e.target.value)} 
+                    /> 
+                    {status.charAt(0).toUpperCase() + status.slice(1)}
+                    </label>
+                ))}
                 </div>
 
                 <div className="modal-actions">

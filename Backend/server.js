@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const listingRoutes = require('./routes/listings')
-app.use('/api/listings', listingRoutes)
 
 dotenv.config();
 
 const app = express();
+app.use('/api/listings', listingRoutes)
 app.use(cors());
 app.use(express.json());
 
