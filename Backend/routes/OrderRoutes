@@ -1,0 +1,8 @@
+const express = require('express');
+const router = express.Router();
+const orderController = require('../controllers/OrderController');
+
+router.get('/orders', orderController.getAllOrders);
+router.patch('/orders/:id', orderController.updateStatus);
+
+module.exports = router;

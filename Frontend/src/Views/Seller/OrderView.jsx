@@ -1,58 +1,26 @@
 // OrderView.jsx
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import axios from 'axios';
 import './OrderView.css';
 
 export default function OrderView() {
-const [orders, setOrders] = useState([
-    {
-    id: 'ORD-001',
-    customer: 'John Doe',
-    date: '2026-04-08',
-    items: 3,
-    total: 149.99,
-    status: 'cancelled',
-},
-{
-    id: 'ORD-002',
-    customer: 'Jane Smith',
-    date: '2026-04-09',
-    items: 2,
-    total: 89.50,
-    status: 'processing',
-},
-{
-    id: 'ORD-003',
-    customer: 'Mike Johnson',
-    date: '2026-04-07',
-    items: 5,
-    total: 249.99,
-    status: 'shipped',
-},
-    {
-    id: 'ORD-004',
-    customer: 'John Doe Jr.',
-    date: '2026-04-08',
-    items: 3,
-    total: 149.99,
-    status: 'pending',
-},
-{
-    id: 'ORD-005',
-    customer: 'Jane Smith',
-    date: '2026-04-09',
-    items: 2,
-    total: 89.50,
-    status: 'processing',
-},
-{
-    id: 'ORD-006',
-    customer: 'Mike Johnson',
-    date: '2026-04-07',
-    items: 5,
-    total: 249.99,
-    status: 'delivered',
-},
-]);
+const [orders, setOrders] = useState([]);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+        const fetchOrders = async () => {
+            try {
+                const res = await axios.get('http://localhost:5000/api/orders');
+                setOrders(res.data);
+                setLoading(false);
+            } catch (err) {
+                console.error("Fetch error:", err);
+                setLoading(false);
+            }
+        };
+        fetchOrders();
+    }, []);
+
 const [selectedOrderId, setSelectedOrderId] = useState(null);
 const [searchTerm, setSearchTerm] = useState('');
 const [statusFilter, setStatusFilter] = useState('');
@@ -63,7 +31,7 @@ const filteredOrders = useMemo(() => {
     return orders.filter((order) => {
         // Search filter - checks order ID and customer name
         const matchesSearch =
-        order.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        order._id.toLowerCase().includes(searchTerm.toLowerCase()) ||
         order.customer.toLowerCase().includes(searchTerm.toLowerCase());
 
         // Status filter
@@ -87,17 +55,24 @@ const closeModal = () => {
     setSelectedStatus(null);
 };
 
-const handleSaveStatus = () => {
+const handleSaveStatus = async () => {
     if (selectedStatus && selectedOrderId) {
+        try {
+        const res = await axios.patch(`http://localhost:5000/api/orders/${selectedOrderId}`, {
+                    status: selectedStatus
+                });
+
         setOrders(orders.map(order =>
         order.id === selectedOrderId
-            ? { ...order, status: selectedStatus }
+            ? res.data
             : order
         ));
         closeModal();
+        } catch (error) {
+        console.error("Error updating order status:", error);
     }
+}
 };
-
 
 
 return (
