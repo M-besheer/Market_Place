@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 const orderSchema = new mongoose.Schema(
     {
+        id: {
+            type: String,
+            unique: true,
+            default: () => new mongoose.Types.ObjectId().toString(),
+        },
+
         buyer_id:{
             type: mongoose.Schema.Types.ObjectId, //forgein key
             ref: 'User',
@@ -23,6 +29,7 @@ const orderSchema = new mongoose.Schema(
     
     {
         timestamps: true,
+        collection: 'orders_order'
     }
 
 );
