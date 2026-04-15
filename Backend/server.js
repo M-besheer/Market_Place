@@ -19,9 +19,12 @@ app.use(session({
   cookie: { secure: false } // Set to true only if using HTTPS
 }));
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
+// --- ADD THIS LINE to import your routes ---
+const orderRoutes = require('./routes/orderRoutes');
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('MongoDB connected ✅'))
+  .catch(err => console.log("❌ Error connecting to MongoDB:", err));
 
 app.get('/', (req, res) => {
   res.send('API is running');
@@ -32,5 +35,8 @@ app.use('/api/auth', require('./routes/auth'));
 const orderRoutes = require('./routes/orderRoutes');
 app.use('/api/orders', orderRoutes);
 
+app.use('/api/orders', orderRoutes);
+
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
