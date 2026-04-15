@@ -17,5 +17,7 @@ app.get('/', (req, res) => {
   res.send('API is running');
 });
 app.use('/api/products', require('./routes/productRoutes'));
+app.use('/api/auth', require('./routes/auth'));
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
