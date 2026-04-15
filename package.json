@@ -60,3 +60,8 @@
     "build": "vite build"
   }
 }
+{
+  "dependencies": {
+    "express-session": "^1.19.0"
+  }
+}

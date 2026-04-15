@@ -2,12 +2,22 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const listingRoutes = require('./routes/listings')
+const session = require('express-session');
 
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:3000', credentials: true })); // after const app = express()
 app.use(express.json());
+app.use('/api/listings', listingRoutes);
+
+app.use(session({
+  secret: 'NinjaSho', // Change this to a random string
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // Set to true only if using HTTPS
+}));
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
