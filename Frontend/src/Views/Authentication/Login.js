@@ -17,9 +17,9 @@ const Login = () => {
             
             // Logic to separate Buyer and Seller apps
             if (data.user.role === 'seller') {
-                navigate('/orders');
+                navigate('/seller/orders');
             } else {
-                navigate('/orders'); // For buyers, you might want to navigate to a different page like '/products'
+                navigate('/products'); // For buyers, you might want to navigate to a different page like '/products'
             }
         } else {
             alert(data.message || "Invalid Login");

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Listing = require('../models/Listings');  
+const Listing = require('../models/Listing');
 
 // Middleware to protect the route by checking if the seller is logged in
 //esta3melt sessions

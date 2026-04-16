@@ -7,10 +7,16 @@ const session = require('express-session');
 
 dotenv.config();
 
+// --- ADD THIS LINE to import your routes ---
+const orderRoutes = require('./routes/orderRoutes');
 const app = express();
+
 app.use(cors({ origin: 'http://localhost:3000', credentials: true })); // after const app = express()
 app.use(express.json());
 app.use('/api/listings', listingRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/products', require('./routes/productRoutes'));
+app.use('/api/auth', require('./routes/auth'));
 
 app.use(session({
   secret: 'NinjaSho', // Change this to a random string
@@ -19,8 +25,7 @@ app.use(session({
   cookie: { secure: false } // Set to true only if using HTTPS
 }));
 
-// --- ADD THIS LINE to import your routes ---
-const orderRoutes = require('./routes/orderRoutes');
+
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected ✅'))
@@ -29,13 +34,6 @@ mongoose.connect(process.env.MONGODB_URI)
 app.get('/', (req, res) => {
   res.send('API is running');
 });
-app.use('/api/products', require('./routes/productRoutes'));
-app.use('/api/auth', require('./routes/auth'));
-
-const orderRoutes = require('./routes/orderRoutes');
-app.use('/api/orders', orderRoutes);
-
-app.use('/api/orders', orderRoutes);
 
 
 const PORT = process.env.PORT || 5000;
