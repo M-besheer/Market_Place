@@ -1,5 +1,29 @@
 import { useState } from 'react'
 import './Seller.css';
+import { getCategories } from '../../services/categories';
+import { useEffect } from 'react';
+
+const useCategories = () => {
+    const [categories, setCategories] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+      const fetchCategories = async () => {
+        try {
+          const categories = await getCategories();
+          setCategories(categories);
+        } catch (error) {
+          setError(error.message);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchCategories();
+    }, []);
+    return { categories, loading, error }
+  }
 
 export default function CreateListing() {
   const [formData, setFormData] = useState({  //formData is an object holding everything in the form 
@@ -12,7 +36,8 @@ export default function CreateListing() {
   })
   const [error, setError] = useState(null)
   const [success, setSuccess] = useState(false) // success is a boolean that flips to true to track if listing creation was successful
-
+  const { categories, loading, error: categoryError } = useCategories() // this custom hook fetches the list of categories from the backend and manages loading and error states for that request.
+  
   // handleChange is a generic function that updates a component's state in real-time as a user types or selects a value in a form element
   // e typically refers to the Event Object. It is a standard naming convention for the first argument passed to an event handler function
   const handleChange = (e) => {
@@ -133,14 +158,17 @@ export default function CreateListing() {
             </div>
 
             <div className="form-group">
-              <label>Category ID</label>
-              <input 
+              <label>Category</label>
+              <select
                 className="search-input" 
                 name="category_id" 
                 value={formData.category_id} 
                 onChange={handleChange} 
-                required 
-              />
+                required
+              >
+                <option value=""> -- Select a category -- </option>
+                {categories.map((category) => (<option key={category._id} value={category._id}>{category.name}</option>))}
+              </select>
             </div>
 
             <div className="form-group">
