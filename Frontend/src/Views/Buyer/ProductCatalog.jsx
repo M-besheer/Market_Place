@@ -77,7 +77,7 @@ const ProductCatalog = () => {
     };
 
     loadProducts();
-  }, [filters, page]);
+  }, [filters.category, filters.priceRange, filters.minRating, page]);
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
@@ -119,8 +119,8 @@ const ProductCatalog = () => {
                       <input
                           type="radio"
                           name="category"
-                          checked={filters.category === cat.name}
-                          onChange={() => handleFilterChange('category', cat.name)}
+                          checked={filters.category === cat._id}
+                          onChange={() => handleFilterChange('category', cat._id)}
                       />
                       <span className="custom-checkbox"></span>
                       <span className="label-text">{cat.name}</span>
@@ -192,7 +192,7 @@ const ProductCatalog = () => {
             ) : (
                 <div className="products-grid">
                   {products.map(product => (
-                      <ProductCard key={product._id} product={product} />
+                      <ProductCard key={product._id} listing={product} />
                   ))}
                 </div>
             )}
