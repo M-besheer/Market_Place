@@ -690,3 +690,50 @@ textarea.search-input {
         grid-template-columns: 1fr;
     }
 }
+/* Styling for the container within the header */
+.New-Listing-Button {
+    display: flex;
+    align-items: center;
+    margin: 0 15px; /* Adds breathing room between the left and right sections */
+}
+
+/* The actual button/link */
+.create-listing-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap; /* Prevents text from wrapping on small screens */
+}
+
+.create-listing-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+    color: white;
+}
+
+/* Responsive: On mobile, we might need to hide it or move it */
+@media (max-width: 600px) {
+    .seller-header {
+        height: auto;
+        padding: 10px;
+    }
+    
+    .New-Listing-Button {
+        order: 3; /* Moves it to the bottom if the header wraps */
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .create-listing-btn {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+}
