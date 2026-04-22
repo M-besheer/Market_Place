@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Seller.css';
-import { getCategories } from '../../services/categories';
+import { getCategories } from '../../services/products';
 import { useEffect } from 'react';
 
 const useCategories = () => {
@@ -37,7 +37,7 @@ export default function CreateListing() {
   const [error, setError] = useState(null)
   const [success, setSuccess] = useState(false) // success is a boolean that flips to true to track if listing creation was successful
   const { categories, loading, error: categoryError } = useCategories() // this custom hook fetches the list of categories from the backend and manages loading and error states for that request.
-  
+
   // handleChange is a generic function that updates a component's state in real-time as a user types or selects a value in a form element
   // e typically refers to the Event Object. It is a standard naming convention for the first argument passed to an event handler function
   const handleChange = (e) => {

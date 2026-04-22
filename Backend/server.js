@@ -2,19 +2,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const listingRoutes = require('./routes/listings')
 const session = require('express-session');
 
 dotenv.config();
 
 // --- ADD THIS LINE to import your routes ---
-const orderRoutes = require('./routes/orderRoutes');
 const app = express();
 
 app.use(cors({ origin: 'http://localhost:3000', credentials: true })); // after const app = express()
 app.use(express.json());
-app.use('/api/listings', listingRoutes);
-app.use('/api/orders', orderRoutes);
+app.use('/api/listings', require('./routes/listings'));
+app.use('/api/orders', require('./routes/orderRoutes'));
 app.use('/api/products', require('./routes/productRoutes'));
 app.use('/api/auth', require('./routes/auth'));
 

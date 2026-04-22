@@ -9,7 +9,7 @@ import 'rc-slider/assets/index.css';
 // but does not export fetchCategories as named if it was not written like `export { fetchCategories }`
 // Actually, let's fix api.js next to make sure.
 
-import fetchProducts from '../../services/api';
+import fetchProducts from '../../services/products';
 // We will manually fetch categories until we are sure api.js exports it.
 // Wait, I will use api.js export format.
 
