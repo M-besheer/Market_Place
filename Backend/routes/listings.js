@@ -20,7 +20,6 @@ const { title, description, price, delivery_days, image_url, category_id } = req
         
         // FAKE IDs FOR TESTING (Mongoose needs 24 characters)
         const fakeSellerId = "65f1a2b3c4d5e6f7a8b9c0d1";
-        const fakeCategoryId = "65f1a2b3c4d5e6f7a8b9c0d6";
 
         const newListing = new Listing({
             seller_id: fakeSellerId, // !!!!Replace with actual seller_id from session
@@ -29,7 +28,7 @@ const { title, description, price, delivery_days, image_url, category_id } = req
             price,
             delivery_days,
             image_url,
-            category_id: fakeCategoryId // !!!!Replace with actual category_id from session
+            category_id
         });
 
         await newListing.save(); // hana5od el data w y7otaha fe el database 
