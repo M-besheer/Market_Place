@@ -15,7 +15,7 @@ function AppRoutes() {
         <Router>
             <Routes>
 
-            <Route path="/buyer/orders" element={<Navigate to="/login" replace />} />
+            <Route path="/buyer/orders" element={<OrderHistory />} />
             <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/seller/orders" element={<OrderView />} />
             <Route path="/login" element={<Login />} />
