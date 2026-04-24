@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Install dependencies (done separately for Docker layer caching)
 COPY package.json package-lock.json* ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Source code is mounted as a volume in compose.yaml —
 # this COPY is only a fallback if volumes are not used.
@@ -14,4 +14,4 @@ COPY . .
 EXPOSE 3000
 
 # React dev server with hot-reload
-CMD ["sh", "-c", "npm install && npm start"]
+CMD ["sh", "-c", "npm install --legacy-peer-deps && npm start"]
