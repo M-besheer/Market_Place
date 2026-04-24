@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './OrderHistory.css';
+import Navbar from '../../Components/Navbar';
+import Footer from '../../Components/Footer';
 
 const sampleOrders = [
   {
@@ -106,21 +108,7 @@ function OrderHistory() {
     <div className="order-history-page">
 
       {/* ── Navbar ── */}
-      <header className="product-detail-header-bar">
-        <div className="header-logo">
-          <span className="header-logo-icon">&#128722;</span>
-          <span className="header-logo-label">MarketPlace</span>
-        </div>
-        <nav className="header-nav">
-          <a href="/" className="nav-link">Home</a>
-          <a href="/catalog" className="nav-link">Catalog</a>
-          <Link to="/buyer/orders" className="nav-link active-nav-link">My Orders</Link>
-        </nav>
-        <div className="header-user">
-          <div className="avatar">B</div>
-          <span className="header-username">Buyer</span>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="page-body">
 
@@ -203,6 +191,7 @@ function OrderHistory() {
         </div>
 
       </main>
+      <Footer />
     </div>
   );
 }
