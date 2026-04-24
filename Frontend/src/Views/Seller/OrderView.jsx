@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useNavigate, Link } from 'react-router-dom'
 import { getIncomingOrders, updateOrderStatus } from '../../Apis/Seller'; // Ensure this path matches your project structure
 import './Seller.css';
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'; 
+import LoadingScreen from '../Loading';
+import Navbar from '../Navbar/Navbar';
 
 export default function OrderView() {
     const [orders, setOrders] = useState([]);
@@ -14,6 +15,8 @@ export default function OrderView() {
     const [searchTerm, setSearchTerm] = useState('');
     const [statusFilter, setStatusFilter] = useState('');
     const [selectedStatus, setSelectedStatus] = useState(null);
+    const [error, setError] = useState(null);
+
 
     // Fetch orders when the component loads
     useEffect(() => {
@@ -22,7 +25,10 @@ export default function OrderView() {
                 const data = await getIncomingOrders();
                 setOrders(data);
             } catch (error) {
-                alert("Failed to load orders");
+                setError({
+                    message: "Unable to load orders. Please contact the developer.",
+                    details: error.message
+                });
             } finally {
                 setLoading(false);
             }
@@ -78,31 +84,26 @@ export default function OrderView() {
                 ));
                 closeModal();
             } catch (error) {
-                alert("Failed to update order status. Check console for details.");
+                setError({
+                    message: "Failed to update order status. Check console for details.",
+                    details: error.message
+                });
             }
         }
     };
 
-    if (loading) return <p>Loading orders...</p>;
+    if (loading) return <LoadingScreen />;
 
     return (
-        <div className="seller-dashboard">
-            {/* Seller Header Bar */}
-            <div className="seller-header">
-                <div className="seller-badge">
-                    <span className="badge-icon">👤</span>
-                    <span className="seller-label">Seller Dashboard, Welcome!</span>
-                </div>
-                <div className="New-Listing-Button">
-                    <Link to="/seller/listings/create" className="create-listing-btn">
-                    Create New Listing
-                    </Link>
-                </div>
-                <div className="seller-info">
-                    <span className="seller-name">YourStore</span>
-                    <button className="seller-menu-btn">⋮</button>
-                </div>
+        error ? (
+            <div className="error-message">
+                <h2>{error.message}</h2>
+                <pre>{error.details}</pre>
+                <button onClick={() => window.location.reload()}>Retry</button>
             </div>
+        ) : (
+        <div className="seller-dashboard">
+            <Navbar role="seller" />
 
             {/* Main Content */}
             <div className="dashboard-content">
@@ -270,5 +271,6 @@ export default function OrderView() {
                 </div>
             )}
         </div>
+        )
     );
 }
