@@ -1,6 +1,8 @@
 import { Link   }  from 'react-router-dom';
 import { useState } from 'react'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import './Seller.css';
+import ListingComp from '../../assets/ListingComp.lottie';
 
 export default function CreateListing() {
   const [formData, setFormData] = useState({  //formData is an object holding everything in the form 
@@ -53,7 +55,48 @@ export default function CreateListing() {
   }
 
   if (success) {
-    return <p>Listing created successfully!</p>
+    return (
+  <div className="success-overlay">
+    <div className="success-card">
+      {/* 1. Lottie Animation */}
+      <div className="success-animation-container">
+        <DotLottieReact 
+          src={ListingComp} 
+          autoplay 
+          loop={false} 
+        />
+      </div>
+
+      {/* 2. Text Content */}
+      <h2>Listing Created!</h2>
+      <p>Your item is now live and visible to customers.</p>
+
+      {/* 3. The missing Action Wrapper - Critical for the row layout */}
+      <div className="success-actions">
+        <Link to="/seller/orders" className="btn-primary">
+          Go to Seller Hub
+        </Link>
+        
+        <button 
+          className="btn-secondary"
+          onClick={() => {
+            setSuccess(false); 
+            setFormData({
+              title: '',
+              description: '',
+              price: '',
+              delivery_days: '',
+              category_id: '',
+              image_url: ''
+            });
+          }}
+        >
+          Create Another
+        </button>
+      </div>
+    </div>
+  </div>
+);
   }
 
   return (

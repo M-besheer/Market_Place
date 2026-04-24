@@ -755,3 +755,107 @@ textarea.search-input {
 .seller-hub-link .seller-label {
     color: white;
 }
+/* --- Success Overlay & Card Layout --- */
+/* --- Success Overlay & Card --- */
+.success-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  animation: fadeInScale 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.success-card {
+  text-align: center;
+  background: white;
+  padding: 3.5rem 3rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); 
+  max-width: 400px;
+  width: 90%;
+}
+
+/* --- Typography Hierarchy --- */
+.success-card h2 {
+  color: #1e293b;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.success-card p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 280px;
+  margin: 0 auto 2rem;
+}
+
+/* --- Shared Button Logic (No Duplication) --- */
+.success-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* Base style for both Link (a) and button */
+.success-actions a, 
+.success-actions button {
+  text-decoration: none !important;
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: inherit;
+}
+
+.success-actions a:active, 
+.success-actions button:active {
+  transform: scale(0.97);
+}
+
+/* Color Overrides Only */
+.btn-primary {
+  background-color: #4f46e5;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+.btn-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1 !important;
+}
+
+/* Animation Container */
+.success-animation-container {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+/* Entrance Keyframes */
+@keyframes fadeInScale {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
