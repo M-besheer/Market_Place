@@ -62,7 +62,8 @@ const seedDB = async () => {
                     category: categoryMap[prod._catObj], // Mapping ObjectId
                     brand: prod.brand,
                     countInStock: prod.countInStock,
-                    sellerID: sellerID
+                    sellerID: sellerID,
+                    rating: prod.rating || 0
                 };
             });
 

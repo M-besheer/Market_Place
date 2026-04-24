@@ -4,12 +4,15 @@ import ProductCard from './ProductCard';
 import { PackageSearch, Filter, SlidersHorizontal, Star } from 'lucide-react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import Navbar from '../../Components/Navbar';
+import Footer from '../../Components/Footer';
 // Assuming fetchProducts is default properly exported and fetchCategories is named export
 // Let's modify the imports to match api.js correctly. api.js exports fetchProducts as default
 // but does not export fetchCategories as named if it was not written like `export { fetchCategories }`
 // Actually, let's fix api.js next to make sure.
 
 import fetchProducts from '../../services/api';
+import { useLocation } from 'react-router-dom';
 // We will manually fetch categories until we are sure api.js exports it.
 // Wait, I will use api.js export format.
 
@@ -18,8 +21,11 @@ const ProductCatalog = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const location = useLocation();
+  const initialCategory = location.state?.category || 'ALL';
+
   const [filters, setFilters] = useState({
-    category: 'ALL',
+    category: initialCategory,
     priceRange: 'ALL',
     minRating: 0
   });
@@ -93,12 +99,7 @@ const ProductCatalog = () => {
 
   return (
       <div className="catalog-container">
-        <header className="catalog-header">
-          <div className="header-title">
-            <h1>Product Catalog</h1>
-            <p>Discover our premium selection of high quality items</p>
-          </div>
-        </header>
+        <Navbar />
 
         <div className="catalog-content">
           <aside className="filters-sidebar">
@@ -205,6 +206,8 @@ const ProductCatalog = () => {
             )}
           </main>
         </div>
+        
+        <Footer />
       </div>
   );
 };

@@ -6,6 +6,7 @@ import ProtectedRoute from './services/ProtectedRoute';
 
 
 import ProductCatalog from "./Views/Buyer/ProductCatalog";
+import Home from "./Views/Buyer/Home";
 import Signup from "./Views/Authentication/Signup";
 import Login from "./Views/Authentication/Login";
 import { Navigate } from 'react-router-dom';
@@ -17,8 +18,11 @@ function AppRoutes() {
             <Routes>
 
             <Route path="/buyer/orders" element={<Navigate to="/login" replace />} />
-            <Route path="/" element={<Navigate to="/login" replace />} />
-            <Route path="/seller/orders" element={<ProtectedRoute allowedRole="seller"><OrderView /></ProtectedRoute>} />
+
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<Home />} />
+           <Route path="/seller/orders" element={<ProtectedRoute allowedRole="seller"><OrderView /></ProtectedRoute>} />
+
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/orders" element={<ProtectedRoute allowedRole="buyer"><OrderHistory /></ProtectedRoute>} />
