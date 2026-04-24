@@ -9,11 +9,14 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = await registerUser(formData);
-        if (data.message === "User registered successfully") {
-            alert("Account created! Please login.");
-            navigate('/login');
+        if (data.token) {
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('role', data.user.role);
+            
+            // Redirect based on role
+            navigate(data.user.role === 'seller' ? '/seller/orders' : '/products');
         } else {
-            alert(data.message || "Error signing up");
+            alert(data.message || "Registration failed");
         }
     };
 
@@ -32,7 +35,7 @@ const Signup = () => {
                     </select>
                     <button type="submit" style={styles.button}>Sign Up</button>
                 </form>
-                <p style={{marginTop: '15px'}}>Already have an account? <a href="/login">Login</a></p>
+                <p style={{marginTop: '15px', color: '#666'}}>Already have an account? <a href="/login">Login</a></p>
             </div>
         </div>
     );
