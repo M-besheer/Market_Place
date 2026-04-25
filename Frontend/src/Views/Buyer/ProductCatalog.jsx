@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 import { PackageSearch, Filter, SlidersHorizontal, Star } from 'lucide-react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+<<<<<<< HEAD
 import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 // Assuming fetchProducts is default properly exported and fetchCategories is named export
@@ -15,6 +16,10 @@ import fetchProducts from '../../services/api';
 import { useLocation } from 'react-router-dom';
 // We will manually fetch categories until we are sure api.js exports it.
 // Wait, I will use api.js export format.
+=======
+
+import { getProducts, getCategories } from '../../services/products';
+>>>>>>> ItemListCategory
 
 const ProductCatalog = () => {
   const [products, setProducts] = useState([]);
@@ -27,7 +32,8 @@ const ProductCatalog = () => {
   const [filters, setFilters] = useState({
     category: initialCategory,
     priceRange: 'ALL',
-    minRating: 0
+    minRating: 0,
+    search: ''
   });
 
   const [localPrice, setLocalPrice] = useState([0, 2000]);
@@ -49,8 +55,7 @@ const ProductCatalog = () => {
   useEffect(() => {
     const loadCategories = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/products/categories");
-        const cats = await response.json();
+        const cats = await getCategories();
         if (Array.isArray(cats)) {
           setCategories(cats);
         } else {
@@ -68,12 +73,13 @@ const ProductCatalog = () => {
     const loadProducts = async () => {
       setLoading(true);
       try {
-        const data = await fetchProducts({
+        const data = await getProducts({
           page,
           category: filters.category,
           limit: 12,
           priceRange: filters.priceRange,
-          minRating: filters.minRating
+          minRating: filters.minRating,
+          search: filters.search
         });
 
         if (Array.isArray(data)) {
@@ -90,7 +96,7 @@ const ProductCatalog = () => {
     };
 
     loadProducts();
-  }, [filters, page]);
+  }, [filters.category, filters.priceRange, filters.minRating, filters.search, page]);
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
@@ -99,8 +105,26 @@ const ProductCatalog = () => {
 
   return (
       <div className="catalog-container">
+<<<<<<< HEAD
         <Navbar />
 
+=======
+        <header className="catalog-header">
+          <div className="header-title">
+            <h1>Product Catalog</h1>
+            <p>Discover our premium selection of high quality items</p>
+          </div>
+        </header>
+        <div className="search-bar-container">
+          <input 
+            type="text" 
+            placeholder="Search listings by name or description..." 
+            className="search-input"
+            value={filters.search}
+            onChange={(e) => handleFilterChange('search', e.target.value)}
+          />
+        </div>
+>>>>>>> ItemListCategory
         <div className="catalog-content">
           <aside className="filters-sidebar">
             <div className="filter-group">
@@ -127,8 +151,8 @@ const ProductCatalog = () => {
                       <input
                           type="radio"
                           name="category"
-                          checked={filters.category === cat.name}
-                          onChange={() => handleFilterChange('category', cat.name)}
+                          checked={filters.category === cat._id}
+                          onChange={() => handleFilterChange('category', cat._id)}
                       />
                       <span className="custom-checkbox"></span>
                       <span className="label-text">{cat.name}</span>
@@ -200,7 +224,7 @@ const ProductCatalog = () => {
             ) : (
                 <div className="products-grid">
                   {products.map(product => (
-                      <ProductCard key={product._id} product={product} />
+                      <ProductCard key={product._id} listing={product} />
                   ))}
                 </div>
             )}

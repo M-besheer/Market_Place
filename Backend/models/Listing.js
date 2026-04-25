@@ -8,7 +8,7 @@ const listingSchema = new mongoose.Schema({
         },
         category_id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Category',
+            ref: 'ProductCategory',
             required: true,
         },
         title: {
@@ -30,11 +30,16 @@ const listingSchema = new mongoose.Schema({
         image_urls: [
             {
             type: String,
+            default: "https://i.ibb.co/000000/default-image.jpg",
             },
         ],
         is_active: {
             type: Boolean,
             default: true,
+        },
+        rating: { 
+            type: Number, 
+            default: 0 
         },
     
     },
