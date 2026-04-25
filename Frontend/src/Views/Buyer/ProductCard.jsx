@@ -3,8 +3,17 @@ import { Star } from 'lucide-react';
 const defaultImg = "https://i.ibb.co/000000/default-image.jpg";
 
 const ProductCard = ({ listing }) => {
+import { useNavigate } from 'react-router-dom';
+
+const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
+  const handleProductClick = () => {
+    navigate(`/buyer/product/${product._id}`);
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleProductClick} style={{ cursor: 'pointer' }}>
       <div className="image-container">
         <span className="category-tag">{listing.category_name}</span>
         <span className="rating-tag">

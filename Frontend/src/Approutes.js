@@ -23,6 +23,9 @@ function AppRoutes() {
             <Route path="/home" element={<Home />} />
            <Route path="/seller/orders" element={<ProtectedRoute allowedRole="seller"><OrderView /></ProtectedRoute>} />
 
+            <Route path="/buyer/orders" element={<OrderHistory />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
+            <Route path="/seller/orders" element={<OrderView />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/orders" element={<ProtectedRoute allowedRole="buyer"><OrderHistory /></ProtectedRoute>} />
