@@ -31,11 +31,10 @@ const useCategories = () => {
 const uploadToCloudinary = async (file) => {
   const formData = new FormData()
   formData.append('file', file)
-  formData.append('upload_preset', import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET)
+formData.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET)
 
   const response = await fetch(
-    `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUDINARY_CLOUD_NAME}/image/upload`,
-    { method: 'POST', body: formData }
+`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`,    { method: 'POST', body: formData }
   )
 
   const data = await response.json()
@@ -121,7 +120,7 @@ const removeFile = (index) => {
 
       setUploading(false)
       
-      setError('Could not connect to server')
+      setError(err.message)
     }
   }
 
@@ -198,6 +197,19 @@ const removeFile = (index) => {
 
           <form onSubmit={handleSubmit} className="listing-form">
             {error && <div className="error-message">{error}</div>}
+
+            <div className="form-group">
+
+  <label>Title</label>
+  <input 
+    className="search-input" 
+    name="title" 
+    placeholder="e.g. Headset, Sewing Machine, etc."
+    value={formData.title} 
+    onChange={handleChange} 
+    required 
+  />
+</div>
 
            <div className="form-group">
              <label>Images</label>
@@ -284,17 +296,6 @@ const removeFile = (index) => {
                 <option value=""> -- Select a category -- </option>
                 {categories.map((category) => (<option key={category._id} value={category._id}>{category.name}</option>))}
               </select>
-            </div>
-
-            <div className="form-group">
-              <label>Image URLs (comma separated)</label>
-              <input 
-                className="search-input" 
-                name="image_url" 
-                placeholder="http://site.com/img1.jpg, http://site.com/img2.jpg"
-                value={formData.image_url} 
-                onChange={handleChange} 
-              />
             </div>
 
             <div className="form-actions">
