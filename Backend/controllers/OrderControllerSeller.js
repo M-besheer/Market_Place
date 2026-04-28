@@ -18,8 +18,7 @@ const getIncomingOrders = async (req, res) => {
         // 2. Find orders tied ONLY to those listings
         const incomingOrders = await Order.find({ listing_id: { $in: listingIds } })
             .populate('listing_id', 'title price delivery_days image_urls')
-            // NOTE: We DO NOT populate buyer_id here because the User model isn't ready.
-            // It will just return the raw dummy ObjectId for now.
+            .populate('buyer_id', 'firstName lastName username') // 👈 add this
             .sort({ created_at: -1 });
 
         res.status(200).json(incomingOrders);
@@ -29,19 +28,19 @@ const getIncomingOrders = async (req, res) => {
 };
 
 // @desc    Update order status with ownership check (No actual User document required)
-// @route   PUT /api/orders/:id/status
+// @route   PUT /api/orders/:orderNumber/status
 const updateOrderStatus = async (req, res) => {
     try {
-        const { id: orderId } = req.params;
+        const { orderNumber } = req.params;
         const { status } = req.body;
         const sellerId = req.user.id;
 
-        const validStatuses = ['pending', 'processing', 'shipped', 'delivered', 'cancelled'];
+        const validStatuses = ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'];
         if (!validStatuses.includes(status)) {
             return res.status(400).json({ message: 'Invalid status provided' });
         }
 
-        const order = await Order.findById(orderId).populate('listing_id');
+        const order = await Order.findOne({ orderNumber }).populate('listing_id');
         if (!order) {
             return res.status(404).json({ message: 'Order not found' });
         }
@@ -55,7 +54,7 @@ const updateOrderStatus = async (req, res) => {
         await order.save();
 
         const statusLog = new OrderStatusLog({
-            order_id: order._id,
+            orderNumber: order.orderNumber,
             status: status
         });
         await statusLog.save();

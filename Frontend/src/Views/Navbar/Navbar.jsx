@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // if you use React Router
 import './Navbar.css';
 
-const Navbar = ({ role = 'buyer' }) => {
+const Navbar = ({ role = 'buyer' , name = '' }) => {
 const navItems = role === 'seller'
 ? [
     { label: 'Dashboard', href: '/seller/dashboard' },
@@ -24,7 +24,7 @@ return (
     {role === 'seller' && (
         <div className="seller-badge">
             <span className="badge-icon">👤</span>
-            <span className="seller-label">Seller Dashboard, Welcome!</span>
+            <span className="seller-label">Welcome, {name}!</span>
         </div>
     )}
     </div>

@@ -276,27 +276,27 @@ font-weight: 700;
 letter-spacing: 0.5px;
 }
 
-.badge-pending {
+.badge-Pending {
 background-color: #fff3cd;
 color: #856404;
 }
 
-.badge-processing {
+.badge-Processing {
 background-color: #cfe2ff;
 color: #084298;
 }
 
-.badge-shipped {
+.badge-Shipped {
 background-color: #ffe5cc;
 color: #b73500;
 }
 
-.badge-delivered {
+.badge-Delivered {
 background-color: #d1e7dd;
 color: #0f5132;
 }
 
-.badge-cancelled {
+.badge-Cancelled {
 background-color: #e7afb2;
 color: #c7314d;
 }
@@ -307,15 +307,16 @@ font-weight: 700;
 color: #667eea;
 }
 
-/* Order Details */
+/* Before: had both display:flex AND grid-template-columns */
 .order-details {
-display: flex;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-gap: 40px;
-margin-bottom: 16px;
-padding: 12px 0;
-border-top: 1px solid #ecf0f1;
-border-bottom: 1px solid #ecf0f1;
+    display: flex;          /* ✅ keep flex */
+    gap: 40px;
+    margin-bottom: 16px;
+    padding: 12px 0;
+    border-top: 1px solid #ecf0f1;
+    border-bottom: 1px solid #ecf0f1;
+    flex-wrap: wrap;        /* ✅ add this so it wraps on small screens */
+    /* ❌ remove grid-template-columns entirely */
 }
 
 .detail-item {
@@ -544,6 +545,7 @@ cursor: pointer;
 padding: 10px;
 border-radius: 6px;
 transition: background-color 0.2s;
+color: #2c3e50;
 }
 
 .status-options label:hover {
@@ -553,10 +555,12 @@ font-weight: 600;
 }
 
 .status-options input[type="radio"] {
-width: 18px;
-height: 18px;
-cursor: pointer;
-accent-color: #667eea;
+    display: inline-block !important;
+    appearance: auto !important;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #667eea;
 }
 
 .modal-actions {
@@ -655,16 +659,6 @@ box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-}
-
-.error-message {
-    background-color: #fce4e4;
-    color: #cc0033;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #f5c6cb;
-    font-size: 14px;
-    font-weight: 600;
 }
 
 .form-actions {
@@ -904,19 +898,23 @@ textarea.search-input {
   cursor: pointer;
   font-size: 12px;
 }
-
+/* Single error-message definition */
 .error-message {
+    color: #cc0033;
+    background-color: #fce4e4;
+    border: 1px solid #f5c6cb;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Full-page error variant */
+.error-message.full-page {
     align-self: center;
     justify-self: center;
     text-align: center;
     margin-top: 40vh;
-    color: #d8000c;
-    background-color: #ffd2d2;
-    border: 1px solid #d8000c;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
 }
 
 .error-message button {
@@ -929,3 +927,27 @@ textarea.search-input {
     cursor: pointer;
     font-size: 14px;
 }
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 100px;
+}
+

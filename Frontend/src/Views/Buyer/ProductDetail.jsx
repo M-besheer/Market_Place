@@ -80,10 +80,12 @@ function ProductDetail() {
  
   const handlePlaceOrder = async () => {
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch('http://localhost:5000/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
           listing_id: product.listing_id,

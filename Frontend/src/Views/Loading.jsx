@@ -2,7 +2,7 @@
 import React from 'react';
 import Lottie from 'lottie-react';
 // Replace with your local JSON file path or import
-import loadingAnimation from '../loading.json'; // adjust path
+import loadingAnimation from '../assets/loading.json'; // adjust path
 
 const LoadingScreen = () => {
 return (

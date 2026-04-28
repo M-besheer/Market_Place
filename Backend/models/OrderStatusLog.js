@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
+const { ref } = require('node:process');
 
 const orderStatusLogSchema = new mongoose.Schema(
 {
-    order_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Order',
-        required: true,
-    },
+    orderNumber: {
+            type: String,
+            ref: 'Order',
+            unique: true,
+        },
     status: {
         type: String,
-        enum: ['pending','processing', 'shipped', 'delivered', 'cancelled'],
+        enum: ['Pending','Processing', 'Shipped', 'Delivered', 'Cancelled'],
         required: true,
         },
     changed_at: {

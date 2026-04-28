@@ -93,10 +93,13 @@ const removeFile = (index) => {
       
       const imageUrls = await Promise.all(imageFiles.map(uploadToCloudinary))
       setUploading(false)
-
+      const token = localStorage.getItem('token')
       const response = await fetch('http://localhost:5000/api/listings', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' }, 
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
         credentials: 'include',   // sends the session cookie with the request
         body: JSON.stringify({
           ...formData,
@@ -202,7 +205,7 @@ const removeFile = (index) => {
 
   <label>Title</label>
   <input 
-    className="search-input" 
+    className="form-input" 
     name="title" 
     placeholder="e.g. Headset, Sewing Machine, etc."
     value={formData.title} 
@@ -236,7 +239,7 @@ const removeFile = (index) => {
             <div className="form-group">
               <label>Description</label>
               <textarea 
-                className="search-input" 
+                className="form-input" 
                 name="description" 
                 rows="4"
                 placeholder="Describe what you are offering..."
@@ -250,7 +253,7 @@ const removeFile = (index) => {
               <div className="form-group">
                 <label>Price ($)</label>
                 <input 
-                  className="search-input" 
+                  className="form-input" 
                   name="price" 
                   type="number" 
                   value={formData.price} 
@@ -262,7 +265,7 @@ const removeFile = (index) => {
               <div className="form-group">
                 <label>Delivery Days</label>
                 <input 
-                  className="search-input" 
+                  className="form-input" 
                   name="delivery_days" 
                   type="number" 
                   value={formData.delivery_days} 
@@ -275,7 +278,7 @@ const removeFile = (index) => {
             <div className="form-group">
               <label>Stock Count</label>
               <input 
-                className="search-input" 
+                className="form-input" 
                 name="stock" 
                 type="number" 
                 value={formData.stock} 
@@ -287,7 +290,7 @@ const removeFile = (index) => {
             <div className="form-group">
               <label>Category</label>
               <select
-                className="search-input" 
+                className="form-input" 
                 name="category_id" 
                 value={formData.category_id} 
                 onChange={handleChange} 

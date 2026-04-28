@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom'
-import { getIncomingOrders, updateOrderStatus } from '../../Apis/Seller'; // Ensure this path matches your project structure
+import { getIncomingOrders, updateOrderStatus} from '../../Apis/Seller'; // Ensure this path matches your project structure
+import { getMe } from '../../Apis/authApi'; // New API call to fetch user info
 import './Seller.css';
 import LoadingScreen from '../Loading';
 import Navbar from '../Navbar/Navbar';
@@ -11,15 +12,28 @@ export default function OrderView() {
     const navigate = useNavigate()
 
     // Modal & Filter State
-    const [selectedOrderId, setSelectedOrderId] = useState(null);
+    const [selectedOrderNumber, setSelectedOrderNumber] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [statusFilter, setStatusFilter] = useState('');
     const [selectedStatus, setSelectedStatus] = useState(null);
+    const [sellerName, setSellerName] = useState(''); // New state for seller's name
     const [error, setError] = useState(null);
 
 
     // Fetch orders when the component loads
     useEffect(() => {
+        const fetchUser = async () => {
+            try{
+                const user = await getMe();
+                setSellerName(user.firstName);
+            } catch (error) {
+                setError({
+                    message: "Unable to load seller information. Please contact the developer.",
+                    details: error.message
+                });
+            }
+        };
+
         const fetchOrders = async () => {
             try {
                 const data = await getIncomingOrders();
@@ -33,7 +47,7 @@ export default function OrderView() {
                 setLoading(false);
             }
         };
-
+        fetchUser();
         fetchOrders();
     }, []);
 
@@ -54,10 +68,10 @@ export default function OrderView() {
     }, [orders, searchTerm, statusFilter]);
 
     // Open Modal
-    const handleUpdateStatusClick = (orderId) => {
-        setSelectedOrderId(orderId);
-        // Find the current status of the order using MongoDB _id
-        const order = orders.find(o => o._id === orderId);
+    const handleUpdateStatusClick = (orderNumber) => {
+        setSelectedOrderNumber(orderNumber);
+        // Find the current status of the order using the order number
+        const order = orders.find(o => o.orderNumber === orderNumber);
         if (order) {
             setSelectedStatus(order.status);
         }
@@ -65,20 +79,20 @@ export default function OrderView() {
 
     // Close Modal
     const closeModal = () => {
-        setSelectedOrderId(null);
+        setSelectedOrderNumber(null);
         setSelectedStatus(null);
     };
 
     // Execute API call and update UI
     const handleSaveStatus = async () => {
-        if (selectedStatus && selectedOrderId) {
+        if (selectedStatus && selectedOrderNumber) {
             try {
                 // 1. Send update to the backend
-                await updateOrderStatus(selectedOrderId, selectedStatus);
+                await updateOrderStatus(selectedOrderNumber, selectedStatus);
 
                 // 2. If successful, update the local UI state
                 setOrders(orders.map(order =>
-                    order._id === selectedOrderId
+                    order.orderNumber === selectedOrderNumber
                         ? { ...order, status: selectedStatus }
                         : order
                 ));
@@ -96,14 +110,14 @@ export default function OrderView() {
 
     return (
         error ? (
-            <div className="error-message">
+            <div className="error-message full-page">
                 <h2>{error.message}</h2>
                 <pre>{error.details}</pre>
                 <button onClick={() => window.location.reload()}>Retry</button>
             </div>
         ) : (
         <div className="seller-dashboard">
-            <Navbar role="seller" />
+            <Navbar role="seller" name={sellerName} />
 
             {/* Main Content */}
             <div className="dashboard-content">
@@ -118,7 +132,7 @@ export default function OrderView() {
                             <input
                                 type="text"
                                 placeholder="Search order ID or Item Title..."
-                                className="search-input"
+                                className="form-input"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
@@ -177,7 +191,7 @@ export default function OrderView() {
                                         {/* Header (ID, Status, Price) */}
                                         <div className="order-header-row">
                                             <div className="order-id-section">
-                                                <span className="order-id">{order._id}</span>
+                                                <span className="order-id">Order ID: {order.orderNumber}</span>
                                                 <span className={`status-badge badge-${order.status}`}>
                                                     {order.status.toUpperCase()}
                                                 </span>
@@ -198,13 +212,13 @@ export default function OrderView() {
                                             <div className="detail-item">
                                                 <span className="detail-label">Date</span>
                                                 <span className="detail-value">
-                                                    {new Date(order.created_at).toLocaleDateString()}
+                                                    {new Date(order.createdAt).toLocaleDateString()}
                                                 </span>
                                             </div>
                                             <div className="detail-item">
-                                                <span className="detail-label">Customer ID</span>
+                                                <span className="detail-label">Customer Name</span>
                                                 <span className="detail-value text-muted">
-                                                    {order.buyer_id}
+                                                    {order.buyer_id?.firstName} {order.buyer_id?.lastName}
                                                 </span>
                                             </div>
                                         </div>
@@ -216,7 +230,7 @@ export default function OrderView() {
                                             </button>
                                             <button
                                                 className="action-btn btn-update"
-                                                onClick={() => handleUpdateStatusClick(order._id)}
+                                                onClick={() => handleUpdateStatusClick(order.orderNumber)}
                                             >
                                                 ✎ Update Status
                                             </button>
@@ -232,7 +246,7 @@ export default function OrderView() {
             </div>
 
             {/* Modal */}
-            {selectedOrderId && (
+            {selectedOrderNumber && (
                 <div className="modal-overlay" onClick={closeModal}>
                     <div className="update-status-modal" onClick={(e) => e.stopPropagation()}>
                         <div className="modal-header">
@@ -241,25 +255,15 @@ export default function OrderView() {
                         </div>
 
                         <div className="modal-content">
-                            <p>Order: <strong>{selectedOrderId}</strong></p>
+                            <p>Order: <strong>{selectedOrderNumber}</strong></p>
 
                             <div className="status-options">
                                 {/* Added checked and onChange handlers to the radio buttons to link them to React state */}
-                                <label>
-                                    <input type="radio" name="status" value="pending" checked={selectedStatus === 'pending'} onChange={(e) => setSelectedStatus(e.target.value)} /> Pending
-                                </label>
-                                <label>
-                                    <input type="radio" name="status" value="processing" checked={selectedStatus === 'processing'} onChange={(e) => setSelectedStatus(e.target.value)} /> Processing
-                                </label>
-                                <label>
-                                    <input type="radio" name="status" value="shipped" checked={selectedStatus === 'shipped'} onChange={(e) => setSelectedStatus(e.target.value)} /> Shipped
-                                </label>
-                                <label>
-                                    <input type="radio" name="status" value="delivered" checked={selectedStatus === 'delivered'} onChange={(e) => setSelectedStatus(e.target.value)} /> Delivered
-                                </label>
-                                <label>
-                                    <input type="radio" name="status" value="cancelled" checked={selectedStatus === 'cancelled'} onChange={(e) => setSelectedStatus(e.target.value)} /> Cancelled
-                                </label>
+                                <label><input type="radio" name="status" value="Pending" checked={selectedStatus === 'Pending'} onChange={(e) => setSelectedStatus(e.target.value)} /> Pending</label>
+                                <label><input type="radio" name="status" value="Processing" checked={selectedStatus === 'Processing'} onChange={(e) => setSelectedStatus(e.target.value)} /> Processing</label>
+                                <label><input type="radio" name="status" value="Shipped" checked={selectedStatus === 'Shipped'} onChange={(e) => setSelectedStatus(e.target.value)} /> Shipped</label>
+                                <label><input type="radio" name="status" value="Delivered" checked={selectedStatus === 'Delivered'} onChange={(e) => setSelectedStatus(e.target.value)} /> Delivered</label>
+                                <label><input type="radio" name="status" value="Cancelled" checked={selectedStatus === 'Cancelled'} onChange={(e) => setSelectedStatus(e.target.value)} /> Cancelled</label>
                             </div>
 
                             <div className="modal-actions">

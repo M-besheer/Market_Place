@@ -6,8 +6,7 @@ const placeOrder = async (req, res) => {
   try {
     const { listing_id } = req.body;
 
-    
-    const buyer_id = req.user?.id || '000000000000000000000001';
+    const buyer_id = req.user.id;
 
     if (!listing_id) {
       return res.status(400).json({ message: 'listing_id is required' });
@@ -31,7 +30,7 @@ const placeOrder = async (req, res) => {
 // Get all orders for the logged-in buyer
 const getBuyerOrders = async (req, res) => {
   try {
-    const buyer_id = req.user?.id || '000000000000000000000001';
+    const buyer_id = req.user.id;
 
     const orders = await Order.find({ buyer_id })
       .populate('listing_id')   

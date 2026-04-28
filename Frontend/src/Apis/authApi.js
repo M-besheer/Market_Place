@@ -17,3 +17,20 @@ export const loginUser = async (credentials) => {
     });
     return response.json();
 };
+
+export const getMe = async () => {
+    try {
+        const token = localStorage.getItem('token');
+        const response = await fetch(`${API_URL}/get-user`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        return response.json();
+    } catch (error) {
+        console.error('Error fetching user:', error.response?.data || error.message);
+        throw error;
+    }
+};
