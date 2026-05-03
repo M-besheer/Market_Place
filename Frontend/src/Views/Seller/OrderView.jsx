@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom'
-import { getIncomingOrders, updateOrderStatus} from '../../Apis/Seller'; // Ensure this path matches your project structure
+import { getIncomingOrders, updateOrderStatus, flagBuyer} from '../../Apis/Seller'; // Ensure this path matches your project structure
 import { getMe } from '../../Apis/authApi'; // New API call to fetch user info
 import './Seller.css';
 import LoadingScreen from '../Loading';
@@ -106,6 +106,34 @@ export default function OrderView() {
         }
     };
 
+    // Handle flagging buyer
+    const handleFlagBuyer = async (orderNumber, flag) => {
+        try {
+            const response = await flagBuyer(orderNumber, flag);
+            // Backend returns buyer stats in response.buyer with camelCase keys
+            const { upVotes, downVotes } = response.buyer || {};
+
+            setOrders(orders.map(order =>
+                order.orderNumber === orderNumber
+                    ? { 
+                        ...order, 
+                        sellerFlag: response.order?.sellerFlag,
+                        buyer_id: {
+                            ...order.buyer_id,
+                            upVotes: upVotes,
+                            downVotes: downVotes
+                        }
+                    }
+                    : order
+            ));
+        } catch (error) {
+            setError({
+                message: "Failed to flag buyer. Check console for details.",
+                details: error.message
+            });
+        }
+    };
+
     if (loading) return <LoadingScreen />;
 
     return (
@@ -139,11 +167,11 @@ export default function OrderView() {
                         </div>
                         <select className="filter-select" value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
                             <option value="">All Status</option>
-                            <option value="pending">Pending</option>
-                            <option value="processing">Processing</option>
-                            <option value="shipped">Shipped</option>
-                            <option value="delivered">Delivered</option>
-                            <option value="cancelled">Cancelled</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Processing">Processing</option>
+                            <option value="Shipped">Shipped</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="Cancelled">Cancelled</option>
                         </select>
                     </div>
                 </div>
@@ -219,6 +247,16 @@ export default function OrderView() {
                                                 <span className="detail-label">Customer Name</span>
                                                 <span className="detail-value text-muted">
                                                     {order.buyer_id?.firstName} {order.buyer_id?.lastName}
+                                                    
+                                                    {/* REPUTATION SECTION */}
+                                                    <span className="customer-reputation" style={{ marginLeft: '10px', fontSize: '0.9em' }}>
+                                                        <span title="Total Good Flags">
+                                                            👍🏻 {order.buyer_id?.upVotes || 0}
+                                                        </span>
+                                                        <span title="Total Bad Flags" style={{ marginLeft: '8px' }}>
+                                                            👎🏻 {order.buyer_id?.downVotes || 0}
+                                                        </span>
+                                                    </span>
                                                 </span>
                                             </div>
                                         </div>
@@ -234,6 +272,25 @@ export default function OrderView() {
                                             >
                                                 ✎ Update Status
                                             </button>
+                                            <div className="flag-buttons">
+                                                <p>
+                                                    🚩 Flag User
+                                                </p>
+                                                <button
+                                                    className={`flag-btn flag-good ${order.sellerFlag === 'good' ? 'active' : 'inactive'}`}
+                                                    onClick={() => handleFlagBuyer(order.orderNumber, 'good')}
+                                                    title={order.sellerFlag === 'good' ? 'Remove good vote' : 'Flag buyer as good'}
+                                                >
+                                                    👍🏻
+                                                </button>
+                                                <button
+                                                    className={`flag-btn flag-bad ${order.sellerFlag === 'bad' ? 'active' : 'inactive'}`}
+                                                    onClick={() => handleFlagBuyer(order.orderNumber, 'bad')}
+                                                    title={order.sellerFlag === 'bad' ? 'Remove bad vote' : 'Flag buyer as bad'}
+                                                >
+                                                    👎🏻
+                                                </button>
+                                            </div>
                                         </div>
                                         
                                     </div> {/* End of Right Column */}

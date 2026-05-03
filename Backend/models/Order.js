@@ -23,6 +23,12 @@ const orderSchema = new mongoose.Schema(
             enum: ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'],
             default: 'Pending',
         },
+
+        sellerFlag: {
+            type: String,
+            enum: ['good', 'bad', null],
+            default: null,
+        },
     },
     {
         timestamps: true,
