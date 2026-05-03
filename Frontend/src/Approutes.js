@@ -28,6 +28,7 @@ function AppRoutes() {
             <Route path="/orders" element={<ProtectedRoute allowedRole="buyer"><OrderHistory /></ProtectedRoute>} />
             <Route path="/buyer/product/:id" element={<ProductDetail />} />
             <Route path="/products" element={<ProductCatalog />} />
+            <Route path="/products/:seller" element={<ProductCatalog />} />
             {/* <Route path="/unauthorized" element={<Navigate to="/login" replace />} /> */}
 
             <Route path="/seller/listings/create" element={<ProtectedRoute allowedRole="seller"><CreateListings /></ProtectedRoute>} />

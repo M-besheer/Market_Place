@@ -280,9 +280,9 @@ function ProductDetail() {
               <StarRating rating={product.sellerRating} />
               <p className="seller-sales">{product.sellerSales} sales completed</p>
             </div>
-            <a href={`/shop/${product.seller}`} className="view-shop-btn">
+            <button onClick={() => navigate(`/products/${encodeURIComponent(product.seller)}`)} className="view-shop-btn">
               View Shop
-            </a>
+            </button>
           </div>
         </section>
  

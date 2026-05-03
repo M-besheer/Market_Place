@@ -3,21 +3,31 @@ const router = express.Router();
 const Listing = require('../models/Listing');
 const ProductCategories = require('../models/ProductCategory');
 const Comment = require('../models/Comment');
+const User = require('../models/User');
 const { protect } = require('../controllers/authController');
 
 router.get('/', async (req, res) => {
     try {
         // 1. Parse inputs
-        const { category, minRating, priceRange, search } = req.query;
+        const { category, minRating, priceRange, search, seller } = req.query;
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 12;
         const skip = (page - 1) * limit;
 
-        let query = {is_active: true}; // Only show active listings
+        let query = { is_active: true }; // Only show active listings
 
-        // 1. Category Filter (using the ID from frontend)
+        // 1. Seller filter by username
+        if (seller && seller !== 'ALL') {
+            const sellerUser = await User.findOne({ username: seller.toLowerCase().trim() }).select('_id');
+            if (!sellerUser) {
+                return res.status(200).json([]);
+            }
+            query.seller_id = sellerUser._id;
+        }
+
+        // 2. Category Filter (using the ID from frontend)
         if (category && category !== "ALL") {
-            query.category_id = category; 
+            query.category_id = category;
         }
 
         // 2. Minimum Rating Filter
@@ -184,4 +194,4 @@ router.post('/:id/comments/:commentId/reply', protect, async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = router;
