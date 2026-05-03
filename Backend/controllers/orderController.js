@@ -4,7 +4,7 @@ const Order = require('../models/Order');
 // Place a new order
 const placeOrder = async (req, res) => {
   try {
-    const { seller_id, items, totalAmount } = req.body;
+    const { seller_id, items, totalAmount, shippingDetails } = req.body;
 
     const buyer_id = req.user.id;
 
@@ -12,11 +12,16 @@ const placeOrder = async (req, res) => {
       return res.status(400).json({ message: 'seller_id and items array are required' });
     }
 
+    if (!shippingDetails) {
+      return res.status(400).json({ message: 'shippingDetails are required' });
+    }
+
     const order = await Order.create({
       buyer_id,
       seller_id,
       items,
       totalAmount,
+      shippingDetails,
     });
 
     res.status(201).json({
