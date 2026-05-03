@@ -125,6 +125,21 @@ function ProductDetail() {
     try {
         const token = localStorage.getItem('token');
         if (!token) return alert('Please login to comment');
+
+        // Validate token: check if valid, not expired, and role is buyer
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const currentTime = Date.now() / 1000;
+            if (payload.exp < currentTime) {
+                return alert('Your session has expired. Please login again.');
+            }
+            if (payload.role !== 'buyer') {
+                return alert('Only buyers can comment.');
+            }
+        } catch (decodeError) {
+            return alert('Invalid token. Please login again.');
+        }
+
         const addedComment = await addComment(id, newCommentText, token);
         setComments([addedComment, ...comments]);
         setNewCommentText("");
@@ -138,6 +153,20 @@ function ProductDetail() {
     try {
         const token = localStorage.getItem('token');
         if (!token) return alert('Please login to like');
+
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const currentTime = Date.now() / 1000;
+            if (payload.exp < currentTime) {
+                return alert('Your session has expired. Please login again.');
+            }
+            if (payload.role !== 'buyer') {
+                return alert('Only buyers can like comments.');
+            }
+        } catch (decodeError) {
+            return alert('Invalid token. Please login again.');
+        }
+
         const likes = await likeComment(id, commentId, token);
         setComments(comments.map(c => c._id === commentId ? { ...c, likes } : c));
     } catch (err) {
@@ -151,6 +180,20 @@ function ProductDetail() {
     try {
         const token = localStorage.getItem('token');
         if (!token) return alert('Please login to reply');
+
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const currentTime = Date.now() / 1000;
+            if (payload.exp < currentTime) {
+                return alert('Your session has expired. Please login again.');
+            }
+            if (payload.role !== 'buyer') {
+                return alert('Only buyers can reply to comments.');
+            }
+        } catch (decodeError) {
+            return alert('Invalid token. Please login again.');
+        }
+
         const updatedComment = await replyToComment(id, commentId, replyText, token);
         setComments(comments.map(c => c._id === commentId ? updatedComment : c));
         setReplyingTo(null);
