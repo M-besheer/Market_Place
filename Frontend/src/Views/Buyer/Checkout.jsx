@@ -68,7 +68,6 @@ const Checkout = () => {
       ...prev,
       [name]: value
     }));
-    // Clear error for this field when user starts typing
     if (formErrors[name]) {
       setFormErrors(prev => ({
         ...prev,
@@ -94,15 +93,36 @@ const Checkout = () => {
     try {
       const token = localStorage.getItem('token');
       
+      // 1. Check if token exists
       if (!token) {
         alert('Please log in to place an order');
         setLoading(false);
         return;
       }
 
-      console.log('Token being used:', token ? 'Present' : 'Missing');
-      console.log('Token length:', token?.length);
+      // 2. Validate token (expiration and role)
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const currentTime = Date.now() / 1000;
 
+        if (payload.exp < currentTime) {
+          alert('Your session has expired. Please login again.');
+          setLoading(false);
+          return;
+        }
+
+        if (payload.role !== 'buyer') {
+          alert('Only buyers can place orders.');
+          setLoading(false);
+          return;
+        }
+      } catch (decodeError) {
+        alert('Invalid session. Please login again.');
+        setLoading(false);
+        return;
+      }
+
+      // Proceed with order placement
       const orderPromises = Object.values(groupedItems).map(async (group) => {
         const orderItems = group.items.map(i => ({
             listing_id: i.listing_id,
@@ -113,12 +133,9 @@ const Checkout = () => {
         const orderPayload = {
           seller_id: group.seller_id,
           items: orderItems,
-          totalAmount: group.total + 5, // item total + shipping
+          totalAmount: group.total + 5,
           shippingDetails: shippingDetails
         };
-
-        console.log('Sending order for seller:', group.seller);
-        console.log('Order payload:', orderPayload);
 
         const response = await fetch('http://localhost:5000/api/orders', {
           method: 'POST',
@@ -131,18 +148,14 @@ const Checkout = () => {
 
         if (!response.ok) {
           const errorData = await response.json().catch(() => ({}));
-          console.error('Server error response:', errorData);
           const errorMsg = errorData.details || errorData.message || `Failed to place order for ${group.seller}`;
           throw new Error(errorMsg);
         }
 
-        const orderData = await response.json();
-        console.log(`Order placed successfully for ${group.seller}:`, orderData);
-        return orderData;
+        return await response.json();
       });
 
-      const results = await Promise.all(orderPromises);
-      console.log('All orders placed successfully:', results);
+      await Promise.all(orderPromises);
       
       clearCart();
       alert('Orders placed successfully!');
@@ -161,7 +174,6 @@ const Checkout = () => {
       <div className="checkout-page">
         <div className="checkout-container">
           {step === 1 ? (
-            // STEP 1: Cart Review Only
             <>
               <header className="checkout-header">
                 <h1 className="checkout-title">Your Cart</h1>
@@ -180,10 +192,8 @@ const Checkout = () => {
               ) : (
                 <div className="checkout-content">
                   <div className="checkout-items-wrapper">
-                    {/* Order Items by Seller */}
                     {Object.values(groupedItems).map((group) => (
                       <div key={group.seller_id} className="seller-group">
-                        
                         {group.items.map(item => (
                           <div key={item.listing_id} className="checkout-item">
                             <img src={item.image} alt={item.name} className="checkout-item-img" />
@@ -235,7 +245,6 @@ const Checkout = () => {
               )}
             </>
           ) : step === 2 ? (
-            // STEP 2: Enter Details
             <>
               <header className="checkout-header">
                 <button className="back-btn" onClick={() => setStep(1)}>
@@ -247,7 +256,6 @@ const Checkout = () => {
 
               <div className="checkout-content">
                 <div className="checkout-items-wrapper">
-                  {/* Shipping Details Form */}
                   <div className="shipping-details-section">
                     <div className="form-grid">
                       <div className="form-group">
@@ -402,14 +410,11 @@ const Checkout = () => {
                     >
                       Place Order
                     </button>
-
-                    
                   </div>
                 </div>
               </div>
             </>
           ) : (
-            // STEP 3: Review & Checkout
             <>
               <header className="checkout-header">
                 <button className="back-btn" onClick={() => setStep(2)}>
@@ -421,7 +426,6 @@ const Checkout = () => {
 
               <div className="checkout-content review-layout">
                 <div className="checkout-items-wrapper">
-                  {/* Delivery Details Review */}
                   <div className="review-section">
                     <div className="section-header">
                       <h2 className="section-title">Delivery Details</h2>
@@ -452,12 +456,10 @@ const Checkout = () => {
                     </div>
                   </div>
 
-                  {/* Order Items Review */}
                   <div className="review-section">
                     <h2 className="section-title">Order Items</h2>
                     {Object.values(groupedItems).map((group) => (
                       <div key={group.seller_id} className="seller-group review-mode">
-                        
                         {group.items.map(item => (
                           <div key={item.listing_id} className="checkout-item review-item">
                             <img src={item.image} alt={item.name} className="checkout-item-img" />
