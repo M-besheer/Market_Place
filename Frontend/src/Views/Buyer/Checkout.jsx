@@ -4,6 +4,7 @@ import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 import { Store, ShoppingCart, Trash2, ChevronLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import './Checkout.css';
 
 const Checkout = () => {
@@ -20,10 +21,13 @@ const Checkout = () => {
     phone: '',
     addressLine1: '',
     addressLine2: '',
+    building: '',
+    floor: '',
+    apartment: '',
     city: '',
     state: '',
     postalCode: '',
-    country: 'India'
+    country: 'Egypt'
   });
 
   // Group items by seller_id
@@ -51,15 +55,22 @@ const Checkout = () => {
     if (!shippingDetails.firstName.trim()) errors.firstName = 'First name is required';
     if (!shippingDetails.lastName.trim()) errors.lastName = 'Last name is required';
     if (!shippingDetails.email.trim()) errors.email = 'Email is required';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(shippingDetails.email)) errors.email = 'Invalid email format';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(shippingDetails.email)) errors.email = 'Please enter a valid email address';
     if (!shippingDetails.phone.trim()) errors.phone = 'Phone number is required';
-    if (!/^\d{10,}$/.test(shippingDetails.phone.replace(/\D/g, ''))) errors.phone = 'Invalid phone number';
-    if (!shippingDetails.addressLine1.trim()) errors.addressLine1 = 'Address is required';
+    if (!/^\d{8,}$/.test(shippingDetails.phone.replace(/[\s\-\(\)\+]/g, ''))) {
+      errors.phone = 'Enter a valid phone number (at least 8 digits)';
+    }
+    if (!shippingDetails.addressLine1.trim()) errors.addressLine1 = 'Street address is required';
     if (!shippingDetails.city.trim()) errors.city = 'City is required';
-    if (!shippingDetails.state.trim()) errors.state = 'State is required';
-    if (!shippingDetails.postalCode.trim()) errors.postalCode = 'Postal code is required';
+    if (!shippingDetails.state.trim()) errors.state = 'District/State is required';
+    
     setFormErrors(errors);
-    return Object.keys(errors).length === 0;
+    
+    if (Object.keys(errors).length > 0) {
+      toast.error('Please correct the errors in the form');
+      return false;
+    }
+    return true;
   };
 
   const handleInputChange = (e) => {
@@ -84,8 +95,7 @@ const Checkout = () => {
   const handleContinueToReview = () => {
     if (validateForm()) {
       setStep(3);
-    } else {
-      alert('Please fill in all required fields correctly');
+      window.scrollTo(0, 0);
     }
   };
 
@@ -93,9 +103,9 @@ const Checkout = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      
+
       if (!token) {
-        alert('Please log in to place an order');
+        toast.warning('Please log in to place an order');
         setLoading(false);
         return;
       }
@@ -105,9 +115,9 @@ const Checkout = () => {
 
       const orderPromises = Object.values(groupedItems).map(async (group) => {
         const orderItems = group.items.map(i => ({
-            listing_id: i.listing_id,
-            quantity: i.quantity,
-            price: i.price
+          listing_id: i.listing_id,
+          quantity: i.quantity,
+          price: i.price
         }));
 
         const orderPayload = {
@@ -142,14 +152,13 @@ const Checkout = () => {
       });
 
       const results = await Promise.all(orderPromises);
-      console.log('All orders placed successfully:', results);
       
       clearCart();
-      alert('Orders placed successfully!');
+      toast.success('Orders placed successfully!');
       navigate('/orders');
     } catch (err) {
       console.error('Order placement error:', err);
-      alert(`Error placing order: ${err.message || 'Please try again.'}`);
+      toast.error(`Error: ${err.message || 'Please try again.'}`);
     } finally {
       setLoading(false);
     }
@@ -173,7 +182,7 @@ const Checkout = () => {
                   <ShoppingCart size={48} className="empty-icon" />
                   <h2>Your cart is empty</h2>
                   <p>Looks like you haven't added anything yet.</p>
-                  <button className="confirm-order-btn" onClick={() => navigate('/products')} style={{maxWidth: '250px', margin: '20px auto 0'}}>
+                  <button className="confirm-order-btn" onClick={() => navigate('/products')} style={{ maxWidth: '250px', margin: '20px auto 0' }}>
                     Continue Shopping
                   </button>
                 </div>
@@ -183,7 +192,7 @@ const Checkout = () => {
                     {/* Order Items by Seller */}
                     {Object.values(groupedItems).map((group) => (
                       <div key={group.seller_id} className="seller-group">
-                        
+
                         {group.items.map(item => (
                           <div key={item.listing_id} className="checkout-item">
                             <img src={item.image} alt={item.name} className="checkout-item-img" />
@@ -199,9 +208,9 @@ const Checkout = () => {
                             </button>
                           </div>
                         ))}
-                        <div className="summary-row mt-3 pt-3" style={{borderTop: '1px solid var(--co-border)'}}>
-                           <span>Seller Subtotal:</span>
-                           <strong>${group.total.toFixed(2)}</strong>
+                        <div className="summary-row mt-3 pt-3" style={{ borderTop: '1px solid var(--co-border)' }}>
+                          <span>Seller Subtotal:</span>
+                          <strong>${group.total.toFixed(2)}</strong>
                         </div>
                       </div>
                     ))}
@@ -223,8 +232,8 @@ const Checkout = () => {
                         <span>${total.toFixed(2)}</span>
                       </div>
 
-                      <button 
-                        className="confirm-order-btn" 
+                      <button
+                        className="confirm-order-btn"
                         onClick={handleContinueToDetails}
                       >
                         Confirm Order
@@ -284,7 +293,7 @@ const Checkout = () => {
                           name="email"
                           value={shippingDetails.email}
                           onChange={handleInputChange}
-                          placeholder="john@example.com"
+                          placeholder="ahmed.ali@example.com"
                           className={formErrors.email ? 'input-error' : ''}
                         />
                         {formErrors.email && <span className="error-text">{formErrors.email}</span>}
@@ -297,33 +306,71 @@ const Checkout = () => {
                           name="phone"
                           value={shippingDetails.phone}
                           onChange={handleInputChange}
-                          placeholder="+91 98765 43210"
+                          placeholder="010 1234 5678"
                           className={formErrors.phone ? 'input-error' : ''}
                         />
                         {formErrors.phone && <span className="error-text">{formErrors.phone}</span>}
                       </div>
                       <div className="form-group full-width">
-                        <label htmlFor="addressLine1">Address Line 1 *</label>
+                        <label htmlFor="addressLine1">Street Address *</label>
                         <input
                           type="text"
                           id="addressLine1"
                           name="addressLine1"
                           value={shippingDetails.addressLine1}
                           onChange={handleInputChange}
-                          placeholder="123 Main Street"
+                          placeholder="90th Street"
                           className={formErrors.addressLine1 ? 'input-error' : ''}
                         />
                         {formErrors.addressLine1 && <span className="error-text">{formErrors.addressLine1}</span>}
                       </div>
                       <div className="form-group full-width">
-                        <label htmlFor="addressLine2">Address Line 2 (Optional)</label>
+                        <div style={{display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: '20px'}}>
+                          <div className="form-group">
+                            <label htmlFor="building">Building Name/No.</label>
+                            <input
+                              type="text"
+                              id="building"
+                              name="building"
+                              value={shippingDetails.building}
+                              onChange={handleInputChange}
+                              placeholder="Galleria Moon Valley"
+                            />
+                          </div>
+                          <div className="form-group">
+                            <label htmlFor="floor">Floor</label>
+                            <input
+                              type="text"
+                              id="floor"
+                              name="floor"
+                              value={shippingDetails.floor}
+                              onChange={handleInputChange}
+                              placeholder="3"
+                            />
+                          </div>
+                          <div className="form-group">
+                            <label htmlFor="apartment">Apartment</label>
+                            <input
+                              type="text"
+                              id="apartment"
+                              name="apartment"
+                              value={shippingDetails.apartment}
+                              onChange={handleInputChange}
+                              placeholder="302"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="form-group full-width">
+                        <label htmlFor="addressLine2">Landmark (Optional)</label>
                         <input
                           type="text"
                           id="addressLine2"
                           name="addressLine2"
                           value={shippingDetails.addressLine2}
                           onChange={handleInputChange}
-                          placeholder="Apt, Suite, etc."
+                          placeholder="Near Point 90 Mall"
                         />
                       </div>
                       <div className="form-group">
@@ -334,36 +381,34 @@ const Checkout = () => {
                           name="city"
                           value={shippingDetails.city}
                           onChange={handleInputChange}
-                          placeholder="Mumbai"
+                          placeholder="New Cairo"
                           className={formErrors.city ? 'input-error' : ''}
                         />
                         {formErrors.city && <span className="error-text">{formErrors.city}</span>}
                       </div>
                       <div className="form-group">
-                        <label htmlFor="state">State *</label>
+                        <label htmlFor="state">District/State *</label>
                         <input
                           type="text"
                           id="state"
                           name="state"
                           value={shippingDetails.state}
                           onChange={handleInputChange}
-                          placeholder="Maharashtra"
+                          placeholder="Cairo"
                           className={formErrors.state ? 'input-error' : ''}
                         />
                         {formErrors.state && <span className="error-text">{formErrors.state}</span>}
                       </div>
                       <div className="form-group">
-                        <label htmlFor="postalCode">Postal Code *</label>
+                        <label htmlFor="postalCode">Postal Code (Optional)</label>
                         <input
                           type="text"
                           id="postalCode"
                           name="postalCode"
                           value={shippingDetails.postalCode}
                           onChange={handleInputChange}
-                          placeholder="400001"
-                          className={formErrors.postalCode ? 'input-error' : ''}
+                          placeholder="11835"
                         />
-                        {formErrors.postalCode && <span className="error-text">{formErrors.postalCode}</span>}
                       </div>
                       <div className="form-group">
                         <label htmlFor="country">Country *</label>
@@ -373,7 +418,7 @@ const Checkout = () => {
                           name="country"
                           value={shippingDetails.country}
                           onChange={handleInputChange}
-                          placeholder="India"
+                          placeholder="Egypt"
                         />
                       </div>
                     </div>
@@ -396,14 +441,14 @@ const Checkout = () => {
                       <span>${total.toFixed(2)}</span>
                     </div>
 
-                    <button 
-                      className="confirm-order-btn" 
+                    <button
+                      className="confirm-order-btn"
                       onClick={handleContinueToReview}
                     >
                       Place Order
                     </button>
 
-                    
+
                   </div>
                 </div>
               </div>
@@ -443,6 +488,9 @@ const Checkout = () => {
                       <div className="detail-row">
                         <span className="detail-label">Address:</span>
                         <span className="detail-value">
+                          {shippingDetails.building && <>{shippingDetails.building}, </>}
+                          {shippingDetails.floor && <>Floor {shippingDetails.floor}, </>}
+                          {shippingDetails.apartment && <>Apt {shippingDetails.apartment}, </>}
                           {shippingDetails.addressLine1}
                           {shippingDetails.addressLine2 && <>, {shippingDetails.addressLine2}</>}
                           <br />{shippingDetails.city}, {shippingDetails.state} {shippingDetails.postalCode}
@@ -457,7 +505,7 @@ const Checkout = () => {
                     <h2 className="section-title">Order Items</h2>
                     {Object.values(groupedItems).map((group) => (
                       <div key={group.seller_id} className="seller-group review-mode">
-                        
+
                         {group.items.map(item => (
                           <div key={item.listing_id} className="checkout-item review-item">
                             <img src={item.image} alt={item.name} className="checkout-item-img" />
@@ -470,17 +518,17 @@ const Checkout = () => {
                             <div className="checkout-item-price">${(item.price * item.quantity).toFixed(2)}</div>
                           </div>
                         ))}
-                        <div className="summary-row mt-3 pt-3" style={{borderTop: '1px solid var(--co-border)'}}>
-                           <span>Subtotal:</span>
-                           <strong>${group.total.toFixed(2)}</strong>
+                        <div className="summary-row mt-3 pt-3" style={{ borderTop: '1px solid var(--co-border)' }}>
+                          <span>Subtotal:</span>
+                          <strong>${group.total.toFixed(2)}</strong>
                         </div>
-                        <div className="summary-row" style={{fontSize: '0.9rem', color: 'var(--co-text-secondary)'}}>
-                           <span>Shipping:</span>
-                           <strong>$5.00</strong>
+                        <div className="summary-row" style={{ fontSize: '0.9rem', color: 'var(--co-text-secondary)' }}>
+                          <span>Shipping:</span>
+                          <strong>$5.00</strong>
                         </div>
-                        <div className="summary-row" style={{fontSize: '1.1rem', fontWeight: '700', borderTop: '1px dashed var(--co-border)', paddingTop: '10px', marginTop: '10px'}}>
-                           <span>Total:</span>
-                           <strong>${(group.total + 5).toFixed(2)}</strong>
+                        <div className="summary-row" style={{ fontSize: '1.1rem', fontWeight: '700', borderTop: '1px dashed var(--co-border)', paddingTop: '10px', marginTop: '10px' }}>
+                          <span>Total:</span>
+                          <strong>${(group.total + 5).toFixed(2)}</strong>
                         </div>
                       </div>
                     ))}
@@ -503,21 +551,15 @@ const Checkout = () => {
                       <span>${total.toFixed(2)}</span>
                     </div>
 
-                    <button 
-                      className="confirm-order-btn" 
+                    <button
+                      className="confirm-order-btn"
                       onClick={handleConfirmOrder}
                       disabled={loading}
                     >
                       {loading ? 'Processing...' : 'Confirm Order'}
                     </button>
 
-                    <button 
-                      className="secondary-btn" 
-                      onClick={() => setStep(2)}
-                      disabled={loading}
-                    >
-                      Back to Edit
-                    </button>
+                   
                   </div>
                 </div>
               </div>

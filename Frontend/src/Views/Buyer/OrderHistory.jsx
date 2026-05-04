@@ -5,11 +5,11 @@ import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 
 const STATUS_STYLES = {
-  Pending:    { color: '#856404', background: '#fff3cd', bar: '#f4c430' },
+  Pending: { color: '#856404', background: '#fff3cd', bar: '#f4c430' },
   Processing: { color: '#084298', background: '#cfe2ff', bar: '#5092e7' },
-  Shipped:    { color: '#b35900', background: '#ffe5cc', bar: '#ff8c00' },
-  Delivered:  { color: '#0f5132', background: '#d1e7dd', bar: '#1a7f4b' },
-  Cancelled:  { color: '#842029', background: '#f8d7da', bar: '#dc3545' },
+  Shipped: { color: '#b35900', background: '#ffe5cc', bar: '#ff8c00' },
+  Delivered: { color: '#0f5132', background: '#d1e7dd', bar: '#1a7f4b' },
+  Cancelled: { color: '#842029', background: '#f8d7da', bar: '#dc3545' },
 };
 
 function StatusBadge({ status }) {
@@ -145,32 +145,49 @@ function OrderHistory() {
                   : 0;
 
                 return (
-                  <div key={order._id} className="oh-order-item">
-
-                    {/* Product Image */}
-                    <div className="oh-product-image">
-                      {pImage
-                        ? <img src={pImage} alt={pName} />
-                        : <div className="oh-image-placeholder">📦</div>
-                      }
+                  <div key={order._id} className="oh-order-card-item">
+                    <div className="oh-order-card-header">
+                      <div className="oh-order-header-main">
+                        <span className="oh-order-number">Seller: {sellerName}</span>
+                        <span className="oh-order-date">{new Date(order.createdAt).toLocaleDateString()}</span>
+                      </div>
+                      <div className="oh-order-header-aside">
+                        <StatusBadge status={order.status || 'Pending'} />
+                      </div>
                     </div>
 
-                    {/* Order Info */}
-                    <div className="oh-order-info">
-                      <p className="oh-product-name">
-                        {pName} {order.items?.length > 1 ? `(+${order.items.length - 1} more)` : ''}
-                      </p>
-                      <p className="oh-meta">
-                        ${order.totalAmount?.toFixed(2) || '0.00'}
-                        &nbsp;·&nbsp; Qty: {totalQty}
-                        &nbsp;·&nbsp; Seller: {sellerName}
-                        &nbsp;·&nbsp; {new Date(order.createdAt).toLocaleDateString()}
-                      </p>
+                    <div className="oh-order-items-list">
+                      {order.items.map((item, idx) => {
+                        const itemTitle = item.listing_id?.title || 'Unknown Product';
+                        const itemImage = item.listing_id?.image_urls?.[0] || '';
+                        return (
+                          <div key={item._id || idx} className="oh-sub-item">
+                            <div className="oh-sub-item-image">
+                              {itemImage
+                                ? <img src={itemImage} alt={itemTitle} />
+                                : <div className="oh-image-placeholder">📦</div>
+                              }
+                            </div>
+                            <div className="oh-sub-item-info">
+                              <p className="oh-sub-item-name">{itemTitle}</p>
+                              <p className="oh-sub-item-meta">
+                                Qty: {item.quantity} &nbsp;·&nbsp; ${item.price?.toFixed(2)}
+                              </p>
+                            </div>
+                            <div className="oh-sub-item-total">
+                              ${(item.price * item.quantity).toFixed(2)}
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
 
-                    {/* Status */}
-                    <StatusBadge status={order.status || 'Pending'} />
-
+                    <div className="oh-order-card-footer">
+                      
+                      <div className="oh-order-total-amount">
+                        Total Amount: <span>${order.totalAmount?.toFixed(2)}</span>
+                      </div>
+                    </div>
                   </div>
                 );
               })}

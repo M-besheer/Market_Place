@@ -89,7 +89,22 @@ const orderSchema = new mongoose.Schema(
             country: {
                 type: String,
                 required: true,
-                default: 'India'
+                default: 'Egypt'
+            },
+            latitude: {
+                type: Number,
+            },
+            longitude: {
+                type: Number,
+            },
+            building: {
+                type: String,
+            },
+            floor: {
+                type: String,
+            },
+            apartment: {
+                type: String,
             },
         },
     },
