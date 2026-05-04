@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, ShoppingCart, User, Menu, X, MapPin, Sun, Moon, Store, Bell, Heart, LogOut } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { toast } from 'react-toastify';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -55,13 +56,42 @@ const Navbar = () => {
         console.log("Searching for:", searchQuery);
     };
 
-    const handleProfileClick = () => {
-        const role = localStorage.getItem('role');
-        if (role === 'seller') {
-            navigate('/seller/orders');
-        } else {
-            navigate('/orders');
+    const isTokenExpired = (token) => {
+        try {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            return payload.exp < Date.now() / 1000;
+        } catch (e) {
+            return true;
         }
+    };
+
+    const handleProfileClick = () => {
+        const token = localStorage.getItem('token');
+        const role = localStorage.getItem('role');
+
+        if (!token) {
+            toast.error("Unauthorized: Please sign in first.", { position: "top-right" });
+            navigate('/login');
+            return;
+        }
+
+        if (isTokenExpired(token)) {
+            toast.warning("Session Expired: Please sign in again.", { position: "top-right" });
+            localStorage.removeItem('token');
+            localStorage.removeItem('role');
+            navigate('/login');
+            return;
+        }
+
+        if (role !== 'buyer') {
+            toast.error("Access Denied: Log in again.", { position: "top-right" });
+            // Optional: stay on page or navigate to seller dashboard if they are a seller
+            // But the user said "never open seller dashboard", so we just show alert.
+            return;
+        }
+
+        // If all checks pass, go to buyer orders
+        navigate('/orders');
     };
 
     const handleLogout = () => {
