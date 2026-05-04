@@ -37,7 +37,9 @@ export default function OrderView() {
         const fetchOrders = async () => {
             try {
                 const data = await getIncomingOrders();
-                setOrders(data);
+                // Handle both array and object responses from API
+                const ordersList = Array.isArray(data) ? data : (data.orders || []);
+                setOrders(ordersList);
             } catch (error) {
                 setError({
                     message: "Unable to load orders. Please contact the developer.",

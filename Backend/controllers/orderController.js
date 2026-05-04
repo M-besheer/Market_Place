@@ -1,33 +1,65 @@
 const Order = require('../models/Order');
-
+const Listing = require('../models/Listing');
 
 // Place a new order
 const placeOrder = async (req, res) => {
   try {
     const { seller_id, items, totalAmount, shippingDetails } = req.body;
-
     const buyer_id = req.user.id;
 
-    if (!seller_id || !items || !items.length) {
-      return res.status(400).json({ message: 'seller_id and items array are required' });
+    // Validation
+    if (!seller_id) {
+      return res.status(400).json({ message: 'seller_id is required' });
+    }
+
+    if (!items || !Array.isArray(items) || items.length === 0) {
+      return res.status(400).json({ message: 'items array is required and must not be empty' });
     }
 
     if (!shippingDetails) {
       return res.status(400).json({ message: 'shippingDetails are required' });
     }
 
+    if (!shippingDetails.firstName || !shippingDetails.lastName || !shippingDetails.email || 
+        !shippingDetails.phone || !shippingDetails.addressLine1 || !shippingDetails.city || 
+        !shippingDetails.state || !shippingDetails.postalCode) {
+      return res.status(400).json({ message: 'All shipping details are required' });
+    }
+
+    // Validate that all items belong to the same seller
+    const listingIds = items.map(item => item.listing_id);
+    const listings = await Listing.find({ _id: { $in: listingIds } });
+
+    const sellerIdFromListings = listings[0]?.seller_id.toString();
+    
+    if (!sellerIdFromListings || listings.some(l => l.seller_id.toString() !== sellerIdFromListings)) {
+      return res.status(400).json({ message: 'All items must be from the same seller' });
+    }
+
+    if (sellerIdFromListings !== seller_id) {
+      return res.status(400).json({ message: 'seller_id does not match the listings' });
+    }
+
+    // Create order
     const order = await Order.create({
       buyer_id,
       seller_id,
       items,
-      totalAmount,
+      totalAmount: totalAmount || items.reduce((sum, item) => sum + (item.price * item.quantity), 0),
       shippingDetails,
     });
+
+    // Populate references before sending response
+    await order.populate('seller_id', 'username email name');
+    await order.populate('buyer_id', 'username email name');
+    await order.populate('items.listing_id', 'title price image_urls');
 
     res.status(201).json({
       message: 'Order placed successfully',
       order,
+      orderNumber: order.orderNumber
     });
+
   } catch (error) {
     console.error('placeOrder error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
@@ -40,11 +72,16 @@ const getBuyerOrders = async (req, res) => {
     const buyer_id = req.user.id;
 
     const orders = await Order.find({ buyer_id })
-      .populate('items.listing_id')
-      .populate('seller_id', 'username name')
-      .sort({ createdAt: -1 }); 
+      .populate('items.listing_id', 'title price image_urls')
+      .populate('seller_id', 'username name email')
+      .sort({ createdAt: -1 });
 
-    res.status(200).json(orders);
+    res.status(200).json({
+      success: true,
+      count: orders.length,
+      orders
+    });
+
   } catch (error) {
     console.error('getBuyerOrders error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
@@ -55,18 +92,42 @@ const getBuyerOrders = async (req, res) => {
 const getOrderById = async (req, res) => {
   try {
     const order = await Order.findById(req.params.id)
-      .populate('items.listing_id')
-      .populate('seller_id', 'username name');
+      .populate('items.listing_id', 'title price image_urls')
+      .populate('seller_id', 'username name email')
+      .populate('buyer_id', 'firstName lastName email phone');
 
     if (!order) {
       return res.status(404).json({ message: 'Order not found' });
     }
 
     res.status(200).json(order);
+
   } catch (error) {
     console.error('getOrderById error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
 
-module.exports = { placeOrder, getBuyerOrders, getOrderById };
+// Get orders for a specific seller (only shows orders for their products)
+const getSellerOrders = async (req, res) => {
+  try {
+    const seller_id = req.user.id;
+
+    const orders = await Order.find({ seller_id })
+      .populate('items.listing_id', 'title price image_urls')
+      .populate('buyer_id', 'firstName lastName email phone')
+      .sort({ createdAt: -1 });
+
+    res.status(200).json({
+      success: true,
+      count: orders.length,
+      orders
+    });
+
+  } catch (error) {
+    console.error('getSellerOrders error:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+module.exports = { placeOrder, getBuyerOrders, getOrderById, getSellerOrders };

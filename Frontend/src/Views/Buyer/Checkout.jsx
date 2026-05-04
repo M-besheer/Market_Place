@@ -94,6 +94,15 @@ const Checkout = () => {
     try {
       const token = localStorage.getItem('token');
       
+      if (!token) {
+        alert('Please log in to place an order');
+        setLoading(false);
+        return;
+      }
+
+      console.log('Token being used:', token ? 'Present' : 'Missing');
+      console.log('Token length:', token?.length);
+
       const orderPromises = Object.values(groupedItems).map(async (group) => {
         const orderItems = group.items.map(i => ({
             listing_id: i.listing_id,
@@ -101,31 +110,46 @@ const Checkout = () => {
             price: i.price
         }));
 
+        const orderPayload = {
+          seller_id: group.seller_id,
+          items: orderItems,
+          totalAmount: group.total + 5, // item total + shipping
+          shippingDetails: shippingDetails
+        };
+
+        console.log('Sending order for seller:', group.seller);
+        console.log('Order payload:', orderPayload);
+
         const response = await fetch('http://localhost:5000/api/orders', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
           },
-          body: JSON.stringify({
-            seller_id: group.seller_id,
-            items: orderItems,
-            totalAmount: group.total + 5, // item total + shipping
-            shippingDetails: shippingDetails
-          })
+          body: JSON.stringify(orderPayload)
         });
 
         if (!response.ok) {
-           throw new Error('Failed to place order for seller: ' + group.seller);
+          const errorData = await response.json().catch(() => ({}));
+          console.error('Server error response:', errorData);
+          const errorMsg = errorData.details || errorData.message || `Failed to place order for ${group.seller}`;
+          throw new Error(errorMsg);
         }
+
+        const orderData = await response.json();
+        console.log(`Order placed successfully for ${group.seller}:`, orderData);
+        return orderData;
       });
 
-      await Promise.all(orderPromises);
+      const results = await Promise.all(orderPromises);
+      console.log('All orders placed successfully:', results);
+      
       clearCart();
+      alert('Orders placed successfully!');
       navigate('/orders');
     } catch (err) {
-      console.error(err);
-      alert('There was an error placing your order. Please try again.');
+      console.error('Order placement error:', err);
+      alert(`Error placing order: ${err.message || 'Please try again.'}`);
     } finally {
       setLoading(false);
     }
@@ -349,7 +373,7 @@ const Checkout = () => {
                           name="country"
                           value={shippingDetails.country}
                           onChange={handleInputChange}
-                          disabled
+                          placeholder="India"
                         />
                       </div>
                     </div>
@@ -376,7 +400,7 @@ const Checkout = () => {
                       className="confirm-order-btn" 
                       onClick={handleContinueToReview}
                     >
-                      Review Order
+                      Place Order
                     </button>
 
                     

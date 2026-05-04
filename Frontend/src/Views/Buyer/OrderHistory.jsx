@@ -4,55 +4,12 @@ import './OrderHistory.css';
 import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 
-const sampleOrders = [
-  {
-    id: 'ORD-001',
-    productName: 'Modern Desk Lamp',
-    productImage: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=120&q=80',
-    seller: 'Luna Lighting',
-    price: 49.99,
-    quantity: 1,
-    status: 'Pending',
-    date: '2026-04-10',
-  },
-  {
-    id: 'ORD-002',
-    productName: 'Wireless Headphones',
-    productImage: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=120&q=80',
-    seller: 'SoundWave',
-    price: 89.99,
-    quantity: 2,
-    status: 'Shipped',
-    date: '2026-04-08',
-  },
-  {
-    id: 'ORD-003',
-    productName: 'Mechanical Keyboard',
-    productImage: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=120&q=80',
-    seller: 'TechStore',
-    price: 120.00,
-    quantity: 1,
-    status: 'Delivered',
-    date: '2026-04-05',
-  },
-  {
-    id: 'ORD-004',
-    productName: 'Leather Wallet',
-    productImage: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=120&q=80',
-    seller: 'StyleHub',
-    price: 35.00,
-    quantity: 1,
-    status: 'Cancelled',
-    date: '2026-04-01',
-  },
-];
-
 const STATUS_STYLES = {
-  Pending:   { color: '#856404', background: '#fff3cd', bar: '#f4c430' },
-  Processing:{ color: '#084298', background: '#cfe2ff', bar: '#5092e7' },
-  Shipped:   { color: '#b35900', background: '#ffe5cc', bar: '#ff8c00' },
-  Delivered: { color: '#0f5132', background: '#d1e7dd', bar: '#1a7f4b' },
-  Cancelled: { color: '#842029', background: '#f8d7da', bar: '#dc3545' },
+  Pending:    { color: '#856404', background: '#fff3cd', bar: '#f4c430' },
+  Processing: { color: '#084298', background: '#cfe2ff', bar: '#5092e7' },
+  Shipped:    { color: '#b35900', background: '#ffe5cc', bar: '#ff8c00' },
+  Delivered:  { color: '#0f5132', background: '#d1e7dd', bar: '#1a7f4b' },
+  Cancelled:  { color: '#842029', background: '#f8d7da', bar: '#dc3545' },
 };
 
 function StatusBadge({ status }) {
@@ -84,12 +41,34 @@ function OrderHistory() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/orders');
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+          console.warn("No authentication token found");
+          setLoading(false);
+          return;
+        }
+
+        const response = await fetch('http://localhost:5000/api/orders/buyer/my-orders', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        });
+
         if (response.ok) {
           const data = await response.json();
-          setOrders(data);
+          const ordersList = Array.isArray(data) ? data : (data.orders || []);
+
+          // Filter out orders where the product data isn't populated
+          const validOrders = ordersList.filter(
+            order => order.items && order.items[0]?.listing_id?.title
+          );
+
+          setOrders(validOrders);
         } else {
-          console.error("Failed to fetch orders");
+          console.error("Failed to fetch orders:", response.status, response.statusText);
         }
       } catch (error) {
         console.error("Error connecting to backend:", error);
@@ -158,22 +137,29 @@ function OrderHistory() {
             <div className="oh-orders-list">
               {filtered.map(order => {
                 const firstItem = order.items && order.items[0] ? order.items[0] : null;
-                const pName = firstItem?.listing_id?.title || 'Multiple Items';
-                const pImage = firstItem?.listing_id?.image_urls?.[0] || 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=120&q=80';
+                const pName = firstItem?.listing_id?.title || 'Unknown Product';
+                const pImage = firstItem?.listing_id?.image_urls?.[0] || '';
                 const sellerName = order.seller_id?.username || 'Unknown Seller';
-                const totalQty = order.items ? order.items.reduce((sum, item) => sum + item.quantity, 0) : 0;
-                
+                const totalQty = order.items
+                  ? order.items.reduce((sum, item) => sum + item.quantity, 0)
+                  : 0;
+
                 return (
                   <div key={order._id} className="oh-order-item">
 
                     {/* Product Image */}
                     <div className="oh-product-image">
-                      <img src={pImage} alt={pName} />
+                      {pImage
+                        ? <img src={pImage} alt={pName} />
+                        : <div className="oh-image-placeholder">📦</div>
+                      }
                     </div>
 
                     {/* Order Info */}
                     <div className="oh-order-info">
-                      <p className="oh-product-name">{pName} {order.items?.length > 1 ? `(+${order.items.length - 1} more)` : ''}</p>
+                      <p className="oh-product-name">
+                        {pName} {order.items?.length > 1 ? `(+${order.items.length - 1} more)` : ''}
+                      </p>
                       <p className="oh-meta">
                         ${order.totalAmount?.toFixed(2) || '0.00'}
                         &nbsp;·&nbsp; Qty: {totalQty}
