@@ -115,30 +115,33 @@ function ProductDetail() {
     setQuantity(value);
   };
  
-  const handleAddToCart = () => {
-
+  const handleAddToCart = async () => {
+    console.log('handleAddToCart called');
     const token = localStorage.getItem('token');
-      if (!token) {
-        // You can use a standard alert, or replace this with your 
-        // custom UI notification (like a Toast or setting an error state)
-        alert('You must be logged in to place an order.');
-        
-        // Return early to stop the function from running the fetch request
-        return; 
-      }
-    addToCart({
-      listing_id: product.listing_id,
-      name: product.name,
-      price: product.price,
-      seller: product.seller,
-      seller_id: product.seller_id,
-      image: product.image,
-      quantity: quantity,
-      stock: product.stock,
-      serviceableAreas: product.serviceableAreas
-    });
-    setOrderCreated(true);
-    setTimeout(() => setOrderCreated(false), 3000);
+    if (!token) {
+      alert('You must be logged in to place an order.');
+      return; 
+    }
+    
+    console.log('Dispatching addToCart for:', product.listing_id);
+    try {
+      await addToCart({
+        listing_id: product.listing_id,
+        name: product.name,
+        price: product.price,
+        seller: product.seller,
+        seller_id: product.seller_id,
+        image: product.image,
+        quantity: quantity,
+        stock: product.stock,
+        serviceableAreas: product.serviceableAreas
+      });
+      console.log('addToCart finished');
+      setOrderCreated(true);
+      setTimeout(() => setOrderCreated(false), 3000);
+    } catch (err) {
+      console.error('Error in handleAddToCart:', err);
+    }
   };
 
   const showToast = (message, type = 'error') => {
