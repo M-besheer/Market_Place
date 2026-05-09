@@ -1,0 +1,3713 @@
+{
+  "reviews": [
+    {
+      "_id": "69fa507f3022593da9edc527",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "listing_id": "69efc6ea26387c1ade622182",
+      "order_id": "69f92c704231f947c9322bab",
+      "rating": 4,
+      "comment": "nice drawing for embedded project",
+      "createdAt": "2026-05-05T20:18:07.437Z",
+      "updatedAt": "2026-05-05T20:18:07.437Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa511fec4e4c60c0c7f756",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "listing_id": "69efc5c026387c1ade622181",
+      "order_id": "69f92c704231f947c9322bab",
+      "rating": 5,
+      "comment": "nice duck man!",
+      "createdAt": "2026-05-05T20:20:47.390Z",
+      "updatedAt": "2026-05-05T20:20:47.390Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa5249ec4e4c60c0c7f76e",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69efc6ea26387c1ade622182",
+      "order_id": "69fa51f2ec4e4c60c0c7f759",
+      "rating": 3,
+      "comment": "meh, it's fine i guess",
+      "createdAt": "2026-05-05T20:25:45.286Z",
+      "updatedAt": "2026-05-05T20:25:45.286Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe537f10322a0ccad88530",
+      "buyer_id": "69fe528110322a0ccad88520",
+      "listing_id": "69fe524c10322a0ccad8851d",
+      "order_id": "69fe533e10322a0ccad88523",
+      "rating": 4,
+      "comment": "Tobey bites when angry",
+      "createdAt": "2026-05-08T21:19:59.134Z",
+      "updatedAt": "2026-05-08T21:19:59.134Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe54fb10322a0ccad88543",
+      "buyer_id": "69fe528110322a0ccad88520",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe54c410322a0ccad8853a",
+      "rating": 3,
+      "comment": "pretty small in real life 1",
+      "createdAt": "2026-05-08T21:26:19.650Z",
+      "updatedAt": "2026-05-08T21:46:22.222Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5646e230d2e48be7d0d9",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe5646e230d2e48be7d0d7",
+      "rating": 5,
+      "comment": "Amazing performance, the screen is stunning! Best laptop I've used for coding.",
+      "createdAt": "2026-05-08T21:31:50.779Z",
+      "updatedAt": "2026-05-08T21:31:50.779Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5647e230d2e48be7d0dc",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe5646e230d2e48be7d0da",
+      "rating": 4,
+      "comment": "Good value for money, but the battery life is average when multitasking.",
+      "createdAt": "2026-05-08T21:31:51.400Z",
+      "updatedAt": "2026-05-08T21:31:51.400Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5648e230d2e48be7d0df",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe5647e230d2e48be7d0dd",
+      "rating": 3,
+      "comment": "The keyboard feels a bit flimsy, but everything else is great. Performance is solid.",
+      "createdAt": "2026-05-08T21:31:52.012Z",
+      "updatedAt": "2026-05-08T21:31:52.012Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5649e230d2e48be7d0e2",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe5648e230d2e48be7d0e0",
+      "rating": 5,
+      "comment": "Super fast shipping! The laptop is exactly as described and works like a charm.",
+      "createdAt": "2026-05-08T21:31:53.054Z",
+      "updatedAt": "2026-05-08T21:31:53.054Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5649e230d2e48be7d0e5",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe5649e230d2e48be7d0e3",
+      "rating": 2,
+      "comment": "Disappointed with the thermal performance, gets quite hot during heavy use.",
+      "createdAt": "2026-05-08T21:31:53.663Z",
+      "updatedAt": "2026-05-08T21:31:53.663Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe564ae230d2e48be7d0e8",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe5649e230d2e48be7d0e6",
+      "rating": 5,
+      "comment": "Best laptop I've owned so far. The build quality is premium and the trackpad is smooth.",
+      "createdAt": "2026-05-08T21:31:54.276Z",
+      "updatedAt": "2026-05-08T21:31:54.276Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe564ae230d2e48be7d0eb",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe564ae230d2e48be7d0e9",
+      "rating": 4,
+      "comment": "Solid build quality, very sleek design. Wish it had more USB-C ports though.",
+      "createdAt": "2026-05-08T21:31:54.888Z",
+      "updatedAt": "2026-05-08T21:31:54.888Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe564be230d2e48be7d0ee",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe564be230d2e48be7d0ec",
+      "rating": 4,
+      "comment": "The webcam is poor, but the display makes up for it. Great for media consumption.",
+      "createdAt": "2026-05-08T21:31:55.497Z",
+      "updatedAt": "2026-05-08T21:31:55.497Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe564ce230d2e48be7d0f1",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe564be230d2e48be7d0ef",
+      "rating": 4,
+      "comment": "A bit pricey, but you get what you pay for. The M-series chip is incredible.",
+      "createdAt": "2026-05-08T21:31:56.111Z",
+      "updatedAt": "2026-05-08T21:31:56.111Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe564ce230d2e48be7d0f4",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fa514b84b3696efdc0f675",
+      "order_id": "69fe564ce230d2e48be7d0f2",
+      "rating": 5,
+      "comment": "Exactly what I needed for university. Lightweight, fast, and stays quiet.",
+      "createdAt": "2026-05-08T21:31:56.723Z",
+      "updatedAt": "2026-05-08T21:31:56.723Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe576db4b5d50fa8b9f3af",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe576cb4b5d50fa8b9f3ad",
+      "rating": 5,
+      "comment": "Amazing performance, the screen is stunning! Best laptop I've used for coding.",
+      "createdAt": "2026-05-08T21:36:45.395Z",
+      "updatedAt": "2026-05-08T21:36:45.395Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe576eb4b5d50fa8b9f3b2",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe576db4b5d50fa8b9f3b0",
+      "rating": 4,
+      "comment": "Good value for money, but the battery life is average when multitasking.",
+      "createdAt": "2026-05-08T21:36:46.015Z",
+      "updatedAt": "2026-05-08T21:36:46.015Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe576eb4b5d50fa8b9f3b5",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe576eb4b5d50fa8b9f3b3",
+      "rating": 3,
+      "comment": "The keyboard feels a bit flimsy, but everything else is great. Performance is solid.",
+      "createdAt": "2026-05-08T21:36:46.776Z",
+      "updatedAt": "2026-05-08T21:36:46.776Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe576fb4b5d50fa8b9f3b8",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe576eb4b5d50fa8b9f3b6",
+      "rating": 5,
+      "comment": "Super fast shipping! The laptop is exactly as described and works like a charm.",
+      "createdAt": "2026-05-08T21:36:47.396Z",
+      "updatedAt": "2026-05-08T21:36:47.396Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5770b4b5d50fa8b9f3bb",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe576fb4b5d50fa8b9f3b9",
+      "rating": 2,
+      "comment": "Disappointed with the thermal performance, gets quite hot during heavy use.",
+      "createdAt": "2026-05-08T21:36:48.034Z",
+      "updatedAt": "2026-05-08T21:36:48.034Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5770b4b5d50fa8b9f3be",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe5770b4b5d50fa8b9f3bc",
+      "rating": 5,
+      "comment": "Best laptop I've owned so far. The build quality is premium and the trackpad is smooth.",
+      "createdAt": "2026-05-08T21:36:48.672Z",
+      "updatedAt": "2026-05-08T21:36:48.672Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5771b4b5d50fa8b9f3c1",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe5770b4b5d50fa8b9f3bf",
+      "rating": 4,
+      "comment": "Solid build quality, very sleek design. Wish it had more USB-C ports though.",
+      "createdAt": "2026-05-08T21:36:49.285Z",
+      "updatedAt": "2026-05-08T21:36:49.285Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5771b4b5d50fa8b9f3c4",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe5771b4b5d50fa8b9f3c2",
+      "rating": 4,
+      "comment": "The webcam is poor, but the display makes up for it. Great for media consumption.",
+      "createdAt": "2026-05-08T21:36:49.899Z",
+      "updatedAt": "2026-05-08T21:36:49.899Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5772b4b5d50fa8b9f3c7",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe5772b4b5d50fa8b9f3c5",
+      "rating": 4,
+      "comment": "A bit pricey, but you get what you pay for. The M-series chip is incredible.",
+      "createdAt": "2026-05-08T21:36:50.523Z",
+      "updatedAt": "2026-05-08T21:36:50.523Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5773b4b5d50fa8b9f3ca",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe5772b4b5d50fa8b9f3c8",
+      "rating": 5,
+      "comment": "Exactly what I needed for university. Lightweight, fast, and stays quiet.",
+      "createdAt": "2026-05-08T21:36:51.377Z",
+      "updatedAt": "2026-05-08T21:36:51.377Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58efa29091871cdabc50",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58eea29091871cdabc4e",
+      "rating": 5,
+      "comment": "Amazing performance, the screen is stunning! Best laptop I've used for coding.",
+      "createdAt": "2026-05-08T21:43:11.389Z",
+      "updatedAt": "2026-05-08T21:43:11.389Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f0a29091871cdabc53",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58efa29091871cdabc51",
+      "rating": 4,
+      "comment": "Good value for money, but the battery life is average when multitasking.",
+      "createdAt": "2026-05-08T21:43:12.015Z",
+      "updatedAt": "2026-05-08T21:43:12.015Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f0a29091871cdabc56",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58f0a29091871cdabc54",
+      "rating": 3,
+      "comment": "The keyboard feels a bit flimsy, but everything else is great. Performance is solid.",
+      "createdAt": "2026-05-08T21:43:12.640Z",
+      "updatedAt": "2026-05-08T21:43:12.640Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f1a29091871cdabc59",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58f0a29091871cdabc57",
+      "rating": 5,
+      "comment": "Super fast shipping! The laptop is exactly as described and works like a charm.",
+      "createdAt": "2026-05-08T21:43:13.263Z",
+      "updatedAt": "2026-05-08T21:43:13.263Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f1a29091871cdabc5c",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58f1a29091871cdabc5a",
+      "rating": 2,
+      "comment": "Disappointed with the thermal performance, gets quite hot during heavy use.",
+      "createdAt": "2026-05-08T21:43:13.885Z",
+      "updatedAt": "2026-05-08T21:43:13.885Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f2a29091871cdabc5f",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58f2a29091871cdabc5d",
+      "rating": 5,
+      "comment": "Best laptop I've owned so far. The build quality is premium and the trackpad is smooth.",
+      "createdAt": "2026-05-08T21:43:14.507Z",
+      "updatedAt": "2026-05-08T21:43:14.507Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f3a29091871cdabc62",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58f2a29091871cdabc60",
+      "rating": 4,
+      "comment": "Solid build quality, very sleek design. Wish it had more USB-C ports though.",
+      "createdAt": "2026-05-08T21:43:15.134Z",
+      "updatedAt": "2026-05-08T21:43:15.134Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f3a29091871cdabc65",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58f3a29091871cdabc63",
+      "rating": 4,
+      "comment": "The webcam is poor, but the display makes up for it. Great for media consumption.",
+      "createdAt": "2026-05-08T21:43:15.747Z",
+      "updatedAt": "2026-05-08T21:43:15.747Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f4a29091871cdabc68",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58f3a29091871cdabc66",
+      "rating": 4,
+      "comment": "A bit pricey, but you get what you pay for. The M-series chip is incredible.",
+      "createdAt": "2026-05-08T21:43:16.361Z",
+      "updatedAt": "2026-05-08T21:43:16.361Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f4a29091871cdabc6b",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "listing_id": "69fe547110322a0ccad88535",
+      "order_id": "69fe58f4a29091871cdabc69",
+      "rating": 5,
+      "comment": "Exactly what I needed for university. Lightweight, fast, and stays quiet.",
+      "createdAt": "2026-05-08T21:43:16.981Z",
+      "updatedAt": "2026-05-08T21:43:16.981Z",
+      "__v": 0
+    }
+  ],
+  "addresses": [
+    {
+      "_id": "69ff58193f83d7a9c211477e",
+      "user_id": "69fe528110322a0ccad88520",
+      "title": "Home",
+      "firstName": "john",
+      "lastName": "doe",
+      "email": "tester@test.com",
+      "phone": "010110501",
+      "addressLine1": "30th street",
+      "city": "Cairo",
+      "state": "Cairo",
+      "postalCode": "11155",
+      "country": "Egypt",
+      "isDefault": true,
+      "createdAt": "2026-05-09T15:51:53.868Z",
+      "updatedAt": "2026-05-09T15:51:53.868Z",
+      "__v": 0
+    }
+  ],
+  "comments": [
+    {
+      "_id": "69f72c8ceeccf048db0fb5e9",
+      "listing_id": "69efc5c026387c1ade622181",
+      "user_id": "69ea3eacda42491f6fef9c12",
+      "text": "i give this duck 3 quacks\n",
+      "likes": [
+        "69e91dceea98ea56de2b318d",
+        "69e02a896410a769fbb150c2"
+      ],
+      "replies": [
+        {
+          "user_id": "69e91dceea98ea56de2b318d",
+          "text": "disagree",
+          "_id": "69f739e1eeccf048db0fb5ea",
+          "createdAt": "2026-05-03T12:04:49.564Z"
+        }
+      ],
+      "createdAt": "2026-05-03T11:07:56.506Z",
+      "__v": 7
+    },
+    {
+      "_id": "69f76fb7efdc7ab58bd9a191",
+      "listing_id": "69efc6ea26387c1ade622182",
+      "user_id": "69e907791ce44e21d97766cb",
+      "text": "dsd",
+      "likes": [
+        "69e907791ce44e21d97766cb"
+      ],
+      "replies": [
+        {
+          "user_id": "69e907791ce44e21d97766cb",
+          "text": "Wow!!! Comments work!",
+          "_id": "69f76fd4efdc7ab58bd9a192",
+          "createdAt": "2026-05-03T15:55:00.633Z"
+        }
+      ],
+      "createdAt": "2026-05-03T15:54:31.241Z",
+      "__v": 10
+    },
+    {
+      "_id": "69f780096fb0a70e2b4523b6",
+      "listing_id": "69efc5c026387c1ade622181",
+      "user_id": "69e02a896410a769fbb150c2",
+      "text": "this duck is cool , noice duck 🦆🦆",
+      "likes": [
+        "69e02a896410a769fbb150c2",
+        "69e91dceea98ea56de2b318d"
+      ],
+      "replies": [],
+      "createdAt": "2026-05-03T17:04:09.861Z",
+      "__v": 2
+    },
+    {
+      "_id": "69f75607b6ffed4ffc86ea1b",
+      "listing_id": "69efc5c026387c1ade622181",
+      "user_id": "69e91dceea98ea56de2b318d",
+      "text": "quck",
+      "likes": [],
+      "replies": [
+        {
+          "user_id": "69e91dceea98ea56de2b318d",
+          "text": "cool",
+          "_id": "69f75648b6ffed4ffc86ea22",
+          "createdAt": "2026-05-03T14:06:00.118Z"
+        }
+      ],
+      "createdAt": "2026-05-03T14:04:55.560Z",
+      "__v": 1
+    }
+  ],
+  "orders_order": [
+    {
+      "_id": "69e02ea94c4c75360474ac1e",
+      "buyer_id": "000000000000000000000001",
+      "listing_id": "69dec095add6545caaa8a124",
+      "status": "Pending",
+      "id": "69e02ea94c4c75360474ac1f",
+      "createdAt": "2026-04-16T00:34:49.277Z",
+      "updatedAt": "2026-04-16T00:34:49.277Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ed4f4177825e4f8cc29404",
+      "buyer_id": "000000000000000000000001",
+      "listing_id": "69ebdf8dfd9f5b86dbba4fb1",
+      "status": "Pending",
+      "id": "69ed4f4177825e4f8cc29405",
+      "createdAt": "2026-04-25T23:33:21.327Z",
+      "updatedAt": "2026-04-25T23:33:21.327Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ed6c54e06be2c035776809",
+      "buyer_id": "69ea3eacda42491f6fef9c12",
+      "listing_id": "69ed572b989f49b0224d72d4",
+      "status": "Pending",
+      "id": "69ed6c54e06be2c03577680a",
+      "createdAt": "2026-04-26T01:37:24.758Z",
+      "updatedAt": "2026-04-26T01:37:24.758Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ef928d97c3f739cfe1dee7",
+      "buyer_id": "000000000000000000000001",
+      "listing_id": "69ed572b989f49b0224d72d4",
+      "status": "Pending",
+      "id": "69ef928d97c3f739cfe1dee8",
+      "createdAt": "2026-04-27T16:45:01.739Z",
+      "updatedAt": "2026-04-27T16:45:01.739Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ef92f697c3f739cfe1dee9",
+      "buyer_id": "000000000000000000000001",
+      "listing_id": "69ed24963d08a7dff652d66b",
+      "status": "Pending",
+      "id": "69ef92f697c3f739cfe1deea",
+      "createdAt": "2026-04-27T16:46:46.154Z",
+      "updatedAt": "2026-04-27T16:46:46.154Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ef93ad97c3f739cfe1deeb",
+      "buyer_id": "000000000000000000000001",
+      "listing_id": "69ebde93fd9f5b86dbba4faf",
+      "status": "Pending",
+      "id": "69ef93ad97c3f739cfe1deec",
+      "createdAt": "2026-04-27T16:49:49.529Z",
+      "updatedAt": "2026-04-27T16:49:49.529Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ef97e197c3f739cfe1deed",
+      "buyer_id": "000000000000000000000001",
+      "listing_id": "69ed572b989f49b0224d72d4",
+      "status": "Pending",
+      "id": "69ef97e197c3f739cfe1deee",
+      "createdAt": "2026-04-27T17:07:45.695Z",
+      "updatedAt": "2026-04-27T17:07:45.695Z",
+      "__v": 0
+    },
+    {
+      "_id": "69efe346ac9d380409a7f50e",
+      "buyer_id": "69e907791ce44e21d97766cb",
+      "listing_id": "69efc6ea26387c1ade622182",
+      "status": "Shipped",
+      "createdAt": "2026-04-27T22:29:26.694Z",
+      "updatedAt": "2026-05-03T18:39:25.695Z",
+      "orderNumber": "ORD-008",
+      "__v": 0,
+      "sellerFlag": null
+    },
+    {
+      "_id": "69f766e32e33b948f221f787",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "listing_id": "69efc5c026387c1ade622181",
+      "status": "Pending",
+      "createdAt": "2026-05-03T15:16:51.976Z",
+      "updatedAt": "2026-05-03T18:41:54.504Z",
+      "orderNumber": "ORD-009",
+      "__v": 0,
+      "sellerFlag": "bad"
+    },
+    {
+      "_id": "69f769512e33b948f221f79a",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "listing_id": "69efc6ea26387c1ade622182",
+      "status": "Pending",
+      "createdAt": "2026-05-03T15:27:13.778Z",
+      "updatedAt": "2026-05-03T18:28:11.007Z",
+      "orderNumber": "ORD-010",
+      "__v": 0,
+      "sellerFlag": "bad"
+    },
+    {
+      "_id": "69f76c722e33b948f221f7a1",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "listing_id": "69efc5c026387c1ade622181",
+      "status": "Pending",
+      "createdAt": "2026-05-03T15:40:34.370Z",
+      "updatedAt": "2026-05-03T19:21:40.345Z",
+      "orderNumber": "ORD-011",
+      "__v": 0,
+      "sellerFlag": "good"
+    },
+    {
+      "_id": "69f797aba66a24d52d3914cf",
+      "buyer_id": "69e907791ce44e21d97766cb",
+      "listing_id": "69efc6ea26387c1ade622182",
+      "status": "Pending",
+      "sellerFlag": "good",
+      "createdAt": "2026-05-03T18:44:59.666Z",
+      "updatedAt": "2026-05-03T19:21:33.684Z",
+      "orderNumber": "ORD-012",
+      "__v": 0
+    },
+    {
+      "_id": "69f798fca66a24d52d3914d5",
+      "buyer_id": "69f798d4a66a24d52d3914d2",
+      "listing_id": "69efc6ea26387c1ade622182",
+      "status": "Pending",
+      "sellerFlag": "bad",
+      "createdAt": "2026-05-03T18:50:36.344Z",
+      "updatedAt": "2026-05-03T19:27:26.216Z",
+      "orderNumber": "ORD-013",
+      "__v": 0
+    },
+    {
+      "_id": "69f7a1b70f4a5844666f7616",
+      "buyer_id": "69e029176410a769fbb150c1",
+      "listing_id": "69efc5c026387c1ade622181",
+      "status": "Pending",
+      "sellerFlag": null,
+      "createdAt": "2026-05-03T19:27:51.335Z",
+      "updatedAt": "2026-05-03T19:27:51.335Z",
+      "orderNumber": "ORD-014",
+      "__v": 0
+    },
+    {
+      "_id": "69f7a1cd0f4a5844666f761b",
+      "buyer_id": "69f798d4a66a24d52d3914d2",
+      "listing_id": "69efc5c026387c1ade622181",
+      "status": "Pending",
+      "sellerFlag": "good",
+      "createdAt": "2026-05-03T19:28:13.896Z",
+      "updatedAt": "2026-05-04T09:37:55.484Z",
+      "orderNumber": "ORD-015",
+      "__v": 0
+    },
+    {
+      "_id": "69f86a82c9c2b743ef6f65b3",
+      "buyer_id": "69e907791ce44e21d97766cb",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc6ea26387c1ade622182",
+          "quantity": 3,
+          "price": 300,
+          "_id": "69f86a82c9c2b743ef6f65b4"
+        }
+      ],
+      "totalAmount": 905,
+      "status": "Shipped",
+      "shippingDetails": {
+        "firstName": "Rog",
+        "lastName": "rog",
+        "email": "rog@gmail.com",
+        "phone": "01000000000",
+        "addressLine1": "ASU :)",
+        "addressLine2": "",
+        "city": "Abbasia",
+        "state": "Abdo Basha",
+        "postalCode": "Idk",
+        "country": "India"
+      },
+      "createdAt": "2026-05-04T09:44:34.746Z",
+      "updatedAt": "2026-05-07T23:57:14.439Z",
+      "orderNumber": "ORD-016",
+      "__v": 0,
+      "sellerFlag": false,
+      "buyerFlag": false
+    },
+    {
+      "_id": "69f88fc7c8f54ddb2df0c78d",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "listing_id": "69efc5c026387c1ade622181",
+      "status": "Pending",
+      "createdAt": "2026-05-04T12:23:35.806Z",
+      "updatedAt": "2026-05-04T12:23:35.806Z",
+      "orderNumber": "ORD-017",
+      "__v": 0
+    },
+    {
+      "_id": "69f8c6c4655c6be83980fbe5",
+      "buyer_id": "69ea3eacda42491f6fef9c12",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc5c026387c1ade622181",
+          "quantity": 1,
+          "price": 200,
+          "_id": "69f8c6c4655c6be83980fbe6"
+        }
+      ],
+      "totalAmount": 205,
+      "status": "Processing",
+      "shippingDetails": {
+        "firstName": "Mariam",
+        "lastName": "Gamgoum",
+        "email": "mariam.gamgoum@gmail.com",
+        "phone": "0111122222",
+        "addressLine1": "Rehab City",
+        "addressLine2": "",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "118222",
+        "country": "Egypt"
+      },
+      "createdAt": "2026-05-04T16:18:12.903Z",
+      "updatedAt": "2026-05-05T23:26:04.544Z",
+      "orderNumber": "ORD-018",
+      "__v": 0,
+      "sellerFlag": false,
+      "buyerFlag": false
+    },
+    {
+      "_id": "69f8c6c4655c6be83980fbe7",
+      "buyer_id": "69ea3eacda42491f6fef9c12",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69ed572b989f49b0224d72d4",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69f8c6c4655c6be83980fbe8"
+        }
+      ],
+      "totalAmount": 10005,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Mariam",
+        "lastName": "Gamgoum",
+        "email": "mariam.gamgoum@gmail.com",
+        "phone": "0111122222",
+        "addressLine1": "Rehab City",
+        "addressLine2": "",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "118222",
+        "country": "Egypt"
+      },
+      "createdAt": "2026-05-04T16:18:12.918Z",
+      "updatedAt": "2026-05-04T16:18:12.918Z",
+      "orderNumber": "ORD-018",
+      "__v": 0
+    },
+    {
+      "_id": "69f8e217db28803089a81d92",
+      "buyer_id": "69f8caf1655c6be83980fc27",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69ed24963d08a7dff652d66b",
+          "quantity": 1,
+          "price": 445,
+          "_id": "69f8e217db28803089a81d93"
+        },
+        {
+          "listing_id": "69ebdf8dfd9f5b86dbba4fb1",
+          "quantity": 1,
+          "price": 600,
+          "_id": "69f8e217db28803089a81d94"
+        }
+      ],
+      "totalAmount": 1050,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "Mariam",
+        "lastName": "Gamgoum",
+        "email": "mariam.gamgoum@gmail.com",
+        "phone": "01555533333",
+        "addressLine1": "Nasr City",
+        "addressLine2": "",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "11841",
+        "country": "Egypt",
+        "building": "44",
+        "floor": "2",
+        "apartment": "12"
+      },
+      "createdAt": "2026-05-04T18:14:47.808Z",
+      "updatedAt": "2026-05-05T19:56:31.795Z",
+      "orderNumber": "ORD-020",
+      "__v": 0
+    },
+    {
+      "_id": "69f8e217db28803089a81d95",
+      "buyer_id": "69f8caf1655c6be83980fc27",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc6ea26387c1ade622182",
+          "quantity": 1,
+          "price": 300,
+          "_id": "69f8e217db28803089a81d96"
+        }
+      ],
+      "totalAmount": 305,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Mariam",
+        "lastName": "Gamgoum",
+        "email": "mariam.gamgoum@gmail.com",
+        "phone": "01555533333",
+        "addressLine1": "Nasr City",
+        "addressLine2": "",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "11841",
+        "country": "Egypt",
+        "building": "44",
+        "floor": "2",
+        "apartment": "12"
+      },
+      "createdAt": "2026-05-04T18:14:47.828Z",
+      "updatedAt": "2026-05-04T18:14:47.828Z",
+      "orderNumber": "ORD-020",
+      "__v": 0
+    },
+    {
+      "_id": "69f92c704231f947c9322bab",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc6ea26387c1ade622182",
+          "quantity": 1,
+          "price": 300,
+          "_id": "69f92c704231f947c9322bac"
+        },
+        {
+          "listing_id": "69efc5c026387c1ade622181",
+          "quantity": 1,
+          "price": 120,
+          "_id": "69f92c704231f947c9322bad"
+        }
+      ],
+      "totalAmount": 425,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mohamed",
+        "lastName": "besheer",
+        "email": "mbesheer26105@gmail.com",
+        "phone": "01002343108",
+        "addressLine1": "Jayd Residence next to rehab's east market",
+        "addressLine2": "",
+        "city": "Cairo",
+        "state": "القاهرة",
+        "postalCode": "11511",
+        "country": "Egypt",
+        "building": "c25",
+        "floor": "2",
+        "apartment": "21"
+      },
+      "createdAt": "2026-05-04T23:32:00.517Z",
+      "updatedAt": "2026-05-05T23:26:05.889Z",
+      "orderNumber": "ORD-022",
+      "__v": 0,
+      "sellerFlag": false,
+      "buyerFlag": false
+    },
+    {
+      "_id": "69fa0d302197f50301c57964",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "seller_id": "69ed5700989f49b0224d72d3",
+      "items": [
+        {
+          "listing_id": "69f9ef004bf131d4c42d9fb5",
+          "quantity": 1,
+          "price": 25,
+          "_id": "69fa0d302197f50301c57965"
+        }
+      ],
+      "totalAmount": 30,
+      "status": "Shipped",
+      "shippingDetails": {
+        "firstName": "mohamed",
+        "lastName": "besheer",
+        "email": "mbesheer26105@gmail.com",
+        "phone": "01002343108",
+        "addressLine1": "Jayd Residence next to rehab's east market",
+        "addressLine2": "Jayd Residence next to rehab's east market",
+        "city": "First Settlement",
+        "state": "Cairo",
+        "postalCode": "11511",
+        "country": "Egypt",
+        "building": "c25",
+        "floor": "2",
+        "apartment": "21"
+      },
+      "createdAt": "2026-05-05T15:30:56.868Z",
+      "updatedAt": "2026-05-06T18:04:21.360Z",
+      "orderNumber": "ORD-023",
+      "__v": 0,
+      "buyerFlag": false,
+      "sellerFlag": false
+    },
+    {
+      "_id": "69fa28ced9dcf97ec77d56ff",
+      "buyer_id": "69e907791ce44e21d97766cb",
+      "seller_id": "69ed5700989f49b0224d72d3",
+      "items": [
+        {
+          "listing_id": "69f9ef004bf131d4c42d9fb5",
+          "quantity": 1,
+          "price": 25,
+          "_id": "69fa28ced9dcf97ec77d5700"
+        }
+      ],
+      "totalAmount": 30,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Roger",
+        "lastName": "Salama",
+        "email": "roger.a.salama@gmail.com",
+        "phone": "01062494318",
+        "addressLine1": "ASU :)",
+        "addressLine2": "",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "Cairo, Egypt",
+        "country": "Egypt",
+        "building": "",
+        "floor": "",
+        "apartment": ""
+      },
+      "createdAt": "2026-05-05T17:28:46.040Z",
+      "updatedAt": "2026-05-05T22:37:42.233Z",
+      "orderNumber": "ORD-024",
+      "__v": 0,
+      "sellerFlag": "bad",
+      "buyerFlag": "good"
+    },
+    {
+      "_id": "69fa2b612515cae2eeadba6c",
+      "buyer_id": "69e907791ce44e21d97766cb",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69fa2ade2515cae2eeadba43",
+          "quantity": 1,
+          "price": 220,
+          "_id": "69fa2b612515cae2eeadba6d"
+        }
+      ],
+      "totalAmount": 225,
+      "status": "Shipped",
+      "shippingDetails": {
+        "firstName": "Roger",
+        "lastName": "Salama",
+        "email": "roger.a.salama@gmail.com",
+        "phone": "01062494318",
+        "addressLine1": "ASU :)",
+        "addressLine2": "",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "Cairo, Egypt",
+        "country": "Egypt",
+        "building": "",
+        "floor": "",
+        "apartment": ""
+      },
+      "createdAt": "2026-05-05T17:39:45.882Z",
+      "updatedAt": "2026-05-06T09:07:26.222Z",
+      "orderNumber": "ORD-025",
+      "__v": 0,
+      "sellerFlag": false,
+      "buyerFlag": true
+    },
+    {
+      "_id": "69fa2f329a6ebe44964e6f55",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69fa2ade2515cae2eeadba43",
+          "quantity": 1,
+          "price": 220,
+          "_id": "69fa2f329a6ebe44964e6f56"
+        }
+      ],
+      "totalAmount": 225,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Abdelrahman",
+        "lastName": "Sallam",
+        "email": "AS@gmail.com",
+        "phone": "01129908336",
+        "addressLine1": "share3 betna",
+        "addressLine2": "betna",
+        "city": "Nasr City",
+        "state": "Al Qāhirah",
+        "postalCode": "111111",
+        "country": "Egypt",
+        "building": "9",
+        "floor": "1",
+        "apartment": "101"
+      },
+      "createdAt": "2026-05-05T17:56:02.340Z",
+      "updatedAt": "2026-05-06T09:07:32.622Z",
+      "orderNumber": "ORD-026",
+      "__v": 0,
+      "sellerFlag": true,
+      "buyerFlag": false
+    },
+    {
+      "_id": "69fa2f929a6ebe44964e6f5b",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "seller_id": "69ed5700989f49b0224d72d3",
+      "items": [
+        {
+          "listing_id": "69f9ef004bf131d4c42d9fb5",
+          "quantity": 3,
+          "price": 25,
+          "_id": "69fa2f929a6ebe44964e6f5c"
+        }
+      ],
+      "totalAmount": 80,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Abdelrahman",
+        "lastName": "Sallam",
+        "email": "AS@gmail.com",
+        "phone": "01129908336",
+        "addressLine1": "share3 betna",
+        "addressLine2": "betna",
+        "city": "Nasr City",
+        "state": "Al Qāhirah",
+        "postalCode": "111111",
+        "country": "Egypt",
+        "building": "9",
+        "floor": "1",
+        "apartment": "101"
+      },
+      "createdAt": "2026-05-05T17:57:38.635Z",
+      "updatedAt": "2026-05-05T17:57:38.635Z",
+      "orderNumber": "ORD-027",
+      "__v": 0
+    },
+    {
+      "_id": "69fa31099a6ebe44964e6f61",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "seller_id": "69ed5700989f49b0224d72d3",
+      "items": [
+        {
+          "listing_id": "69f9ef004bf131d4c42d9fb5",
+          "quantity": 3,
+          "price": 25,
+          "_id": "69fa31099a6ebe44964e6f62"
+        }
+      ],
+      "totalAmount": 80,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Abdelrahman",
+        "lastName": "Sallam",
+        "email": "AS@gmail.com",
+        "phone": "01129908336",
+        "addressLine1": "share3 betna",
+        "addressLine2": "betna",
+        "city": "Nasr City",
+        "state": "Al Qāhirah",
+        "postalCode": "111111",
+        "country": "Egypt",
+        "building": "9",
+        "floor": "1",
+        "apartment": "101"
+      },
+      "createdAt": "2026-05-05T18:03:53.022Z",
+      "updatedAt": "2026-05-05T18:03:53.022Z",
+      "orderNumber": "ORD-028",
+      "__v": 0
+    },
+    {
+      "_id": "69fa3349dd1a9643696fb290",
+      "buyer_id": "69e907791ce44e21d97766cb",
+      "seller_id": "69ed5700989f49b0224d72d3",
+      "items": [
+        {
+          "listing_id": "69f9ef004bf131d4c42d9fb5",
+          "quantity": 5,
+          "price": 25,
+          "_id": "69fa3349dd1a9643696fb291"
+        }
+      ],
+      "totalAmount": 130,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "Roger",
+        "lastName": "Salama",
+        "email": "roger.a.salama@gmail.com",
+        "phone": "01062494318",
+        "addressLine1": "ASU :)",
+        "addressLine2": "",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "Cairo, Egypt",
+        "country": "Egypt",
+        "building": "",
+        "floor": "",
+        "apartment": ""
+      },
+      "sellerFlag": true,
+      "createdAt": "2026-05-05T18:13:29.579Z",
+      "updatedAt": "2026-05-06T18:02:51.006Z",
+      "orderNumber": "ORD-029",
+      "__v": 0,
+      "buyerFlag": false
+    },
+    {
+      "_id": "69fa33d7514fbab23a20f6e8",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "seller_id": "69ed5700989f49b0224d72d3",
+      "items": [
+        {
+          "listing_id": "69f9ef004bf131d4c42d9fb5",
+          "quantity": 10,
+          "price": 25,
+          "_id": "69fa33d7514fbab23a20f6e9"
+        }
+      ],
+      "totalAmount": 255,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Abdelrahman",
+        "lastName": "Sallam",
+        "email": "AS@gmail.com",
+        "phone": "01129908336",
+        "addressLine1": "share3 betna",
+        "addressLine2": "betna",
+        "city": "Nasr City",
+        "state": "Al Qāhirah",
+        "postalCode": "111111",
+        "country": "Egypt",
+        "building": "9",
+        "floor": "1",
+        "apartment": "101"
+      },
+      "createdAt": "2026-05-05T18:15:51.286Z",
+      "updatedAt": "2026-05-06T18:01:58.710Z",
+      "orderNumber": "ORD-030",
+      "__v": 0,
+      "buyerFlag": false,
+      "sellerFlag": false
+    },
+    {
+      "_id": "69fa51f2ec4e4c60c0c7f759",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc6ea26387c1ade622182",
+          "quantity": 1,
+          "price": 300,
+          "_id": "69fa51f2ec4e4c60c0c7f75a"
+        }
+      ],
+      "totalAmount": 305,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mohamed",
+        "lastName": "besheer",
+        "email": "mbesheer26105@gmail.com",
+        "phone": "01002343108",
+        "addressLine1": "Jayd Residence next to rehab's east market",
+        "addressLine2": "Jayd Residence next to rehab's east market",
+        "city": "First Settlement",
+        "state": "Cairo",
+        "postalCode": "11511",
+        "country": "Egypt",
+        "building": "c25",
+        "floor": "2",
+        "apartment": "21"
+      },
+      "createdAt": "2026-05-05T20:24:18.470Z",
+      "updatedAt": "2026-05-05T20:25:08.957Z",
+      "orderNumber": "ORD-031",
+      "__v": 0
+    },
+    {
+      "_id": "69fa5e562b01fdfd78eafd02",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc5c026387c1ade622181",
+          "quantity": 1,
+          "price": 120,
+          "_id": "69fa5e562b01fdfd78eafd03"
+        }
+      ],
+      "totalAmount": 125,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Abdelrahman",
+        "lastName": "Sallam",
+        "email": "AS@gmail.com",
+        "phone": "01129908336",
+        "addressLine1": "share3 betna",
+        "addressLine2": "betna",
+        "city": "Nasr City",
+        "state": "Al Qāhirah",
+        "postalCode": "111111",
+        "country": "Egypt",
+        "building": "9",
+        "floor": "1",
+        "apartment": "101"
+      },
+      "createdAt": "2026-05-05T21:17:10.279Z",
+      "updatedAt": "2026-05-05T23:37:44.576Z",
+      "orderNumber": "ORD-032",
+      "__v": 0,
+      "buyerFlag": false,
+      "sellerFlag": false
+    },
+    {
+      "_id": "69fa5e562b01fdfd78eafd00",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fa5e562b01fdfd78eafd01"
+        }
+      ],
+      "totalAmount": 10005,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Abdelrahman",
+        "lastName": "Sallam",
+        "email": "AS@gmail.com",
+        "phone": "01129908336",
+        "addressLine1": "share3 betna",
+        "addressLine2": "betna",
+        "city": "Nasr City",
+        "state": "Al Qāhirah",
+        "postalCode": "111111",
+        "country": "Egypt",
+        "building": "9",
+        "floor": "1",
+        "apartment": "101"
+      },
+      "createdAt": "2026-05-05T21:17:10.273Z",
+      "updatedAt": "2026-05-05T21:17:10.273Z",
+      "orderNumber": "ORD-032",
+      "__v": 0
+    },
+    {
+      "_id": "69fa73fc658cd049bfbca579",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa6d4eabd3cac996ee38f7",
+          "quantity": 1,
+          "price": 3000,
+          "_id": "69fa73fc658cd049bfbca57a"
+        }
+      ],
+      "totalAmount": 3005,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Abdelrahman",
+        "lastName": "Sallam",
+        "email": "AS@gmail.com",
+        "phone": "01129908336",
+        "addressLine1": "share3 betna",
+        "addressLine2": "betna",
+        "city": "Cairo (Central/Downtown)",
+        "state": "Al Qāhirah",
+        "postalCode": "111111",
+        "country": "Egypt",
+        "building": "9",
+        "floor": "1",
+        "apartment": "101"
+      },
+      "createdAt": "2026-05-05T22:49:32.711Z",
+      "updatedAt": "2026-05-05T22:49:32.711Z",
+      "orderNumber": "ORD-034",
+      "__v": 0
+    },
+    {
+      "_id": "69fa85f9ceee69b181e375ad",
+      "buyer_id": "69e91dceea98ea56de2b318d",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa6d4eabd3cac996ee38f7",
+          "quantity": 1,
+          "price": 3000,
+          "_id": "69fa85f9ceee69b181e375ae"
+        }
+      ],
+      "totalAmount": 3005,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "Abdelrahman",
+        "lastName": "Sallam",
+        "email": "AS@gmail.com",
+        "phone": "01129908336",
+        "addressLine1": "share3 betna",
+        "addressLine2": "betna",
+        "city": "New Cairo & Rehab",
+        "state": "Al Qāhirah",
+        "postalCode": "111111",
+        "country": "Egypt",
+        "building": "9",
+        "floor": "1",
+        "apartment": "101"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-06T00:06:17.273Z",
+      "updatedAt": "2026-05-06T00:06:17.273Z",
+      "orderNumber": "ORD-035",
+      "__v": 0
+    },
+    {
+      "_id": "69fb042d5ee22943b9b127b2",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa6d4eabd3cac996ee38f7",
+          "quantity": 1,
+          "price": 3000,
+          "_id": "69fb042d5ee22943b9b127b3"
+        }
+      ],
+      "totalAmount": 3005,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "mohamed",
+        "lastName": "besheer",
+        "email": "mbesheer26105@gmail.com",
+        "phone": "01002343108",
+        "addressLine1": "Jayd Residence next to rehab's east market",
+        "addressLine2": "Jayd Residence next to rehab's east market",
+        "city": "New Cairo & Rehab",
+        "state": "Cairo",
+        "postalCode": "11511",
+        "country": "Egypt",
+        "building": "c25",
+        "floor": "2",
+        "apartment": "21"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-06T09:04:45.887Z",
+      "updatedAt": "2026-05-06T09:05:19.071Z",
+      "orderNumber": "ORD-036",
+      "__v": 0
+    },
+    {
+      "_id": "69fb2d09f6e9d65b5417c1e3",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc5c026387c1ade622181",
+          "quantity": 1,
+          "price": 120,
+          "_id": "69fb2d09f6e9d65b5417c1e4"
+        }
+      ],
+      "totalAmount": 125,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "mohamed",
+        "lastName": "besheer",
+        "email": "mbesheer26105@gmail.com",
+        "phone": "01002343108",
+        "addressLine1": "Jayd Residence next to rehab's east market",
+        "addressLine2": "Jayd Residence next to rehab's east market",
+        "city": "Cairo (Central/Downtown)",
+        "state": "Cairo",
+        "postalCode": "11511",
+        "country": "Egypt",
+        "building": "c25",
+        "floor": "2",
+        "apartment": "21"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-06T11:59:05.527Z",
+      "updatedAt": "2026-05-06T11:59:05.527Z",
+      "orderNumber": "ORD-037",
+      "__v": 0
+    },
+    {
+      "_id": "69fd35c8f84e367682cb0a9e",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc5c026387c1ade622181",
+          "quantity": 1,
+          "price": 120,
+          "_id": "69fd35c8f84e367682cb0a9f"
+        }
+      ],
+      "totalAmount": 125,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "mohamed",
+        "lastName": "besheer",
+        "email": "mbesheer26105@gmail.com",
+        "phone": "01002343108",
+        "addressLine1": "Jayd Compound, Cairo",
+        "addressLine2": "Jayd Residence next to rehab's east market",
+        "city": "Cairo (Central/Downtown)",
+        "state": "Cairo",
+        "postalCode": "11841",
+        "country": "Egypt",
+        "building": "c25",
+        "floor": "2",
+        "apartment": "21"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T01:00:56.608Z",
+      "updatedAt": "2026-05-08T01:00:56.608Z",
+      "orderNumber": "ORD-038",
+      "__v": 0
+    },
+    {
+      "_id": "69fd38a62a27e48057665386",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc5c026387c1ade622181",
+          "quantity": 1,
+          "price": 120,
+          "_id": "69fd38a62a27e48057665387"
+        }
+      ],
+      "totalAmount": 125,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "mohamed",
+        "lastName": "besheer",
+        "email": "mbesheer26105@gmail.com",
+        "phone": "01002343108",
+        "addressLine1": "Jayd Compound, Cairo",
+        "addressLine2": "Jayd Residence next to rehab's east market",
+        "city": "Cairo (Central/Downtown)",
+        "state": "Cairo",
+        "postalCode": "11841",
+        "country": "Egypt",
+        "building": "c25",
+        "floor": "2",
+        "apartment": "21"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T01:13:10.691Z",
+      "updatedAt": "2026-05-08T01:13:10.691Z",
+      "orderNumber": "ORD-039",
+      "__v": 0
+    },
+    {
+      "_id": "69fd39392a27e48057665393",
+      "buyer_id": "69f88f93c8f54ddb2df0c788",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa6d4eabd3cac996ee38f7",
+          "quantity": 1,
+          "price": 3000,
+          "_id": "69fd39392a27e48057665394"
+        }
+      ],
+      "totalAmount": 3005,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "mohamed",
+        "lastName": "bashir",
+        "email": "mbashir26105@gmail.com",
+        "phone": "01002343108",
+        "addressLine1": "1st District, 6th of October",
+        "addressLine2": "El Nozha Street",
+        "city": "6th of October & Sheikh Zayed",
+        "state": "القاهرة",
+        "postalCode": "11511",
+        "country": "Egypt",
+        "building": "c25",
+        "floor": "2",
+        "apartment": "21"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T01:15:37.080Z",
+      "updatedAt": "2026-05-08T01:15:37.080Z",
+      "orderNumber": "ORD-040",
+      "__v": 0
+    },
+    {
+      "_id": "69fe4eed10322a0ccad8851a",
+      "buyer_id": "69fe4d2510322a0ccad8850f",
+      "seller_id": "69e029176410a769fbb150c1",
+      "items": [
+        {
+          "listing_id": "69efc5c026387c1ade622181",
+          "quantity": 1,
+          "price": 120,
+          "_id": "69fe4eed10322a0ccad8851b"
+        }
+      ],
+      "totalAmount": 125,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "john",
+        "lastName": "doe",
+        "email": "tester@test.com",
+        "phone": "01010101015",
+        "addressLine1": "39 Abou Hayan Al Tawhidi Street",
+        "addressLine2": "",
+        "city": "Nasr City",
+        "state": "Cairo",
+        "postalCode": "11765",
+        "country": "Egypt",
+        "building": "",
+        "floor": "",
+        "apartment": ""
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:00:29.876Z",
+      "updatedAt": "2026-05-08T21:00:29.876Z",
+      "orderNumber": "ORD-041",
+      "__v": 0
+    },
+    {
+      "_id": "69fe533e10322a0ccad88523",
+      "buyer_id": "69fe528110322a0ccad88520",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe524c10322a0ccad8851d",
+          "quantity": 1,
+          "price": 1000,
+          "_id": "69fe533e10322a0ccad88524"
+        }
+      ],
+      "totalAmount": 1005,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "john",
+        "lastName": "Doe",
+        "email": "tester@test.com",
+        "phone": "01010152521",
+        "addressLine1": "26th July Street",
+        "addressLine2": "",
+        "city": "Cairo (Central/Downtown)",
+        "state": "Cairo",
+        "postalCode": "11611",
+        "country": "Egypt",
+        "building": "moon",
+        "floor": "3",
+        "apartment": "302"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:18:54.288Z",
+      "updatedAt": "2026-05-08T21:19:23.864Z",
+      "orderNumber": "ORD-042",
+      "__v": 0
+    },
+    {
+      "_id": "69fe54c410322a0ccad8853a",
+      "buyer_id": "69fe528110322a0ccad88520",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe54c410322a0ccad8853b"
+        }
+      ],
+      "totalAmount": 105,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "john",
+        "lastName": "Doe",
+        "email": "testing@test.com",
+        "phone": "0101015101",
+        "addressLine1": "18 Moustafa Abou Hif Street",
+        "addressLine2": "",
+        "city": "Cairo (Central/Downtown)",
+        "state": "Cairo",
+        "postalCode": "11513",
+        "country": "Egypt",
+        "building": "",
+        "floor": "",
+        "apartment": ""
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:25:24.209Z",
+      "updatedAt": "2026-05-08T21:25:52.893Z",
+      "orderNumber": "ORD-043",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5646e230d2e48be7d0d7",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe5646e230d2e48be7d0d8"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:50.355Z",
+      "updatedAt": "2026-05-08T21:31:50.355Z",
+      "orderNumber": "ORD-044",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5646e230d2e48be7d0da",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe5646e230d2e48be7d0db"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:50.995Z",
+      "updatedAt": "2026-05-08T21:31:50.995Z",
+      "orderNumber": "ORD-045",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5647e230d2e48be7d0dd",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe5647e230d2e48be7d0de"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:51.605Z",
+      "updatedAt": "2026-05-08T21:31:51.605Z",
+      "orderNumber": "ORD-046",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5648e230d2e48be7d0e0",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe5648e230d2e48be7d0e1"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:52.219Z",
+      "updatedAt": "2026-05-08T21:31:52.219Z",
+      "orderNumber": "ORD-047",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5649e230d2e48be7d0e3",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe5649e230d2e48be7d0e4"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:53.261Z",
+      "updatedAt": "2026-05-08T21:31:53.261Z",
+      "orderNumber": "ORD-048",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5649e230d2e48be7d0e6",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe5649e230d2e48be7d0e7"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:53.869Z",
+      "updatedAt": "2026-05-08T21:31:53.869Z",
+      "orderNumber": "ORD-049",
+      "__v": 0
+    },
+    {
+      "_id": "69fe564ae230d2e48be7d0e9",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe564ae230d2e48be7d0ea"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:54.479Z",
+      "updatedAt": "2026-05-08T21:31:54.479Z",
+      "orderNumber": "ORD-050",
+      "__v": 0
+    },
+    {
+      "_id": "69fe564be230d2e48be7d0ec",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe564be230d2e48be7d0ed"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:55.091Z",
+      "updatedAt": "2026-05-08T21:31:55.091Z",
+      "orderNumber": "ORD-051",
+      "__v": 0
+    },
+    {
+      "_id": "69fe564be230d2e48be7d0ef",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe564be230d2e48be7d0f0"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:55.705Z",
+      "updatedAt": "2026-05-08T21:31:55.705Z",
+      "orderNumber": "ORD-052",
+      "__v": 0
+    },
+    {
+      "_id": "69fe564ce230d2e48be7d0f2",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69e028856410a769fbb150c0",
+      "items": [
+        {
+          "listing_id": "69fa514b84b3696efdc0f675",
+          "quantity": 1,
+          "price": 10000,
+          "_id": "69fe564ce230d2e48be7d0f3"
+        }
+      ],
+      "totalAmount": 10000,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:31:56.318Z",
+      "updatedAt": "2026-05-08T21:31:56.318Z",
+      "orderNumber": "ORD-053",
+      "__v": 0
+    },
+    {
+      "_id": "69fe576cb4b5d50fa8b9f3ad",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe576cb4b5d50fa8b9f3ae"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:44.822Z",
+      "updatedAt": "2026-05-08T21:36:44.822Z",
+      "orderNumber": "ORD-054",
+      "__v": 0
+    },
+    {
+      "_id": "69fe576db4b5d50fa8b9f3b0",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe576db4b5d50fa8b9f3b1"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:45.607Z",
+      "updatedAt": "2026-05-08T21:36:45.607Z",
+      "orderNumber": "ORD-055",
+      "__v": 0
+    },
+    {
+      "_id": "69fe576eb4b5d50fa8b9f3b3",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe576eb4b5d50fa8b9f3b4"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:46.223Z",
+      "updatedAt": "2026-05-08T21:36:46.223Z",
+      "orderNumber": "ORD-056",
+      "__v": 0
+    },
+    {
+      "_id": "69fe576eb4b5d50fa8b9f3b6",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe576eb4b5d50fa8b9f3b7"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:46.988Z",
+      "updatedAt": "2026-05-08T21:36:46.988Z",
+      "orderNumber": "ORD-057",
+      "__v": 0
+    },
+    {
+      "_id": "69fe576fb4b5d50fa8b9f3b9",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe576fb4b5d50fa8b9f3ba"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:47.613Z",
+      "updatedAt": "2026-05-08T21:36:47.613Z",
+      "orderNumber": "ORD-058",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5770b4b5d50fa8b9f3bc",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe5770b4b5d50fa8b9f3bd"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:48.238Z",
+      "updatedAt": "2026-05-08T21:36:48.238Z",
+      "orderNumber": "ORD-059",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5770b4b5d50fa8b9f3bf",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe5770b4b5d50fa8b9f3c0"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:48.878Z",
+      "updatedAt": "2026-05-08T21:36:48.878Z",
+      "orderNumber": "ORD-060",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5771b4b5d50fa8b9f3c2",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe5771b4b5d50fa8b9f3c3"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:49.488Z",
+      "updatedAt": "2026-05-08T21:36:49.488Z",
+      "orderNumber": "ORD-061",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5772b4b5d50fa8b9f3c5",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe5772b4b5d50fa8b9f3c6"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:50.108Z",
+      "updatedAt": "2026-05-08T21:36:50.108Z",
+      "orderNumber": "ORD-062",
+      "__v": 0
+    },
+    {
+      "_id": "69fe5772b4b5d50fa8b9f3c8",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe5772b4b5d50fa8b9f3c9"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:36:50.970Z",
+      "updatedAt": "2026-05-08T21:36:50.970Z",
+      "orderNumber": "ORD-063",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58eea29091871cdabc4e",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58eea29091871cdabc4f"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:10.975Z",
+      "updatedAt": "2026-05-08T21:43:10.975Z",
+      "orderNumber": "ORD-064",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58efa29091871cdabc51",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58efa29091871cdabc52"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:11.604Z",
+      "updatedAt": "2026-05-08T21:43:11.604Z",
+      "orderNumber": "ORD-065",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f0a29091871cdabc54",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58f0a29091871cdabc55"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:12.229Z",
+      "updatedAt": "2026-05-08T21:43:12.229Z",
+      "orderNumber": "ORD-066",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f0a29091871cdabc57",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58f0a29091871cdabc58"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:12.853Z",
+      "updatedAt": "2026-05-08T21:43:12.853Z",
+      "orderNumber": "ORD-067",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f1a29091871cdabc5a",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58f1a29091871cdabc5b"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:13.473Z",
+      "updatedAt": "2026-05-08T21:43:13.473Z",
+      "orderNumber": "ORD-068",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f2a29091871cdabc5d",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58f2a29091871cdabc5e"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:14.090Z",
+      "updatedAt": "2026-05-08T21:43:14.090Z",
+      "orderNumber": "ORD-069",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f2a29091871cdabc60",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58f2a29091871cdabc61"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:14.714Z",
+      "updatedAt": "2026-05-08T21:43:14.714Z",
+      "orderNumber": "ORD-070",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f3a29091871cdabc63",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58f3a29091871cdabc64"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:15.342Z",
+      "updatedAt": "2026-05-08T21:43:15.342Z",
+      "orderNumber": "ORD-071",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f3a29091871cdabc66",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58f3a29091871cdabc67"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:15.954Z",
+      "updatedAt": "2026-05-08T21:43:15.954Z",
+      "orderNumber": "ORD-072",
+      "__v": 0
+    },
+    {
+      "_id": "69fe58f4a29091871cdabc69",
+      "buyer_id": "69e02a896410a769fbb150c2",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69fe58f4a29091871cdabc6a"
+        }
+      ],
+      "totalAmount": 100,
+      "status": "Delivered",
+      "shippingDetails": {
+        "firstName": "mariam",
+        "lastName": "ramy",
+        "email": "shoyo@example.com",
+        "phone": "1234567890",
+        "addressLine1": "123 Test St",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "12345",
+        "country": "Egypt"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-08T21:43:16.570Z",
+      "updatedAt": "2026-05-08T21:43:16.570Z",
+      "orderNumber": "ORD-073",
+      "__v": 0
+    },
+    {
+      "_id": "69ff49c12f50a3d731c55af1",
+      "buyer_id": "69fe528110322a0ccad88520",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69ff49c12f50a3d731c55af2"
+        }
+      ],
+      "totalAmount": 105,
+      "status": "Cancelled",
+      "shippingDetails": {
+        "firstName": "adad",
+        "lastName": "adada",
+        "email": "adadadad@mail.com",
+        "phone": "011111111",
+        "addressLine1": "dadad",
+        "addressLine2": "adada",
+        "city": "Cairo (Central/Downtown)",
+        "state": "Cairo",
+        "postalCode": "dada",
+        "country": "Egypt",
+        "building": "dadad",
+        "floor": "dada",
+        "apartment": "dada"
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-09T14:50:41.922Z",
+      "updatedAt": "2026-05-09T14:51:11.320Z",
+      "orderNumber": "ORD-074",
+      "__v": 0
+    },
+    {
+      "_id": "69ff58423f83d7a9c2114780",
+      "buyer_id": "69fe528110322a0ccad88520",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "items": [
+        {
+          "listing_id": "69fe547110322a0ccad88535",
+          "quantity": 1,
+          "price": 100,
+          "_id": "69ff58423f83d7a9c2114781"
+        }
+      ],
+      "totalAmount": 105,
+      "status": "Pending",
+      "shippingDetails": {
+        "firstName": "john",
+        "lastName": "doe",
+        "email": "tester@test.com",
+        "phone": "010110501",
+        "addressLine1": "30th street",
+        "addressLine2": "",
+        "city": "Cairo",
+        "state": "Cairo",
+        "postalCode": "11155",
+        "country": "Egypt",
+        "building": "",
+        "floor": "",
+        "apartment": ""
+      },
+      "sellerFlag": false,
+      "buyerFlag": false,
+      "createdAt": "2026-05-09T15:52:34.822Z",
+      "updatedAt": "2026-05-09T15:52:34.822Z",
+      "orderNumber": "ORD-075",
+      "__v": 0
+    }
+  ],
+  "aireviews": [
+    {
+      "_id": "69fe5381d9726bc2e9a36e6b",
+      "listing_id": "69fe524c10322a0ccad8851d",
+      "__v": 0,
+      "created_at": "2026-05-08T21:20:00.033Z",
+      "error_message": null,
+      "last_updated": "2026-05-08T21:20:33.590Z",
+      "review_count_at_generation": 1,
+      "reviews_analyzed": 0,
+      "status": "completed",
+      "ai_rating": 3.4,
+      "analysis_type": "description",
+      "summary": "The Tobey product appears to be a slave or servant item, with a title suggesting it is 'good' and a description implying it serves a master. The product's purpose and intended use are unclear without further information, making it difficult to determine its suitability for specific buyers. Further details about the product's features, materials, and functionality would be necessary to make an informed purchasing decision."
+    },
+    {
+      "_id": "69fe54fdd9726bc2e9a36e6c",
+      "listing_id": "69fe547110322a0ccad88535",
+      "__v": 0,
+      "created_at": "2026-05-08T21:26:20.495Z",
+      "error_message": null,
+      "last_updated": "2026-05-08T22:04:07.180Z",
+      "review_count_at_generation": 21,
+      "reviews_analyzed": 21,
+      "status": "completed",
+      "ai_rating": 4.2,
+      "analysis_type": "reviews",
+      "summary": "The laptop is highly regarded for its performance and display quality, with many reviewers praising its premium build and smooth trackpad. However, some users have reported thermal issues, poor webcam quality, and sizing inconsistencies. Despite these drawbacks, overall satisfaction is high due to excellent shipping and responsive seller support.",
+      "cons": [
+        "Thermal issues reported by some users",
+        "Poor webcam quality",
+        "Sizing inconsistencies",
+        "Flimsy keyboard feel"
+      ],
+      "pros": [
+        "Premium build quality",
+        "Smooth trackpad",
+        "Stunning display",
+        "Incredible M-series chip performance"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "_id": "69e028856410a769fbb150c0",
+      "firstName": "Roger",
+      "lastName": "Salama",
+      "username": "rogrog",
+      "password": "1234",
+      "role": "seller",
+      "createdAt": "2026-04-16T00:08:37.074Z",
+      "__v": 0,
+      "flags": 0
+    },
+    {
+      "_id": "69e029176410a769fbb150c1",
+      "firstName": "Mohamed",
+      "lastName": "Besheer",
+      "username": "besho",
+      "password": "1234",
+      "role": "seller",
+      "createdAt": "2026-04-16T00:11:03.053Z",
+      "__v": 0,
+      "downVotes": 5,
+      "upVotes": 5,
+      "flags": 1
+    },
+    {
+      "_id": "69e02a896410a769fbb150c2",
+      "firstName": "mariam",
+      "lastName": "ramy",
+      "username": "shoyo",
+      "password": "1234",
+      "role": "buyer",
+      "createdAt": "2026-04-16T00:17:13.903Z",
+      "__v": 0
+    },
+    {
+      "_id": "69e625d1cfd12611e47dafc2",
+      "firstName": "test",
+      "lastName": "test",
+      "username": "tester",
+      "password": "test",
+      "role": "buyer",
+      "createdAt": "2026-04-20T13:10:41.482Z",
+      "__v": 0
+    },
+    {
+      "_id": "69e9049d1ce44e21d97766c9",
+      "firstName": "roger",
+      "lastName": "roger",
+      "username": "roger",
+      "password": "1234",
+      "role": "seller",
+      "createdAt": "2026-04-22T17:25:49.841Z",
+      "__v": 0
+    },
+    {
+      "_id": "69e907791ce44e21d97766cb",
+      "firstName": "roger2",
+      "lastName": "roger2",
+      "username": "roger2",
+      "password": "1111",
+      "role": "buyer",
+      "createdAt": "2026-04-22T17:38:01.660Z",
+      "__v": 0,
+      "downvotes": 0,
+      "upvotes": 1,
+      "downVotes": 1,
+      "upVotes": 4,
+      "flags": 1
+    },
+    {
+      "_id": "69e91dceea98ea56de2b318d",
+      "firstName": "Boudy",
+      "lastName": "Sallam",
+      "username": "abdo",
+      "password": "pass123",
+      "role": "buyer",
+      "createdAt": "2026-04-22T19:13:18.285Z",
+      "__v": 0,
+      "downvotes": 4,
+      "upvotes": 0,
+      "downVotes": 0,
+      "upVotes": 2,
+      "flags": 1
+    },
+    {
+      "_id": "69ea3df0da42491f6fef9c10",
+      "firstName": "mariam",
+      "lastName": "gamgoum",
+      "username": "tofah",
+      "password": "1234",
+      "role": "seller",
+      "createdAt": "2026-04-23T15:42:40.894Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ea3eacda42491f6fef9c12",
+      "firstName": "mariam ",
+      "lastName": "gamgoum",
+      "username": "noodles",
+      "password": "1234",
+      "role": "buyer",
+      "createdAt": "2026-04-23T15:45:48.259Z",
+      "__v": 0,
+      "downVotes": 0,
+      "upVotes": 1,
+      "flags": 0
+    },
+    {
+      "_id": "69ed5700989f49b0224d72d3",
+      "firstName": "Mariam",
+      "lastName": "Ramy",
+      "username": "rico",
+      "password": "1234",
+      "role": "seller",
+      "createdAt": "2026-04-26T00:06:24.162Z",
+      "__v": 0,
+      "downVotes": 5,
+      "upVotes": 4,
+      "flags": 14
+    },
+    {
+      "_id": "69f798d4a66a24d52d3914d2",
+      "firstName": "rog",
+      "lastName": "rog",
+      "username": "rog",
+      "password": "1",
+      "role": "buyer",
+      "upvotes": 1,
+      "downvotes": 0,
+      "createdAt": "2026-05-03T18:49:56.028Z",
+      "__v": 0,
+      "downVotes": 1,
+      "upVotes": 1
+    },
+    {
+      "_id": "69f88f93c8f54ddb2df0c788",
+      "firstName": "Mohamed",
+      "lastName": "Othman",
+      "username": "besheer",
+      "password": "1111",
+      "role": "buyer",
+      "createdAt": "2026-05-04T12:22:43.502Z",
+      "__v": 0,
+      "downVotes": 0,
+      "upVotes": 2,
+      "flags": 0
+    },
+    {
+      "_id": "69f8caf1655c6be83980fc27",
+      "firstName": "mariam",
+      "lastName": "gamgoum",
+      "username": "sushi",
+      "password": "pass123",
+      "role": "buyer",
+      "createdAt": "2026-05-04T16:36:01.616Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f9ef4c4bf131d4c42d9fb6",
+      "firstName": "Amira",
+      "lastName": "Amir",
+      "username": "mirmirty",
+      "password": "123456",
+      "role": "buyer",
+      "createdAt": "2026-05-05T13:23:24.916Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa0c6c267be02424210b9b",
+      "firstName": "Ninja",
+      "lastName": "Shoyo",
+      "username": "ninjashoyo",
+      "password": "123456",
+      "role": "seller",
+      "createdAt": "2026-05-05T15:27:40.134Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe4d2510322a0ccad8850f",
+      "firstName": "John",
+      "lastName": "Doe",
+      "username": "the real shoyo",
+      "password": "Hinata",
+      "role": "buyer",
+      "flags": 0,
+      "createdAt": "2026-05-08T20:52:53.904Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe506710322a0ccad8851c",
+      "firstName": "jonh",
+      "lastName": "Doe",
+      "username": "3m ya syad",
+      "password": "hinata",
+      "role": "seller",
+      "flags": 0,
+      "createdAt": "2026-05-08T21:06:47.529Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe528110322a0ccad88520",
+      "firstName": "shoyo",
+      "lastName": "hinata",
+      "username": "the real shoto",
+      "password": "hinata",
+      "role": "buyer",
+      "flags": 0,
+      "createdAt": "2026-05-08T21:15:45.081Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe66f194b636dda6811f76",
+      "firstName": "hamdy",
+      "lastName": "hamada",
+      "username": "hamdy",
+      "password": "hamdy",
+      "role": "seller",
+      "flags": 0,
+      "createdAt": "2026-05-08T22:42:57.963Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ff42032f50a3d731c55aeb",
+      "firstName": "John",
+      "lastName": "Doe",
+      "username": "tester_buyer",
+      "password": "password123",
+      "role": "buyer",
+      "flags": 0,
+      "createdAt": "2026-05-09T14:17:39.968Z",
+      "__v": 0
+    }
+  ],
+  "wishlists": [
+    {
+      "_id": "69ff42172f50a3d731c55aed",
+      "user_id": "69ff42032f50a3d731c55aeb",
+      "listings": [],
+      "createdAt": "2026-05-09T14:17:59.342Z",
+      "updatedAt": "2026-05-09T14:18:50.736Z",
+      "__v": 1
+    },
+    {
+      "_id": "69ff4a492f50a3d731c55af6",
+      "user_id": "69fe528110322a0ccad88520",
+      "listings": [],
+      "createdAt": "2026-05-09T14:52:57.143Z",
+      "updatedAt": "2026-05-09T14:59:02.385Z",
+      "__v": 3
+    }
+  ],
+  "listings": [
+    {
+      "_id": "69dee095add6545caaa8a124",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "ertyu",
+      "description": "edrtfghjki;jlkgjhfhgtrd",
+      "price": 34,
+      "delivery_days": 5,
+      "image_url": [
+        "http://site.com/img1.jpg",
+        "http://site.com/img2.jpg"
+      ],
+      "is_active": true,
+      "createdAt": "2026-04-15T00:49:25.396Z",
+      "updatedAt": "2026-04-15T00:49:25.396Z",
+      "__v": 0,
+      "updated_at": "2026-04-26T00:51:43.073Z"
+    },
+    {
+      "_id": "69e02e024c4c75360474ac1d",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "mouse",
+      "description": "nice mouse",
+      "price": 300,
+      "delivery_days": 3,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-16T00:32:02.124Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69e904ea1ce44e21d97766ca",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "Pencil",
+      "description": "Very nice pencil",
+      "price": 20,
+      "delivery_days": 3,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-22T17:27:06.454Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69e92783b72b7823361ac06d",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "The amazing sock",
+      "description": "This sock out of this world!!!!! #Fashionable",
+      "price": 1462,
+      "delivery_days": 4,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-22T19:54:43.115Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69e928bcb72b7823361ac06e",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "WristBand",
+      "description": "The wristband is just..... *speechless* .... simply AMAZING!\nBuy it please, i need money.",
+      "price": 132,
+      "delivery_days": 2,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-22T19:59:56.041Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69e9390760b78f6058ccde0a",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "69e0345a4340368a319fafae",
+      "title": "Air conditioner",
+      "description": "Come on, who doesnt need an air conditioner in this weather? You do. Buy it for only 999.99$",
+      "price": 999.99,
+      "delivery_days": 4,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-22T21:09:27.940Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ea3e7ada42491f6fef9c11",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "Blanket",
+      "description": "very soft",
+      "price": 39.99,
+      "delivery_days": 4,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-23T15:44:58.495Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ebd93ffd9f5b86dbba4fac",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "Headset",
+      "description": "edrtfyguhjik",
+      "price": 52,
+      "delivery_days": 5,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-24T20:57:35.755Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ebd973fd9f5b86dbba4fad",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "Hinata Shoyo Pop",
+      "description": "cute antique",
+      "price": 2110,
+      "delivery_days": 5,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-24T20:58:27.638Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ebdb58fd9f5b86dbba4fae",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "Animal Farm by George Orwell",
+      "description": "sedrtfygtuhyij",
+      "price": 54,
+      "delivery_days": 2,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-24T21:06:32.080Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ebde93fd9f5b86dbba4faf",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "AirPods Pro 2",
+      "description": "Airpods compatible with all phones and bluetooth devices",
+      "price": 9000,
+      "delivery_days": 2,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-24T21:20:19.759Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ebdee6fd9f5b86dbba4fb0",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "Copybook 5 subjects",
+      "description": "nice copybook heavy weight paper 5 subjects",
+      "price": 60,
+      "delivery_days": 1,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-24T21:21:42.102Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ebdf8dfd9f5b86dbba4fb1",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "Nature Magazine spring edition",
+      "description": "animals whales nature magazine scientific reserach 2026",
+      "price": 600,
+      "delivery_days": 4,
+      "image_urls": [],
+      "is_active": true,
+      "created_at": "2026-04-24T21:24:29.088Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ed24963d08a7dff652d66b",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "69e0345a4340368a319fafae",
+      "title": "Headset",
+      "description": "fyguhijoikpl[",
+      "price": 445,
+      "delivery_days": 3,
+      "image_urls": [
+        "http://site.com/img1.jpg",
+        "http://site.com/img2.jpg"
+      ],
+      "countInStock": 3,
+      "is_active": true,
+      "rating": 0,
+      "created_at": "2026-04-25T20:31:18.394Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69ed572b989f49b0224d72d4",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "69e0345a4340368a319fafae",
+      "title": "Iphone 17 pro max",
+      "description": "srdfghjkjkll;,",
+      "price": 10000,
+      "delivery_days": 2,
+      "image_urls": [
+        "https://res.cloudinary.com/dgzgnwdtc/image/upload/v1777162027/dswnc0vh0gsqetoaccn7.jpg"
+      ],
+      "countInStock": 71,
+      "is_active": true,
+      "rating": 0,
+      "created_at": "2026-04-26T00:07:07.175Z",
+      "updated_at": "2026-04-26T00:51:43.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69efc19fecadb4276996ce3b",
+      "seller_id": "65f1a2b3c4d5e6f7a8b9c0d1",
+      "category_id": "65f1a2b3c4d5e6f7a8b9c0d6",
+      "title": "Professional Logo Design",
+      "description": "I will design a modern logo for your brand",
+      "price": 150,
+      "delivery_days": 3,
+      "image_urls": [],
+      "countInStock": 0,
+      "is_active": true,
+      "rating": 0,
+      "created_at": "2026-04-27T20:05:51.362Z",
+      "updated_at": "2026-04-27T20:05:51.362Z",
+      "__v": 0
+    },
+    {
+      "_id": "69efc5c026387c1ade622181",
+      "seller_id": "69e029176410a769fbb150c1",
+      "category_id": "69e0345a4340368a319fafb0",
+      "title": "duck",
+      "description": "cool duck? more like awesome...",
+      "price": 120,
+      "delivery_days": 2,
+      "image_urls": [
+        "https://res.cloudinary.com/dgzgnwdtc/image/upload/v1777321407/mwr4pwzbgczexxxl2bat.ico"
+      ],
+      "countInStock": 1494,
+      "is_active": true,
+      "rating": 5,
+      "created_at": "2026-04-27T20:23:28.249Z",
+      "updated_at": "2026-05-08T21:00:29.650Z",
+      "__v": 1,
+      "serviceableAreas": [
+        {
+          "region": "Cairo (Central/Downtown)",
+          "fee": 10,
+          "_id": "69fb218f8dd043e46ca39501"
+        },
+        {
+          "region": "Giza & Haram",
+          "fee": 20,
+          "_id": "69fb218f8dd043e46ca39502"
+        }
+      ]
+    },
+    {
+      "_id": "69efc6ea26387c1ade622182",
+      "seller_id": "69e029176410a769fbb150c1",
+      "category_id": "69e0345a4340368a319fafae",
+      "title": "embedded system drawing ",
+      "description": "embedded project last sem ",
+      "price": 300,
+      "delivery_days": 1,
+      "image_urls": [
+        "https://res.cloudinary.com/dgzgnwdtc/image/upload/v1777321705/dwjmelu5unid9ifrvwet.png"
+      ],
+      "countInStock": 50,
+      "is_active": true,
+      "rating": 3.5,
+      "created_at": "2026-04-27T20:28:26.376Z",
+      "updated_at": "2026-05-05T20:25:45.684Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f9ef004bf131d4c42d9fb5",
+      "seller_id": "69ed5700989f49b0224d72d3",
+      "category_id": "69e0345a4340368a319fafb0",
+      "title": "french fries farm frites",
+      "description": "batates",
+      "price": 25,
+      "delivery_days": 1,
+      "image_urls": [
+        "https://res.cloudinary.com/dgzgnwdtc/image/upload/v1777987328/ezzbycnos0k2havidjla.jpg"
+      ],
+      "countInStock": 188,
+      "is_active": true,
+      "rating": 0,
+      "created_at": "2026-05-05T13:22:08.451Z",
+      "updated_at": "2026-05-05T19:30:14.625Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa2ade2515cae2eeadba43",
+      "seller_id": "69e029176410a769fbb150c1",
+      "category_id": "69e0345a4340368a319fafaf",
+      "title": "7ayawan aleef",
+      "description": "cutieeeeeeee",
+      "price": 220,
+      "delivery_days": 3,
+      "image_urls": [
+        "https://res.cloudinary.com/dgzgnwdtc/image/upload/v1778002653/qqcpw6nvgeq3mlvts3ye.jpg"
+      ],
+      "countInStock": 7,
+      "is_active": true,
+      "rating": 0,
+      "created_at": "2026-05-05T17:37:34.053Z",
+      "updated_at": "2026-05-05T17:37:34.053Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa514b84b3696efdc0f675",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "69e0345a4340368a319fafae",
+      "title": "Laptop",
+      "description": "A very good laptop, trust me",
+      "price": 10000,
+      "delivery_days": 3,
+      "image_urls": [
+        "https://res.cloudinary.com/dgzgnwdtc/image/upload/v1778012491/cfdog8dvdzo5xgdutsvk.jpg"
+      ],
+      "countInStock": 2,
+      "is_active": true,
+      "rating": 0,
+      "serviceableAreas": [],
+      "created_at": "2026-05-05T20:21:31.699Z",
+      "updated_at": "2026-05-05T21:17:10.055Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa6d4eabd3cac996ee38f7",
+      "seller_id": "69e028856410a769fbb150c0",
+      "category_id": "69e0345a4340368a319fafb0",
+      "title": "LEGO BMW Super Car",
+      "description": "BMW",
+      "price": 3000,
+      "delivery_days": 3,
+      "image_urls": [
+        "https://res.cloudinary.com/dgzgnwdtc/image/upload/v1778019661/iuzxdhomcxc4korbggyb.png"
+      ],
+      "countInStock": 1,
+      "is_active": true,
+      "rating": 0,
+      "serviceableAreas": [
+        {
+          "region": "Suez",
+          "fee": 50,
+          "_id": "69fa6d4eabd3cac996ee38f8"
+        },
+        {
+          "region": "Cairo (Central/Downtown)",
+          "fee": 10,
+          "_id": "69fa6d4eabd3cac996ee38f9"
+        },
+        {
+          "region": "6th of October & Sheikh Zayed",
+          "fee": 30,
+          "_id": "69fa6d4eabd3cac996ee38fa"
+        },
+        {
+          "region": "Alexandria",
+          "fee": 40,
+          "_id": "69fa6d4eabd3cac996ee38fb"
+        },
+        {
+          "region": "Giza & Haram",
+          "fee": 20,
+          "_id": "69fa6d4eabd3cac996ee38fc"
+        },
+        {
+          "region": "Heliopolis & Nasr City",
+          "fee": 10,
+          "_id": "69fa6d4eabd3cac996ee38fd"
+        },
+        {
+          "region": "Madinaty, Shorouk & Badr",
+          "fee": 30,
+          "_id": "69fa6d4eabd3cac996ee38fe"
+        },
+        {
+          "region": "New Cairo & Rehab",
+          "fee": 30,
+          "_id": "69fa6d4eabd3cac996ee38ff"
+        },
+        {
+          "region": "Maadi & Mokattam",
+          "fee": 20,
+          "_id": "69fa6d4eabd3cac996ee3900"
+        },
+        {
+          "region": "Obour & 10th of Ramadan",
+          "fee": 30,
+          "_id": "69fa6d4eabd3cac996ee3901"
+        },
+        {
+          "region": "North Coast (Sahel) & Matrouh",
+          "fee": 50,
+          "_id": "69fa6d4eabd3cac996ee3902"
+        }
+      ],
+      "created_at": "2026-05-05T22:21:02.485Z",
+      "updated_at": "2026-05-08T01:15:36.877Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe524c10322a0ccad8851d",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "category_id": "69e0345a4340368a319fafb0",
+      "title": "Tobey (Good slave)",
+      "description": "Tobey be really good for master.",
+      "price": 1000,
+      "delivery_days": 2,
+      "image_urls": [
+        "https://res.cloudinary.com/dgzgnwdtc/image/upload/v1778274893/s8qndjcepeapnygbcp7h.jpg"
+      ],
+      "countInStock": 0,
+      "is_active": true,
+      "rating": 4,
+      "serviceableAreas": [
+        {
+          "region": "6th of October & Sheikh Zayed",
+          "fee": 5,
+          "_id": "69fe524c10322a0ccad8851e"
+        },
+        {
+          "region": "Cairo (Central/Downtown)",
+          "fee": 5,
+          "_id": "69fe524c10322a0ccad8851f"
+        }
+      ],
+      "created_at": "2026-05-08T21:14:52.601Z",
+      "updated_at": "2026-05-08T21:19:59.554Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe547110322a0ccad88535",
+      "seller_id": "69fe506710322a0ccad8851c",
+      "category_id": "69e0345a4340368a319fafaf",
+      "title": "Hinata shoyo  figure",
+      "description": "Easy-to-print model of Shoyo Hinata.\n\nMeasurements:\n\nx: 82mm\n\ny: 82mm\n\nz:160mm\n\n(scalable)\n\nTobio Kageyama:",
+      "price": 100,
+      "delivery_days": 10,
+      "image_urls": [
+        "https://res.cloudinary.com/dgzgnwdtc/image/upload/v1778275441/c30hkbp5h9jnlxvxesyv.jpg"
+      ],
+      "countInStock": 0,
+      "is_active": true,
+      "rating": 4,
+      "serviceableAreas": [
+        {
+          "region": "Cairo (Central/Downtown)",
+          "fee": 5,
+          "_id": "69fe547110322a0ccad88536"
+        }
+      ],
+      "created_at": "2026-05-08T21:24:01.168Z",
+      "updated_at": "2026-05-09T15:52:34.608Z",
+      "__v": 0
+    }
+  ],
+  "orderstatuslogs": [
+    {
+      "_id": "69eff9161bfde48fbe4b4ca5",
+      "orderNumber": "ORD-008",
+      "status": "Shipped",
+      "changed_at": "2026-04-28T00:02:30.631Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f8c878655c6be83980fc0a",
+      "orderNumber": "ORD-018",
+      "status": "Processing",
+      "changed_at": "2026-05-04T16:25:29.001Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f92e434231f947c9322bcc",
+      "orderNumber": "ORD-022",
+      "status": "Processing",
+      "changed_at": "2026-05-04T23:39:47.934Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa144b15123731ff6a1995",
+      "orderNumber": "ORD-023",
+      "status": "Delivered",
+      "changed_at": "2026-05-05T16:01:15.770Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa2b872515cae2eeadba81",
+      "orderNumber": "ORD-025",
+      "status": "Delivered",
+      "changed_at": "2026-05-05T17:40:23.759Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa4b1bc8e0d5b5ed149523",
+      "orderNumber": "ORD-020",
+      "status": "Pending",
+      "changed_at": "2026-05-05T19:55:07.634Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa5225ec4e4c60c0c7f76c",
+      "orderNumber": "ORD-031",
+      "status": "Delivered",
+      "changed_at": "2026-05-05T20:25:09.162Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fa741b658cd049bfbca594",
+      "orderNumber": "ORD-034",
+      "status": "Pending",
+      "changed_at": "2026-05-05T22:50:03.745Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fb824b3311bd3d66cb82a3",
+      "orderNumber": "ORD-029",
+      "status": "Delivered",
+      "changed_at": "2026-05-06T18:02:51.347Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fd26da77bb9e4315a01053",
+      "orderNumber": "ORD-016",
+      "status": "Shipped",
+      "changed_at": "2026-05-07T23:57:14.676Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe535c10322a0ccad8852e",
+      "orderNumber": "ORD-042",
+      "status": "Delivered",
+      "changed_at": "2026-05-08T21:19:24.073Z",
+      "__v": 0
+    },
+    {
+      "_id": "69fe54e110322a0ccad88541",
+      "orderNumber": "ORD-043",
+      "status": "Delivered",
+      "changed_at": "2026-05-08T21:25:53.100Z",
+      "__v": 0
+    }
+  ],
+  "regions": [
+    {
+      "_id": "69fa65ae4cd1908e540f6007",
+      "name": "Cairo (Central/Downtown)",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6017",
+      "name": "Monufia (Shibin El Kom)",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6018",
+      "name": "Qalyubia (Banha)",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6025",
+      "name": "South Sinai (Sharm El-Sheikh)",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6012",
+      "name": "Ismailia",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6016",
+      "name": "Sharqia (Zagazig)",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f601d",
+      "name": "Beni Suef",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6013",
+      "name": "Suez",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6014",
+      "name": "Dakahlia (Mansoura)",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6020",
+      "name": "Sohag",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6022",
+      "name": "Luxor",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f600f",
+      "name": "Alexandria",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f601c",
+      "name": "Fayoum",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f601f",
+      "name": "Assiut",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f601e",
+      "name": "Minya",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6021",
+      "name": "Qena",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f600e",
+      "name": "Obour & 10th of Ramadan",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f600c",
+      "name": "Giza & Haram",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6009",
+      "name": "Madinaty, Shorouk & Badr",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f600d",
+      "name": "6th of October & Sheikh Zayed",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6010",
+      "name": "North Coast (Sahel) & Matrouh",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f601b",
+      "name": "Beheira (Damanhur)",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f601a",
+      "name": "Damietta",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6023",
+      "name": "Aswan",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6011",
+      "name": "Port Said",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f600a",
+      "name": "Maadi & Mokattam",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6015",
+      "name": "Gharbia (Tanta)",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6008",
+      "name": "New Cairo & Rehab",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f600b",
+      "name": "Heliopolis & Nasr City",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6019",
+      "name": "Kafr El-Sheikh",
+      "isActive": true,
+      "__v": 0
+    },
+    {
+      "_id": "69fa65ae4cd1908e540f6024",
+      "name": "Red Sea (Hurghada & El Gouna)",
+      "isActive": true,
+      "__v": 0
+    }
+  ],
+  "productcategories": [
+    {
+      "_id": "69e0345a4340368a319fafb0",
+      "name": "Home & Garden",
+      "description": "Furniture and outdoor living",
+      "imageUrl": "https://i.ibb.co/000000/home.jpg",
+      "__v": 0
+    },
+    {
+      "_id": "69e0345a4340368a319fafb1",
+      "name": "Sports",
+      "description": "Sporting goods and equipment",
+      "imageUrl": "https://i.ibb.co/000000/sports.jpg",
+      "__v": 0
+    },
+    {
+      "_id": "69e0345a4340368a319fafae",
+      "name": "Electronics",
+      "description": "Gadgets and devices",
+      "imageUrl": "https://i.ibb.co/000000/electronics.jpg",
+      "__v": 0
+    },
+    {
+      "_id": "69e0345a4340368a319fafaf",
+      "name": "Fashion",
+      "description": "Clothing, shoes, and accessories",
+      "imageUrl": "https://i.ibb.co/000000/fashion.jpg",
+      "__v": 0
+    }
+  ]
+}
