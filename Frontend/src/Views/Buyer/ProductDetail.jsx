@@ -134,6 +134,7 @@ function ProductDetail() {
       seller_id: product.seller_id,
       image: product.image,
       quantity: quantity,
+      stock: product.stock,
       serviceableAreas: product.serviceableAreas
     });
     setOrderCreated(true);
@@ -327,14 +328,32 @@ function ProductDetail() {
  
             <div className="order-controls">
               <label htmlFor="quantity">Quantity</label>
-              <input
-                id="quantity"
-                type="number"
-                min="1"
-                max={product.stock}
-                value={quantity}
-                onChange={handleQuantityChange}
-              />
+              <div className="qty-stepper">
+                <button 
+                  className="qty-btn" 
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  disabled={quantity <= 1}
+                  type="button"
+                >
+                  ‹
+                </button>
+                <input
+                  id="quantity"
+                  type="number"
+                  min="1"
+                  max={product.stock}
+                  value={quantity}
+                  onChange={handleQuantityChange}
+                />
+                <button 
+                  className="qty-btn" 
+                  onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
+                  disabled={quantity >= product.stock}
+                  type="button"
+                >
+                  ›
+                </button>
+              </div>
             </div>
  
             <div className="order-summary">

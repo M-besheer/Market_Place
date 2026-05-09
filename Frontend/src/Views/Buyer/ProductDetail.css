@@ -335,9 +335,14 @@ body {
   justify-content: center;
 }
 
-.qty-btn:hover {
+.qty-btn:hover:not(:disabled) {
   background: var(--pd-primary-light);
   color: var(--pd-primary);
+}
+
+.qty-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .order-controls input[type='number'] {

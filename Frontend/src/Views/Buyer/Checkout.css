@@ -491,3 +491,54 @@
     outline: none;
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
+
+/* Quantity Stepper for Checkout */
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--co-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--co-surface-2);
+  width: fit-content;
+  margin-top: 8px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--co-surface);
+  color: var(--co-text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover:not(:disabled) {
+  background: var(--co-primary-light);
+  color: var(--co-primary);
+}
+
+.qty-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.qty-value {
+  width: 40px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1.5px solid var(--co-border);
+  border-right: 1.5px solid var(--co-border);
+  color: var(--co-text);
+  height: 32px;
+}
