@@ -121,7 +121,7 @@ export default function ListingDetail() {
         setTimeout(() => setToast(null), 3000);
     };
 
-    // if (loading) return <LoadingScreen />;
+    if (loading) return <LoadingScreen />;
     if (error) return (
         <div className="error-message full-page">
             <h2>{error.message}</h2>
