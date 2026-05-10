@@ -567,7 +567,7 @@ const Checkout = () => {
                         {formErrors.state && <span className="error-text">{formErrors.state}</span>}
                       </div>
                       <div className="form-group">
-                        <label htmlFor="postalCode">Postal Code (Optional)</label>
+                        <label htmlFor="postalCode">Postal Code *</label>
                         <input
                           type="text"
                           id="postalCode"
