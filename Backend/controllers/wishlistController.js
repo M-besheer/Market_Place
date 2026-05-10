@@ -53,11 +53,16 @@ const addToWishlist = async (req, res) => {
       }
     }
 
+    // Re-fetch with population to ensure we only return existing products
+    const updatedWishlist = await Wishlist.findOne({ user_id: req.user.id }).populate('listings');
+    const validIds = updatedWishlist.listings.filter(l => l !== null).map(l => l._id.toString());
+
     res.status(200).json({
       success: true,
       message: 'Product added to wishlist',
-      wishlistIds: wishlist.listings.map(id => id.toString()),
+      wishlistIds: [...new Set(validIds)],
     });
+
   } catch (err) {
     console.error('addToWishlist error:', err);
     res.status(500).json({ message: 'Server error', error: err.message });
@@ -78,11 +83,16 @@ const removeFromWishlist = async (req, res) => {
     wishlist.listings = wishlist.listings.filter(id => id.toString() !== productId);
     await wishlist.save();
 
+    // Re-fetch with population to ensure we only return existing products
+    const updatedWishlist = await Wishlist.findOne({ user_id: req.user.id }).populate('listings');
+    const validIds = updatedWishlist ? updatedWishlist.listings.filter(l => l !== null).map(l => l._id.toString()) : [];
+
     res.status(200).json({
       success: true,
       message: 'Product removed from wishlist',
-      wishlistIds: wishlist.listings.map(id => id.toString()),
+      wishlistIds: [...new Set(validIds)],
     });
+
   } catch (err) {
     console.error('removeFromWishlist error:', err);
     res.status(500).json({ message: 'Server error', error: err.message });
@@ -95,13 +105,19 @@ const removeFromWishlist = async (req, res) => {
  */
 const getWishlistIds = async (req, res) => {
   try {
-    const wishlist = await Wishlist.findOne({ user_id: req.user.id }).select('listings');
-    const ids = wishlist ? wishlist.listings.map(id => id.toString()) : [];
-    res.status(200).json({ ids });
+    const wishlist = await Wishlist.findOne({ user_id: req.user.id }).populate('listings');
+    
+    // Filter out nulls (deleted listings) and get unique strings
+    const validIds = wishlist 
+      ? [...new Set(wishlist.listings.filter(l => l !== null).map(l => l._id.toString()))]
+      : [];
+      
+    res.status(200).json({ ids: validIds });
   } catch (err) {
     console.error('getWishlistIds error:', err);
     res.status(500).json({ message: 'Server error', error: err.message });
   }
 };
+
 
 module.exports = { getWishlist, addToWishlist, removeFromWishlist, getWishlistIds };

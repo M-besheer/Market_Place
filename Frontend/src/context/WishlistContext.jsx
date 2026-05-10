@@ -6,25 +6,45 @@ const API = 'http://localhost:5000/api/wishlist';
 export function WishlistProvider({ children }) {
   const [wishlistIds, setWishlistIds] = useState(new Set());
   const [loading, setLoading] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem('token'));
 
-  const getToken = () => localStorage.getItem('token');
-
-  // Load just the IDs on mount (lightweight)
+  // Sync token from localStorage (useful since there's no global AuthContext)
   useEffect(() => {
-    const token = getToken();
-    if (!token) return;
+    const interval = setInterval(() => {
+      const currentToken = localStorage.getItem('token');
+      if (currentToken !== token) {
+        setToken(currentToken);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [token]);
+
+  // Load just the IDs when token changes
+  useEffect(() => {
+    if (!token) {
+      setWishlistIds(new Set());
+      return;
+    }
 
     fetch(`${API}/ids`, { headers: { Authorization: `Bearer ${token}` } })
       .then(r => r.ok ? r.json() : { ids: [] })
-      .then(data => setWishlistIds(new Set(data.ids || [])))
-      .catch(() => {});
-  }, []);
+      .then(data => {
+        const rawIds = data.ids || [];
+        // Only keep valid 24-char hex strings (ObjectIds)
+        const cleanIds = rawIds.filter(id => typeof id === 'string' && /^[0-9a-fA-F]{24}$/.test(id));
+        setWishlistIds(new Set(cleanIds));
+      })
+      .catch(() => setWishlistIds(new Set()));
+
+  }, [token]);
+
+
 
   const isWishlisted = useCallback((productId) => wishlistIds.has(productId), [wishlistIds]);
 
   const toggleWishlist = useCallback(async (productId) => {
-    const token = getToken();
     if (!token) return false; // signal: not logged in
+
 
     const alreadyIn = wishlistIds.has(productId);
 
@@ -44,8 +64,11 @@ export function WishlistProvider({ children }) {
       if (!res.ok) throw new Error('Request failed');
 
       const data = await res.json();
-      setWishlistIds(new Set(data.wishlistIds || []));
+      const rawIds = data.wishlistIds || [];
+      const cleanIds = rawIds.filter(id => typeof id === 'string' && /^[0-9a-fA-F]{24}$/.test(id));
+      setWishlistIds(new Set(cleanIds));
       return true;
+
     } catch {
       // Rollback on error
       setWishlistIds(prev => {
@@ -55,10 +78,14 @@ export function WishlistProvider({ children }) {
       });
       return false;
     }
-  }, [wishlistIds]);
+  }, [wishlistIds, token]);
+
+  const clearWishlist = useCallback(() => {
+    setWishlistIds(new Set());
+  }, []);
 
   return (
-    <WishlistContext.Provider value={{ wishlistIds, isWishlisted, toggleWishlist, loading }}>
+    <WishlistContext.Provider value={{ wishlistIds, isWishlisted, toggleWishlist, clearWishlist, loading }}>
       {children}
     </WishlistContext.Provider>
   );

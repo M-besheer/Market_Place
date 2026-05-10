@@ -23,7 +23,7 @@ const Navbar = () => {
     });
     const { cartItems } = useCart();
     const { location, updateLocation, clearLocation } = useLocationContext();
-    const { wishlistIds } = useWishlist();
+    const { wishlistIds, clearWishlist } = useWishlist();
 
     const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
     const wishlistCount = wishlistIds.size;
@@ -103,14 +103,13 @@ const Navbar = () => {
             toast.warning("Session Expired: Please sign in again.", { position: "top-right" });
             localStorage.removeItem('token');
             localStorage.removeItem('role');
+            clearWishlist();
             navigate('/login');
             return;
         }
 
         if (role !== 'buyer') {
             toast.error("Access Denied: Log in again.", { position: "top-right" });
-            // Optional: stay on page or navigate to seller dashboard if they are a seller
-            // But the user said "never open seller dashboard", so we just show alert.
             return;
         }
 
@@ -124,8 +123,10 @@ const Navbar = () => {
         localStorage.removeItem('userLocation');
         clearLocation();  // ✅ also clear from context (in-memory state)
         setSavedLocation(null);  // ✅ clear the local state too
+        clearWishlist();  // ✅ clear wishlist state
         navigate('/login');
     };
+
 
     const isLoggedIn = !!localStorage.getItem('token');
 

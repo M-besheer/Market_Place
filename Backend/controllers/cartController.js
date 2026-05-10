@@ -59,27 +59,40 @@ const addToCart = async (req, res) => {
     const listing = await Listing.findById(listing_id);
     if (!listing) return res.status(404).json({ message: 'Listing not found' });
 
+    if (listing.countInStock <= 0) {
+      return res.status(400).json({ message: 'Product is out of stock' });
+    }
+
     let cart = await Cart.findOne({ user_id: req.user.id });
 
     if (!cart) {
+      const initialQty = Math.min(quantity, listing.countInStock);
       cart = await Cart.create({
         user_id: req.user.id,
-        items: [{ listing_id, quantity }]
+        items: [{ listing_id, quantity: initialQty }]
       });
     } else {
       const itemIndex = cart.items.findIndex(item => item.listing_id.toString() === listing_id);
 
       if (itemIndex > -1) {
-        // Update quantity
-        cart.items[itemIndex].quantity += quantity;
+        // Update quantity, ensuring it doesn't exceed stock
+        const currentQty = cart.items[itemIndex].quantity;
+        const totalRequested = currentQty + quantity;
+        
+        if (totalRequested > listing.countInStock) {
+          cart.items[itemIndex].quantity = listing.countInStock;
+        } else {
+          cart.items[itemIndex].quantity = totalRequested;
+        }
       } else {
         // Add new item
-        cart.items.push({ listing_id, quantity });
+        const finalQty = Math.min(quantity, listing.countInStock);
+        cart.items.push({ listing_id, quantity: finalQty });
       }
       await cart.save();
     }
 
-    res.status(200).json({ success: true, message: 'Item added to cart' });
+    res.status(200).json({ success: true, message: 'Item added to cart', stock: listing.countInStock });
   } catch (err) {
     console.error('addToCart error:', err);
     res.status(500).json({ message: 'Server error', error: err.message });
@@ -99,6 +112,16 @@ const updateCartItemQuantity = async (req, res) => {
       return res.status(400).json({ message: 'Quantity must be at least 1' });
     }
 
+    const listing = await Listing.findById(listing_id);
+    if (!listing) return res.status(404).json({ message: 'Listing not found' });
+
+    if (quantity > listing.countInStock) {
+      return res.status(400).json({ 
+        message: `Only ${listing.countInStock} units in stock`,
+        stock: listing.countInStock 
+      });
+    }
+
     const cart = await Cart.findOne({ user_id: req.user.id });
     if (!cart) return res.status(404).json({ message: 'Cart not found' });
 
@@ -114,6 +137,7 @@ const updateCartItemQuantity = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: err.message });
   }
 };
+
 
 /**
  * DELETE /api/cart/:listing_id

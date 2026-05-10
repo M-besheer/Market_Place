@@ -7,7 +7,7 @@ const { aiSummaryQueue, JOB_NAMES } = require('../queues/aiSummaryQueue');
 // Load environment variables from ../.env
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
-const LISTING_ID = '69fe547110322a0ccad88535';
+const LISTING_ID = '69ffd12fa87b28e4aa01e857';
 
 async function triggerReview() {
     try {

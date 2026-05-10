@@ -58,6 +58,13 @@ export function CartProvider({ children }) {
 
     const addToCart = async (item) => {
         console.log('Adding to cart:', item, 'Logged in:', !!token);
+        
+        // Basic check for frontend
+        if ((item.stock || 0) <= 0) {
+            import('react-toastify').then(({ toast }) => toast.warning('This item is currently out of stock.'));
+            return;
+        }
+
         if (token) {
             try {
                 const res = await addItemToCart(item.listing_id, item.quantity || 1);
@@ -66,25 +73,41 @@ export function CartProvider({ children }) {
                 import('react-toastify').then(({ toast }) => toast.success('Added to cart!'));
             } catch (error) {
                 console.error('Failed to add to cart:', error);
-                import('react-toastify').then(({ toast }) => toast.error('Failed to add to cart. Please try again.'));
+                const errorMsg = error.response?.data?.message || 'Failed to add to cart. Please try again.';
+                import('react-toastify').then(({ toast }) => toast.error(errorMsg));
             }
         } else {
             console.log('Guest mode: Adding to local state');
             setCartItems(prev => {
                 const existingItem = prev.find(i => i.listing_id === item.listing_id);
+                const requestedQty = item.quantity || 1;
+                
                 if (existingItem) {
+                    const newQty = existingItem.quantity + requestedQty;
+                    // Cap at stock
+                    if (newQty > (item.stock || 999)) {
+                        import('react-toastify').then(({ toast }) => toast.info(`Capped at available stock (${item.stock})`));
+                        return prev.map(i => 
+                            i.listing_id === item.listing_id 
+                                ? { ...i, quantity: item.stock } 
+                                : i
+                        );
+                    }
                     return prev.map(i => 
                         i.listing_id === item.listing_id 
-                            ? { ...i, quantity: i.quantity + (item.quantity || 1) } 
+                            ? { ...i, quantity: newQty } 
                             : i
                     );
                 }
-                const newItem = { ...item, quantity: item.quantity || 1 };
+                
+                const finalQty = Math.min(requestedQty, item.stock || 999);
+                const newItem = { ...item, quantity: finalQty };
                 return [...prev, newItem];
             });
             import('react-toastify').then(({ toast }) => toast.success('Added to cart (Guest)!'));
         }
     };
+
 
     const removeFromCart = async (listing_id) => {
         if (token) {
@@ -103,13 +126,24 @@ export function CartProvider({ children }) {
 
     const updateQuantity = async (listing_id, newQuantity) => {
         const qty = Math.max(1, newQuantity);
+        
+        // Find the item to check its stock
+        const item = cartItems.find(i => i.listing_id === listing_id);
+        const maxStock = item?.stock || 999;
+
+        if (qty > maxStock) {
+            import('react-toastify').then(({ toast }) => toast.warning(`Only ${maxStock} units available`));
+            return;
+        }
+
         if (token) {
             try {
                 await updateItemQuantity(listing_id, qty);
                 await loadCart();
             } catch (error) {
                 console.error('Failed to update quantity:', error);
-                import('react-toastify').then(({ toast }) => toast.error('Failed to update quantity'));
+                const errorMsg = error.response?.data?.message || 'Failed to update quantity';
+                import('react-toastify').then(({ toast }) => toast.error(errorMsg));
             }
         } else {
             setCartItems(prev => prev.map(item => 
@@ -119,6 +153,7 @@ export function CartProvider({ children }) {
             ));
         }
     };
+
 
     const clearCart = async () => {
         if (token) {

@@ -28,7 +28,7 @@ async function seedLaptopReviews() {
         console.log('Connected to MongoDB...');
 
         // 1. Find the specific listing
-        const listingId = "69fe547110322a0ccad88535";
+        const listingId = "69ffd12fa87b28e4aa01e857";
         const laptop = await Listing.findById(listingId);
         if (!laptop) {
             console.error(`Error: Listing with ID ${listingId} not found.`);
@@ -37,7 +37,7 @@ async function seedLaptopReviews() {
         console.log(`Found listing: ${laptop.title} (${laptop._id})`);
 
         // 2. Find the specific buyer "shoyo"
-        const buyer = await User.findOne({ username: 'shoyo', role: 'buyer' });
+        const buyer = await User.findOne({ username: 'lotfy', role: 'buyer' });
         if (!buyer) {
             console.error('Error: User "shoyo" with role "buyer" not found.');
             process.exit(1);

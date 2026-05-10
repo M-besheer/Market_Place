@@ -51,6 +51,12 @@ const ProductCard = ({ listing, product, searchQuery = "" }) => {
 
   const handleCartClick = async (e) => {
     e.stopPropagation();
+    
+    if (item.countInStock <= 0) {
+      toast.error(`${item.title} is out of stock!`);
+      return;
+    }
+
     const token = localStorage.getItem('token');
     if (!token) {
       toast.info('Please sign in to add items to your cart');
@@ -79,13 +85,15 @@ const ProductCard = ({ listing, product, searchQuery = "" }) => {
 
         {/* ── Add to Cart Button (Bottom Left) ── */}
         <button
-          className="cart-btn"
+          className={`cart-btn ${item.countInStock <= 0 ? 'out-of-stock-btn' : ''}`}
           onClick={handleCartClick}
-          title="Add to cart"
-          aria-label="Add to cart"
+          title={item.countInStock <= 0 ? 'Out of stock' : 'Add to cart'}
+          aria-label={item.countInStock <= 0 ? 'Out of stock' : 'Add to cart'}
         >
           <ShoppingCart size={16} />
         </button>
+
+
 
         {/* ── Wishlist Heart Button (Bottom Right) ── */}
         <button

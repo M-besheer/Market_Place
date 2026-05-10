@@ -24,6 +24,7 @@ const Login = () => {
                 } else {
                     navigate('/home'); 
                 }
+
             } else {
                 setError(data.message || 'Invalid credentials');
             }

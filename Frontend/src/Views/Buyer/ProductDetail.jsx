@@ -117,6 +117,12 @@ function ProductDetail() {
  
   const handleAddToCart = async () => {
     console.log('handleAddToCart called');
+
+    if (product.stock <= 0) {
+      import('react-toastify').then(({ toast }) => toast.error('Item is out of stock!'));
+      return;
+    }
+
     const token = localStorage.getItem('token');
     if (!token) {
       alert('You must be logged in to place an order.');
@@ -143,6 +149,7 @@ function ProductDetail() {
       console.error('Error in handleAddToCart:', err);
     }
   };
+
 
   const showToast = (message, type = 'error') => {
     setToast({ message, type });
@@ -365,13 +372,15 @@ function ProductDetail() {
             </div>
  
             <button
-              className="place-order-button"
+              className={`place-order-button ${product.stock <= 0 ? 'out-of-stock-btn' : ''}`}
               type="button"
               onClick={handleAddToCart}
               disabled={orderCreated}
             >
-              {orderCreated ? '✓ Product Added' : 'Add To Cart'}
+              {product.stock <= 0 ? 'Out of Stock' : (orderCreated ? '✓ Product Added' : 'Add To Cart')}
             </button>
+
+
           </div>
         </section>
  
