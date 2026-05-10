@@ -1,7 +1,8 @@
 import React from 'react';
-import { Star, Heart } from 'lucide-react';
+import { Star, Heart, ShoppingCart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useWishlist } from '../../context/WishlistContext';
+import { useCart } from '../../context/CartContext';
 import { toast } from 'react-toastify';
 import './ProductCard.css';
 
@@ -26,6 +27,7 @@ const getHighlightedText = (text, highlight) => {
 const ProductCard = ({ listing, product, searchQuery = "" }) => {
   const navigate = useNavigate();
   const { isWishlisted, toggleWishlist } = useWishlist();
+  const { addToCart } = useCart();
   const item = listing || product;
   if (!item) return null;
 
@@ -47,6 +49,25 @@ const ProductCard = ({ listing, product, searchQuery = "" }) => {
     }
   };
 
+  const handleCartClick = async (e) => {
+    e.stopPropagation();
+    const token = localStorage.getItem('token');
+    if (!token) {
+      toast.info('Please sign in to add items to your cart');
+      return;
+    }
+    
+    await addToCart({
+      listing_id: productId,
+      name: item.title,
+      price: item.price,
+      image: item.image_url || defaultImg,
+      seller_id: item.seller_id,
+      stock: item.countInStock,
+      serviceableAreas: item.serviceableAreas || []
+    });
+  };
+
   return (
     <div className="product-card" onClick={() => navigate(`/buyer/product/${productId}`)}>
       <div className="image-container">
@@ -56,7 +77,17 @@ const ProductCard = ({ listing, product, searchQuery = "" }) => {
         </span>
         <img src={item.image_url || defaultImg} alt={item.title} className="product-img" />
 
-        {/* ── Wishlist Heart Button ── */}
+        {/* ── Add to Cart Button (Bottom Left) ── */}
+        <button
+          className="cart-btn"
+          onClick={handleCartClick}
+          title="Add to cart"
+          aria-label="Add to cart"
+        >
+          <ShoppingCart size={16} />
+        </button>
+
+        {/* ── Wishlist Heart Button (Bottom Right) ── */}
         <button
           className={`wishlist-btn ${wishlisted ? 'wishlisted' : ''}`}
           onClick={handleWishlistClick}

@@ -43,3 +43,32 @@
 .wishlist-btn.wishlisted:hover {
   background: #ffe4e6;
 }
+
+/* ── Cart button (Bottom Left) ── */
+.cart-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.cart-btn:hover {
+  background: #f0fdf4;
+  color: #16a34a;
+  border-color: #bbf7d0;
+  transform: scale(1.12);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+}

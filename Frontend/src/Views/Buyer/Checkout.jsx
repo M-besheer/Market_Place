@@ -12,7 +12,7 @@ import './Checkout.css';
 
 
 const Checkout = () => {
-  const { cartItems, removeFromCart, clearCart } = useCart();
+  const { cartItems, removeFromCart, updateQuantity, clearCart } = useCart();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
@@ -295,7 +295,25 @@ const Checkout = () => {
                             <div className="checkout-item-info">
                               <h3 className="checkout-item-name">{item.name}</h3>
                               <div className="checkout-item-meta">
-                                Qty: {item.quantity}
+                                <div className="qty-stepper">
+                                  <button 
+                                    className="qty-btn" 
+                                    onClick={() => updateQuantity(item.listing_id, item.quantity - 1)}
+                                    disabled={item.quantity <= 1}
+                                    type="button"
+                                  >
+                                    ‹
+                                  </button>
+                                  <span className="qty-value">{item.quantity}</span>
+                                  <button 
+                                    className="qty-btn" 
+                                    onClick={() => updateQuantity(item.listing_id, item.quantity + 1)}
+                                    disabled={item.quantity >= (item.stock || 999)}
+                                    type="button"
+                                  >
+                                    ›
+                                  </button>
+                                </div>
                               </div>
                               <div className="checkout-item-price">{(item.price * item.quantity).toFixed(2)} LE</div>
                             </div>
