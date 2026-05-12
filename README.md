@@ -1,7 +1,7 @@
 # Market Place
 
 A full-stack MERN marketplace application (MongoDB, Express, React, Node.js) running in Docker for a consistent development experience across all machines.
-
+![Demo](./demo.gif)
 ## Tech Stack
 
 | Layer    | Technology          |
