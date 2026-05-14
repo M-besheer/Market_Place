@@ -8,6 +8,42 @@ const User = require('../models/User');
 const Order = require('../models/Order');
 const { protect } = require('../controllers/authController');
 
+/**
+ * @swagger
+ * /api/products:
+ *   get:
+ *     summary: Get all products with filters
+ *     tags: [Products]
+ *     parameters:
+ *       - in: query
+ *         name: category
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: minRating
+ *         schema:
+ *           type: number
+ *       - in: query
+ *         name: priceRange
+ *         schema:
+ *           type: string
+ *           example: "0-100"
+ *       - in: query
+ *         name: search
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: seller
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: inStock
+ *         schema:
+ *           type: boolean
+ *     responses:
+ *       200:
+ *         description: List of products
+ */
 router.get('/', async (req, res) => {
     try {
         // 1. Parse inputs
@@ -95,6 +131,16 @@ router.get('/', async (req, res) => {
     }
 });
 
+/**
+ * @swagger
+ * /api/products/categories:
+ *   get:
+ *     summary: Get all product categories
+ *     tags: [Products]
+ *     responses:
+ *       200:
+ *         description: List of categories
+ */
 router.get('/categories', async (req, res) => {
     try {
         let categories = await ProductCategories.find({});
@@ -104,6 +150,24 @@ router.get('/categories', async (req, res) => {
     }
 });
 
+/**
+ * @swagger
+ * /api/products/{id}:
+ *   get:
+ *     summary: Get a single product by ID
+ *     tags: [Products]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Product details
+ *       404:
+ *         description: Product not found
+ */
 router.get('/:id', async (req, res) => {
     try {
         const listing = await Listing.findById(req.params.id)

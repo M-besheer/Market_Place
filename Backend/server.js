@@ -6,9 +6,13 @@ const session = require('express-session');
 const { startAISummaryWorker } = require('./workers/aiSummaryWorker');
 const { syncToMeilisearch } = require('./services/syncToMeilisearch');
 
+const { swaggerUi, specs } = require('./swagger');
+
 dotenv.config();
 
 const app = express();
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(express.json());

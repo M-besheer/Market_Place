@@ -24,6 +24,8 @@
     "jsonwebtoken": "^9.0.3",
     "meilisearch": "^0.44.1",
     "mongoose": "^9.4.1",
-    "nodemailer": "^8.0.7"
+    "nodemailer": "^8.0.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   }
 }
